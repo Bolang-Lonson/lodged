@@ -1,0 +1,11 @@
+.header {
+    width: auto; 
+    height: 1029px;
+    background-color: rgb(18, 38, 32);
+}
+
+.bg-img {
+    width: inherit;
+    height: inherit;
+    opacity: 0.5;
+}
