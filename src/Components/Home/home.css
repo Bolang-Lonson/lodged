@@ -9,3 +9,8 @@
     height: inherit;
     opacity: 0.5;
 }
+
+.navbar {
+    position: absolute;
+    top: 0;
+}
