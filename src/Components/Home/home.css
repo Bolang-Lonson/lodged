@@ -1,14 +1,9 @@
 .header {
     width: auto; 
     height: 1029px;
-    background-color: rgb(18, 38, 32);
+    background-image: linear-gradient(rgba(18, 38, 32, 0.5), rgba(18, 38, 32, 0.5)), url('../../Assets/Images/landpic.jpg');
+    background-size: cover;
     position: relative;
-}
-
-.bg-img {
-    width: inherit;
-    height: inherit;
-    opacity: 0.5;
 }
 
 .navbar {
