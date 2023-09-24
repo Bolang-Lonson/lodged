@@ -1,16 +1,14 @@
+body {
+    background-color: #f4ebd0;
+}
 .header {
-    width: auto; 
+    width: 100%; 
     height: 800px;
     background-image: linear-gradient(rgba(18, 38, 32, 0.5), rgba(18, 38, 32, 0.5)), url('../../Assets/Images/landpic.jpg');
     background-size: cover;
     position: relative;
-    border-bottom-left-radius: 70% 5%;
+    border-bottom-left-radius: 70% 5%; /* giving the header an elliptical curve at the bottom border*/
     border-bottom-right-radius: 70% 5%;
-}
-
-.navbar {
-    position: absolute;
-    top: 0; left: 0;
 }
 
 .info {
@@ -34,10 +32,15 @@
     background-color: rgba(182, 141, 64, 0.8);
     border: none;
     transform: scale(1.3);
+    text-align: center;
     text-transform: uppercase;
     transition: all 0.3s ease 0s;
 }
 .s-u button:hover {
     transform: scale(1.4);
     background-color: rgba(182, 141, 64, 1);
+}
+
+p {
+    color: white;
 }

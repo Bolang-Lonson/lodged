@@ -1,0 +1,28 @@
+#howto {
+    padding: 80px 10%;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: nowrap;
+    position: relative;
+}
+
+.steps {
+    width: 200px; height: 200px;
+    border: 2px solid #ccc;
+    margin-top: 20px;
+    border-radius: 5%;
+    box-shadow: 6px 6px 15px  #ccc;
+    padding: 5%;
+    transition: all 0.1s ease 0s;
+}
+
+.steps:hover {
+    width: 220px; height: 220px;
+}
+
+h2 {
+    position: absolute;
+    top: 10px;
+    float: center;
+    text-transform: uppercase;
+}

@@ -1,0 +1,12 @@
+footer {
+    background-color: #122620;
+    width: 100%; height: 400px;
+    padding: 60px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+
+.sxn {
+    flex-basis: 30%;
+}
