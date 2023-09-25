@@ -1,12 +1,18 @@
 import './footer.css';
+import img from '../../Assets/Images/logo2-png.png'
 
 const Footer = () => {
     return (
-        <footer>
-            <div className='sxn sxn1'>COMPANY</div>
+        <div className='footer'>
+            <div className='sxn sxn1'>
+                <img src={img} alt='logo'/>
+            </div>
+            {/* Template for footer with 3 columns for various classified links */}
             <div className='sxn sxn2'>PRICING</div>
-            <div className='sxn sxn3'></div>
-        </footer>
+            <div className='sxn sxn3'>HOME</div>
+            {/* Bottom row if needed */}
+            <div className='sxn sxn4'>BOTTOM</div>
+        </div>
     )
 }
 
