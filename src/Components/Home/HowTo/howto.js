@@ -9,6 +9,11 @@ const HowTo = () => {
             <div className='steps'>Step 2: Find Lodging</div>
             <div className='steps'>Step 3: Book Lodging</div>
         </div>
+        <hr/>
+        <div id='partners'>
+            <h2>We Partnered With</h2>
+            <div className='partner-carousel'> Partners Carousel </div>
+        </div>
         </>
     )
 }
