@@ -11,6 +11,7 @@ const HowTo = () => {
         </div>
         <hr/>
         <div id='partners'>
+            {/* A carousel with the logos of the major hotels we get to join. the most enticing list */}
             <h2>We Partnered With</h2>
             <div className='partner-carousel'> Partners Carousel </div>
         </div>

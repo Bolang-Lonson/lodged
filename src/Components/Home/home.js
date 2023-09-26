@@ -9,12 +9,17 @@ const Home = () => {
         <body>
         <header className='header'>
             <Navbar className='navbar'/>
+            <div className='carousel'>
+                {/* Caoursel will display various images of hotels, guest houses and resorts */}
+                <h3>Greeting Carousel</h3>
+            </div>
             <div className='info'>
                 <h1>let's find <br></br>your <br></br>dream hotel room or <br></br>guest house</h1>
                 <Link className='s-u' to='/signup'><button>get started &rarr;</button></Link>
                 <p>Already have an account? <a href='/login'>Login</a></p>
             </div>
         </header>
+        {/* HowTo is separated into its own component because it will become more complicated in the future */}
         <HowTo/>
         <Footer/>
         </body>

@@ -5,16 +5,28 @@ body {
     width: 100%; 
     height: 800px;
     background-image: linear-gradient(rgba(18, 38, 32, 0.5), rgba(18, 38, 32, 0.5)), url('../../Assets/Images/landpic.jpg');
-    background-size: cover;
+    background-size: cover; /* Stretches the bg-image to fit exactly in the div*/
     position: relative;
     border-bottom-left-radius: 70% 5%; /* giving the header an elliptical curve at the bottom border*/
     border-bottom-right-radius: 70% 5%;
 }
 
-.info {
-    width: 35%; height: auto;
+div.carousel {
+    width: 50%; height: 50%;
+    position: absolute;
     margin-top: 80px;
-    float: right;
+    color: white;
+    left: 5%;
+    border: 1px dashed black;
+    padding: 50px;
+}
+
+/* Placing the carousel and info side by side */
+.info {
+    position: absolute;
+    width: 35%; height: auto;
+    margin-top: 80px;   /* placing it at the far right with our greeting info text*/
+    right: 0;
 }
 
 .info h1 {

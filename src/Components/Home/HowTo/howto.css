@@ -11,12 +11,12 @@
     border: 2px solid #ccc;
     margin-top: 20px;
     border-radius: 5%;
-    box-shadow: 6px 6px 15px  #ccc;
     padding: 5%;
     transition: all 0.1s ease 0s;
 }
 
 .steps:hover {
+    box-shadow: 6px 6px 15px #ccc;
     width: 220px; height: 220px;
     /* Scaling by 110% */
 }
