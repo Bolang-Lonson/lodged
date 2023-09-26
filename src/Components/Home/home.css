@@ -26,7 +26,10 @@ div.carousel {
     position: absolute;
     width: 35%; height: auto;
     margin-top: 80px;   /* placing it at the far right with our greeting info text*/
-    right: -100px;
+    right: 0;
+    border: 1px dashed black;
+    padding-left: 5%;
+
 }
 
 .info h1 {
