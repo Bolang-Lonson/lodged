@@ -14,7 +14,7 @@ const Home = () => {
                 <h3>Greeting Carousel</h3>
             </div>
             <div className='info'>
-                <h1>let's find <br></br>your <br></br>dream hotel room or <br></br>guest house</h1>
+                <h1>let's find <br></br>your <br></br>dream hotel <br></br>room or <br></br>guest house</h1>
                 <Link className='s-u' to='/signup'><button>get started &rarr;</button></Link>
                 <p>Already have an account? <a href='/login'>Login</a></p>
             </div>
