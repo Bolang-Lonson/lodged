@@ -11,7 +11,7 @@ const Footer = () => {
             <div className='sxn sxn2'>PRICING</div>
             <div className='sxn sxn3'>HOME</div>
             {/* Bottom row if needed */}
-            <div className='sxn sxn4'>BOTTOM</div>
+            <div className='sxn sxn4'>XERTIA Inc &copy;</div>
         </div>
     )
 }
