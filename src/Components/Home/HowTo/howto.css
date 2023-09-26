@@ -16,7 +16,7 @@
 }
 
 .steps:hover {
-    box-shadow: 6px 6px 15px #ccc;
+    box-shadow: -6px -6px 15px #ccc;
     width: 220px; height: 220px;
     /* Scaling by 110% */
 }
