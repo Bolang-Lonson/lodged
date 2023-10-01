@@ -1,12 +1,11 @@
 import { Link } from "react-router-dom";
-import Logo from '../../Assets/Images/biglogo-png.png';
 import './navbar.css';
 
-const Navbar = () => {
+const Navbar = ({logo}) => {
 
   return(
     <div className="head">
-      <img className='logo' src={Logo} alt="logo"/>
+      <img className='logo' src={logo} alt="logo"/>
       <nav>
         <ul className="nav_links">
           <li><Link className='a' aria-current='page' to='/'>HOME</Link></li>
