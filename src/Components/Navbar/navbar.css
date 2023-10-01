@@ -1,3 +1,14 @@
+.head {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 10px 5%;
+}
+
+.no-trans {
+    background-color: #122620;
+}
+
 .logo {
     cursor: pointer;
     margin-right: auto;
@@ -24,13 +35,6 @@ li, .a, button {
 
 .nav_btn button:hover {
     background-color: rgba(182, 141, 64, 0.8);
-}
-
-.head {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    padding: 10px 5%;
 }
 
 .nav_links {
@@ -63,4 +67,13 @@ li, .a, button {
 
 .nav_links li .a:hover::after {
     width: 100%;
+}
+/* whichever view is active will be highlighted */
+.nav_links li .active::after {
+    content: '';
+    height: 3px; width: 100%;
+    background: #b68d40;
+    position: absolute;
+    left: 0; bottom: -10px;
+    transition: 0.3s;
 }
