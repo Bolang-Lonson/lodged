@@ -1,14 +1,22 @@
 body { 
     background-color: #f4ebd0;
     position: relative;
+    /* display: flex;
+    justify-content: space-around; */
 }
 
 form {
-    position: absolute;
-    left: 0; right: 0;
-    top: 0; bottom: 0;
+    position: relative;
+    float: center;
+    /* margin: 30% 0; */
     width: 30%; height: 30%;
     border: 1px solid #122620;
     border-radius: 5px;
     padding: 5%;
+}
+form img, form input, form button {
+    margin: 2%;
+}
+form button {
+    display: block;
 }
