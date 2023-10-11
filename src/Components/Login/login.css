@@ -1,13 +1,30 @@
-body { 
-    background-color: #f4ebd0;
-}
-
 .form_box {
     /* float: right; */
-    width: 30%; height: 30%;
+    width: 100%; height: 30%;
     /* border: 1px solid black;  */
-    box-shadow: 0 0 5px #ccc;
+    box-shadow: 0 0 5px #aaa;
     border-radius: 10px;
     padding: 5%;
     margin: 5% auto;
+}
+
+@media (min-width: 960px) {
+    .form_box {
+        width: 600px;
+    }
+}
+
+@media (min-width: 540px) and (max-width: 960px) {
+    .form_box {
+        width: 60%;
+    }
+}
+
+.login-logo {
+    background-image: url("../../Assets/Images//other/logo-char.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+    min-height: 75px;
+    transform: translateY(-10%);
 }
