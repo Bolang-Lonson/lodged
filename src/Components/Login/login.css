@@ -1,22 +1,13 @@
 body { 
     background-color: #f4ebd0;
-    position: relative;
-    /* display: flex;
-    justify-content: space-around; */
 }
 
-form {
-    position: relative;
-    float: center;
-    /* margin: 30% 0; */
+.form_box {
+    /* float: right; */
     width: 30%; height: 30%;
-    border: 1px solid #122620;
-    border-radius: 5px;
+    /* border: 1px solid black;  */
+    box-shadow: 0 0 5px #ccc;
+    border-radius: 10px;
     padding: 5%;
-}
-form img, form input, form button {
-    margin: 2%;
-}
-form button {
-    display: block;
+    margin: 5% auto;
 }
