@@ -1,7 +1,6 @@
 import './login.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import drklogo from '../../Assets/Images/other/logo-char.png'
-import { useState } from 'react';
 
 const Login = () => {
     function signIn() {
