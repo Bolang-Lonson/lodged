@@ -4,8 +4,8 @@
     /* border: 1px solid black;  */
     box-shadow: 0 0 5px #aaa;
     border-radius: 10px;
-    padding: 5%;
-    margin: 5% auto;
+    padding:2% 5% 5% 5%;
+    margin: 0 auto 5% auto;
 }
 
 @media (min-width: 960px) {
@@ -20,11 +20,10 @@
     }
 }
 
-.login-logo {
-    background-image: url("../../Assets/Images//other/logo-char.png");
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center center;
-    min-height: 75px;
-    transform: translateY(-10%);
+.logo-box {
+    display: grid;
+    place-items: center;
+    height: inherit;
+    margin: 0;
+    padding: 0;
 }
