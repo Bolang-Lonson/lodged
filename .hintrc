@@ -18,6 +18,12 @@
           "display: grid"
         ]
       }
+    ],
+    "axe/forms": [
+      "default",
+      {
+        "select-name": "off"
+      }
     ]
   },
   "browserslist": [
