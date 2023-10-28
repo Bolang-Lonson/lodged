@@ -51,3 +51,20 @@
     border: 1px solid #ccc;
 }
   
+.form-floating {
+    position: relative;
+  }
+  
+  .form-floating label {
+    position: absolute;
+    pointer-events: none;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: all 0.3s ease;
+  }
+  
+  .form-floating input:focus + label {
+    top: 0;
+    font-size: 12px;
+    color: #555;
+  }
