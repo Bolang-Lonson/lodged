@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import countries from './countrycodes.json';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import drklogo from '../../Assets/Images/other/logo-char.png';
+import './signup.css';
 
 const Signup = () => {
   const [formData, setFormData] = useState({
