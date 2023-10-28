@@ -50,7 +50,20 @@ const Login = () => {
         <h1 className="text-center form-group mb-3">Login</h1>
         <form onSubmit={handleSubmit}>
           <div className="form-group mb-3">
-            <label htmlFor="exampleInputEmail1" className="form-label">Email address</label>
+            <label htmlFor="exampleInputEmail1" className="form-label" 
+                style={{
+                    position: 'absolute',
+                    pointerEvents: 'none',
+                    top: '50%',
+                    transform: 'translateY(-50%)',
+                    transition: 'all 0.3s ease',
+                    ...(formData.name && {
+                      top: 0,
+                      fontSize: '12px',
+                      color: '#555',
+                    }),
+                  }}
+            >Email address</label>
             <input
               type="email"
               className={`form-control ${errors.email ? 'is-invalid' : ''}`}
@@ -65,7 +78,20 @@ const Login = () => {
             <div id="emailHelp" className="form-text">Enter a valid email address.</div>
           </div>
           <div className="form-group mb-3">
-            <label htmlFor="exampleInputPassword1" className="form-label">Password</label>
+            <label htmlFor="exampleInputPassword1" className="form-label" 
+                style={{
+                    position: 'absolute',
+                    pointerEvents: 'none',
+                    top: '50%',
+                    transform: 'translateY(-50%)',
+                    transition: 'all 0.3s ease',
+                    ...(formData.name && {
+                      top: 0,
+                      fontSize: '12px',
+                      color: '#555',
+                    }),
+                  }}
+            >Password</label>
             <input
               type="password"
               className={`form-control ${errors.password ? 'is-invalid' : ''}`}
