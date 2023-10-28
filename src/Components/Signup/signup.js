@@ -80,7 +80,21 @@ const Signup = () => {
         <h1 className='text-center mb-3'>Signup</h1>
         <form onSubmit={handleSubmit}>
           <div className='form-floating my-2'>
-            <label htmlFor='name'>Name</label>
+            <label htmlFor='name' 
+                style={{
+                    position: 'absolute',
+                    pointerEvents: 'none',
+                    top: '50%',
+                    transform: 'translateY(-50%)',
+                    transition: 'all 0.3s ease',
+                    ...(formData.name && {
+                      top: 0,
+                      fontSize: '12px',
+                      color: '#555',
+                    }),
+                  }}
+            >
+                Name</label>
             <input
               type='text'
               className={`form-control ${errors.name ? 'is-invalid' : ''}`}
@@ -97,7 +111,20 @@ const Signup = () => {
             )}
           </div>
           <div className='form-floating my-2'>
-            <label htmlFor='email'>Email</label>
+            <label htmlFor='email' 
+                style={{
+                    position: 'absolute',
+                    pointerEvents: 'none',
+                    top: '50%',
+                    transform: 'translateY(-50%)',
+                    transition: 'all 0.3s ease',
+                    ...(formData.name && {
+                      top: 0,
+                      fontSize: '12px',
+                      color: '#555',
+                    }),
+                  }}
+            >Email</label>
             <input
               type='email'
               className={`form-control ${errors.email ? 'is-invalid' : ''}`}
@@ -136,7 +163,20 @@ const Signup = () => {
               <div className='invalid-feedback'>{errors.country}</div>
             )}
             <div className='form-floating number'>
-              <label htmlFor='phone'>Telephone Number</label>
+              <label htmlFor='phone' 
+                style={{
+                    position: 'absolute',
+                    pointerEvents: 'none',
+                    top: '50%',
+                    transform: 'translateY(-50%)',
+                    transition: 'all 0.3s ease',
+                    ...(formData.name && {
+                      top: 0,
+                      fontSize: '12px',
+                      color: '#555',
+                    }),
+                  }}
+              >Telephone Number</label>
               <input
                 type='tel'
                 className={`form-control ${errors.phone ? 'is-invalid' : ''}`}
@@ -154,7 +194,20 @@ const Signup = () => {
             </div>
           </div>
           <div className='form-floating my-2'>
-            <label htmlFor='password'>Password</label>
+            <label htmlFor='password'
+                style={{
+                    position: 'absolute',
+                    pointerEvents: 'none',
+                    top: '50%',
+                    transform: 'translateY(-50%)',
+                    transition: 'all 0.3s ease',
+                    ...(formData.name && {
+                      top: 0,
+                      fontSize: '12px',
+                      color: '#555',
+                    }),
+                  }}
+            >Password</label>
             <input type='password'
               className={`form-control ${
                 errors.password ? 'is-invalid' : ''
@@ -172,7 +225,20 @@ const Signup = () => {
             )}
           </div>
           <div className='form-floating my-2'>
-            <label htmlFor='confirmPassword'>Confirm Password</label>
+            <label htmlFor='confirmPassword'
+                style={{
+                    position: 'absolute',
+                    pointerEvents: 'none',
+                    top: '50%',
+                    transform: 'translateY(-50%)',
+                    transition: 'all 0.3s ease',
+                    ...(formData.name && {
+                      top: 0,
+                      fontSize: '12px',
+                      color: '#555',
+                    }),
+                  }}
+            >Confirm Password</label>
             <input
               type='password'
               className={`form-control ${
