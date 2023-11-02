@@ -52,7 +52,7 @@ const Login = () => {
           <div className="form-group mb-3">
             <label htmlFor="exampleInputEmail1" className="form-label" 
                 style={{
-                    position: 'absolute',
+                    // position: 'absolute',
                     pointerEvents: 'none',
                     top: '50%',
                     transform: 'translateY(-50%)',
@@ -80,7 +80,7 @@ const Login = () => {
           <div className="form-group mb-3">
             <label htmlFor="exampleInputPassword1" className="form-label" 
                 style={{
-                    position: 'absolute',
+                    // position: 'absolute',
                     pointerEvents: 'none',
                     top: '50%',
                     transform: 'translateY(-50%)',
