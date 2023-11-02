@@ -6,7 +6,7 @@ import Footer from '../Footer/footer';
 
 const Home = () => {
     return (
-        <body>
+        <>
         <header className='header'>
             <Navbar className='navbar' signedIn={false}/>
             <div className='carousel'>
@@ -22,7 +22,7 @@ const Home = () => {
         {/* HowTo is separated into its own component because it will become more complicated in the future */}
         <HowTo/>
         <Footer/>
-        </body>
+        </>
     )
 }
 
