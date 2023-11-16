@@ -44,79 +44,92 @@ const Login = () => {
   }
 
   return (
-    <div>
-      <div className='logo-box pt-4'><img src={drklogo} alt='...'/></div>
-      <div className='form_box'>
-        <h1 className="text-center form-group mb-3">Login</h1>
-        <form onSubmit={handleSubmit}>
-          <div className="form-group mb-3">
-            <label htmlFor="exampleInputEmail1" className="form-label" 
-                style={{
-                    // position: 'absolute',
-                    pointerEvents: 'none',
-                    top: '50%',
-                    transform: 'translateY(-50%)',
-                    transition: 'all 0.3s ease',
-                    ...(formData.name && {
-                      top: 0,
-                      fontSize: '12px',
-                      color: '#555',
-                    }),
-                  }}
-            >Email address</label>
-            <input
-              type="email"
-              className={`form-control ${errors.email ? 'is-invalid' : ''}`}
-              id="exampleInputEmail1"
-              aria-describedby="emailHelp"
-              value={formData.email}
-              onChange={(e) =>
-                setFormData({ ...formData, email: e.target.value })
-              }
-            />
-            {errors.email && <div className="invalid-feedback">{errors.email}</div>}
-            <div id="emailHelp" className="form-text">Enter a valid email address.</div>
-          </div>
-          <div className="form-group mb-3">
-            <label htmlFor="exampleInputPassword1" className="form-label" 
-                style={{
-                    // position: 'absolute',
-                    pointerEvents: 'none',
-                    top: '50%',
-                    transform: 'translateY(-50%)',
-                    transition: 'all 0.3s ease',
-                    ...(formData.name && {
-                      top: 0,
-                      fontSize: '12px',
-                      color: '#555',
-                    }),
-                  }}
-            >Password</label>
-            <input
-              type="password"
-              className={`form-control ${errors.password ? 'is-invalid' : ''}`}
-              id="exampleInputPassword1"
-              value={formData.password}
-              onChange={(e) =>
-                setFormData({ ...formData, password: e.target.value })
-              }
-            />
-            {errors.password && <div className="invalid-feedback">{errors.password}</div>}
-          </div>
-          <div className="form-group mb-3 form-check">
-            <input
-              type="checkbox"
-              className="form-check-input"
-              id="rem-check"
-            />
-            <label className="form-check-label" htmlFor="rem-check">Remember me</label>
-          </div>
-          <button type="submit" className="btn btn-outline-success px-5">Login</button>
-          <div className='form-text pt-1'>Don't have an account? <a href='/signup'>Signup</a></div>
-        </form>
+    <div className='container'>
+      <div className='row pt-4 text-center'>
+        <div className='col'>
+          <img 
+            src={drklogo} 
+            alt='...' 
+            className='img-fluid'
+          />
+        </div>
       </div>
-      <div>
-        <p className="mt-5 form-group mb-3 text-body-secondary">&copy; Lodged.com 2024</p>
+      <div className='row'>
+        <div className='col-12 col-md-8 col-lg-5 mx-auto mt-0 form_box container'>
+          <div className='row'>
+            <div className='col-8 mx-auto'><h1 className="text-center form-group mb-3">Login</h1></div>
+          </div>
+          <div className='row'>
+            <form onSubmit={handleSubmit} className='col-9 mx-auto mt-4'>
+              <div className="form-group mb-3">
+                <label htmlFor="exampleInputEmail1" className="form-label" 
+                    style={{
+                        // position: 'absolute',
+                        pointerEvents: 'none',
+                        // top: '50%',
+                        // transform: 'translateY(-50%)',
+                        transition: 'all 0.3s ease',
+                        ...(formData.name && {
+                          top: 0,
+                          fontSize: '12px',
+                          color: '#555',
+                        }),
+                      }}
+                >Email address</label>
+                <input
+                  type="email"
+                  className={`form-control ${errors.email ? 'is-invalid' : ''}`}
+                  id="exampleInputEmail1"
+                  aria-describedby="emailHelp"
+                  value={formData.email}
+                  onChange={(e) =>
+                    setFormData({ ...formData, email: e.target.value })
+                  }
+                />{errors.email && <div className="invalid-feedback">{errors.email}</div>}
+                <div id="emailHelp" className="form-text">Enter a valid email address.</div>
+              </div>
+              <div className="form-group mb-3">
+                <label htmlFor="exampleInputPassword1" className="form-label" 
+                    style={{
+                        // position: 'absolute',
+                        pointerEvents: 'none',
+                        // top: '50%',
+                        // transform: 'translateY(-50%)',
+                        transition: 'all 0.3s ease',
+                        ...(formData.name && {
+                          top: 0,
+                          fontSize: '12px',
+                          color: '#555',
+                        }),
+                      }}
+                >Password</label>
+                <input
+                  type="password"
+                  className={`form-control ${errors.password ? 'is-invalid' : ''}`}
+                  id="exampleInputPassword1"
+                  value={formData.password}
+                  onChange={(e) =>
+                    setFormData({ ...formData, password: e.target.value })
+                  }
+                />
+                {errors.password && <div className="invalid-feedback">{errors.password}</div>}
+              </div>
+              <div className="form-group mb-3 form-check form-switch">
+                <input
+                  type="checkbox"
+                  className="form-check-input"
+                  id="rem-check"
+                />
+                <label className="form-check-label" htmlFor="rem-check">Remember me</label>
+              </div>
+              <button type="submit" className="btn btn-outline-success px-5">Login</button>
+              <div className='form-text pt-1'>Don't have an account? <a href='/signup'>Signup</a></div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div className='row text-center '>
+        <p className="mt-3 form-group mb-3 text-body-secondary">&copy; Lodged.com 2024</p>
       </div>
     </div>
   );
