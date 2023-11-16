@@ -57,7 +57,7 @@ const Login = () => {
       <div className='row'>
         <div className='col-12 col-md-8 col-lg-5 mx-auto mt-0 form_box container'>
           <div className='row'>
-            <div className='col-8 mx-auto'><h1 className="text-center form-group mb-3">Login</h1></div>
+            <div className='col-8 mx-auto'><h1 className="text-center mb-3">Login</h1></div>
           </div>
           <div className='row'>
             <form onSubmit={handleSubmit} className='col-9 mx-auto mt-4'>
@@ -129,7 +129,7 @@ const Login = () => {
         </div>
       </div>
       <div className='row text-center '>
-        <p className="mt-3 form-group mb-3 text-body-secondary">&copy; Lodged.com 2024</p>
+        <p className="form-group text-body-secondary">&copy; Lodged.com 2024</p>
       </div>
     </div>
   );

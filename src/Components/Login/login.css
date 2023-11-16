@@ -4,3 +4,44 @@
     padding:2% 5% 5% 5%;
     margin-bottom: 5%;
 }
+
+.telly {
+    display: flex;
+    flex-wrap: wrap;
+    flex-grow: 0;
+    align-items: center;
+}
+
+.telly label {
+    /* width: 100%; */
+    float: right;
+}
+.telly select {
+    width: 40%;
+}
+  
+.number {
+    width: 60%;
+}
+  
+.form-select {
+    border: 1px solid #ccc;
+}
+  
+.form-floating {
+    position: relative;
+}
+  
+.form-floating label {
+position: absolute;
+pointer-events: none;
+top: 50%;
+transform: translateY(-50%);
+transition: all 0.3s ease;
+}
+  
+.form-floating input:focus + label {
+top: 0;
+font-size: 12px;
+color: #555;
+}
