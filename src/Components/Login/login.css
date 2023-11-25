@@ -1,10 +1,20 @@
+.body {
+    background-image: url('../../Assets/Images/BG2.jpg');
+    background-size: contain;
+    background-repeat: repeat;
+    background-position: center center;
+}
 .form_box {
     box-shadow: 0 0 5px #aaa;
     border-radius: 10px;
     padding:2% 5% 5% 5%;
     margin-bottom: 5%;
+    background: #fff;
 }
 
+.img-fluid {
+    background-color: #fff;
+}
 .telly {
     display: flex;
     flex-wrap: wrap;

@@ -71,7 +71,7 @@ const Signup = () => {
   }
 
   return (
-    <div className='container'>
+    <div className='container body'>
       <div className='row pt-4 text-center'>
         <div className='col'>
           <img 
