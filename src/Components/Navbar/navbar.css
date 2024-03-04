@@ -1,58 +1,29 @@
-.head {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    padding: 10px 5%;
-}
-
 .no-trans {
     background-color: #122620;
 }
 
-.logo {
-    cursor: pointer;
-    margin-right: auto;
-}
-
-li, .a, button {
-    font-family: sans-serif;
-    font-weight: 500;
-    font-size: 16px;
-    color: #d6ad60;
-    text-decoration: none;
-}
-
-.nav_btn button {
-    margin-left: 25px;
-    color: #f4ebd0;
-    padding: 9px 25px;
+a.custom-btn {
     background-color: rgba(182, 141, 64, 1);
-    border: none;
-    border-radius: 50px;
-    cursor: pointer;
+    color: #f4ebd0;
     transition: all 0.3s ease 0s;
 }
 
-.nav_btn button:hover {
+a.custom-btn:hover {
     background-color: rgba(182, 141, 64, 0.8);
+    color: #f4ebd0;
 }
 
-.nav_links {
-    list-style: none;
-    transform: translateY(9px);
+.navbar-toggler-icon {
+    background-color: #b68d40;
 }
 
-.nav_links li {
-    display: inline-block;
-    padding: 0px 20px;
-}
-
-.nav_links li .a {
+li .nav-link {
+    color: #d6ad60;
     position: relative;
     transition: all 0.3s ease 0s;
 }
 
-.nav_links li .a::after {
+li .nav-link::after {
     content: '';
     height: 3px; width: 0;
     background: #b68d40;
@@ -61,15 +32,15 @@ li, .a, button {
     transition: 0.3s;
 }
 
-.nav_links li .a:hover {
+li .nav-link:hover {
     color: #b68d40;
 }
 
-.nav_links li .a:hover::after {
+li .nav-link:hover::after {
     width: 100%;
 }
-/* whichever view is active will be highlighted */
-.nav_links li .active::after {
+
+.navbar-nav li .current::after {
     content: '';
     height: 3px; width: 100%;
     background: #b68d40;

@@ -8,7 +8,7 @@ const Home = () => {
     return (
         <div>
             <div className='header'>
-                <Navbar className='navbar navbar-expand-md ' signedIn={false}/>
+                <Navbar signedIn={false}/>
                 <div className='container'>
                     <div className='row'>
                         <div className='carousel col-12 col-lg-6'>
