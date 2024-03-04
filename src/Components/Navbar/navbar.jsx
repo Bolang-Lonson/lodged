@@ -29,7 +29,7 @@ const Navbar = ({transparent = true, signedIn}) => {
 	const opaque = transparent? '': ' no-trans'
 	return(
 	  	<nav className={"navbar navbar-expand-md navbar-light" + opaque}>
-		  	<div className="container-xl">
+		  	<div className="container">
 			  	<a href="/" className="navbar-brand">
 				  	<img src={Logo} alt="logo"/>
 			  	</a>

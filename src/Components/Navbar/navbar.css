@@ -2,6 +2,10 @@
     background-color: #122620;
 }
 
+button.navbar-toggler {
+    color: #d6ad60;
+    transform: scale(1.3);
+}
 a.custom-btn {
     background-color: rgba(182, 141, 64, 1);
     color: #f4ebd0;

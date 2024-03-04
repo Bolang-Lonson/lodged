@@ -1,19 +1,12 @@
 .header {
-    width: 100%; 
-    height: 800px;
     background-image: linear-gradient(rgba(18, 38, 32, 0.5), rgba(18, 38, 32, 0.5)), url('../../Assets/Images/landpic.jpg');
     background-size: cover; /* Stretches the bg-image to fit exactly in the div*/
-    position: relative;
     border-bottom-left-radius: 70% 5%; /* giving the header an elliptical curve at the bottom border*/
     border-bottom-right-radius: 70% 5%;
 }
 
 div.carousel {
-    width: 55%; height: 50%;
-    position: absolute;
-    margin-top: 80px;
     color: white;
-    left: 5%;
     border: 1px dashed black;
     padding: 50px;
 }
@@ -29,16 +22,12 @@ div.carousel {
 
 }
 
-.info h1 {
-    font-size: 60px;
-    font-weight: 450;
+div h1 {
     color: #fff;
     text-transform: uppercase;
 }
 
-.s-u button {
-    margin: 50px 80px;
-    border-radius: 50px;
+div .s-u {
     color: #f4ebd0;
     padding: 9px 25px;
     background-color: rgba(182, 141, 64, 0.8);
@@ -48,11 +37,8 @@ div.carousel {
     text-transform: uppercase;
     transition: all 0.3s ease 0s;
 }
-.s-u button:hover {
+div .s-u:hover {
     transform: scale(1.4);
+    color: #f4ebd0;
     background-color: rgba(182, 141, 64, 1);
-}
-
-p {
-    color: white;
 }
