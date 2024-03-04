@@ -82,13 +82,24 @@ const Signup = () => {
         </div>
       </div>
       <div className='row'>
-        <div className='col-12 col-md-8 col-lg-5 mx-auto mt-0 form_box container'>
+        <div className='col-11 col-md-8 col-lg-5 mx-auto mt-0 form_box container'>
           <div className='row'>
             <div className='col-8 mx-auto'><h1 className="text-center mb-3">Signup</h1></div>
           </div>
           <div className='row'>
             <form onSubmit={handleSubmit} className='col-9 mx-auto mt-1'>
-              <div className='form-floating my-2'>
+              <div className='form-floating my-2'> 
+                <input
+                  type='text'
+                  className={`form-control ${errors.name ? 'is-invalid' : ''}`}
+                  id='name'
+                  name='name'
+                  placeholder='Enter your name'
+                  value={formData.name}
+                  onChange={(e) =>
+                    setFormData({ ...formData, name: e.target.value })
+                  }
+                />
                 <label htmlFor='name' 
                     style={{
                         position: 'absolute',
@@ -104,22 +115,22 @@ const Signup = () => {
                       }}
                 >
                     Name</label>
-                <input
-                  type='text'
-                  className={`form-control ${errors.name ? 'is-invalid' : ''}`}
-                  id='name'
-                  name='name'
-                  placeholder='Enter your name'
-                  value={formData.name}
-                  onChange={(e) =>
-                    setFormData({ ...formData, name: e.target.value })
-                  }
-                />
                 {errors.name && (
                   <div className='invalid-feedback'>{errors.name}</div>
                 )}
               </div>
               <div className='form-floating my-2'>
+                <input
+                  type='email'
+                  className={`form-control ${errors.email ? 'is-invalid' : ''}`}
+                  id='email'
+                  name='email'
+                  placeholder='Enter your email'
+                  value={formData.email}
+                  onChange={(e) =>
+                    setFormData({ ...formData, email: e.target.value })
+                  }
+                />
                 <label htmlFor='email' 
                     style={{
                         position: 'absolute',
@@ -134,17 +145,6 @@ const Signup = () => {
                         }),
                       }}
                 >Email</label>
-                <input
-                  type='email'
-                  className={`form-control ${errors.email ? 'is-invalid' : ''}`}
-                  id='email'
-                  name='email'
-                  placeholder='Enter your email'
-                  value={formData.email}
-                  onChange={(e) =>
-                    setFormData({ ...formData, email: e.target.value })
-                  }
-                />
                 {errors.email && (
                   <div className='invalid-feedback'>{errors.email}</div>
                 )}
@@ -172,6 +172,17 @@ const Signup = () => {
                   <div className='invalid-feedback'>{errors.country}</div>
                 )}
                 <div className='form-floating number'>
+                  <input
+                    type='tel'
+                    className={`form-control ${errors.phone ? 'is-invalid' : ''}`}
+                    id='phone'
+                    name='phone'
+                    placeholder='Enter your telephone number'
+                    value={formData.phone}
+                    onChange={(e) =>
+                      setFormData({ ...formData, phone: e.target.value })
+                    }
+                  />
                   <label htmlFor='phone' 
                     style={{
                         position: 'absolute',
@@ -186,17 +197,6 @@ const Signup = () => {
                         }),
                       }}
                   >Telephone Number</label>
-                  <input
-                    type='tel'
-                    className={`form-control ${errors.phone ? 'is-invalid' : ''}`}
-                    id='phone'
-                    name='phone'
-                    placeholder='Enter your telephone number'
-                    value={formData.phone}
-                    onChange={(e) =>
-                      setFormData({ ...formData, phone: e.target.value })
-                    }
-                  />
                   {errors.phone && (
                     <div className='invalid-feedback'>{errors.phone}</div>
                   )}

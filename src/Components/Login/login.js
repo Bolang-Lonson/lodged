@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 // import { Link } from 'react-router-dom';
-
 import './login.css';
 import drklogo from '../../Assets/Images/other/logo-char.png';
 
@@ -54,7 +53,7 @@ const Login = () => {
         </div>
       </div>
       <div className='row'>
-        <div className='col-12 col-md-8 col-lg-5 mx-auto mt-0 form_box container'>
+        <div className='col-11 col-md-8 col-lg-5 mx-auto mt-0 form_box container'>
           <div className='row'>
             <div className='col-8 mx-auto'><h1 className="text-center mb-3">Login</h1></div>
           </div>
@@ -75,16 +74,28 @@ const Login = () => {
                         }),
                       }}
                 >Email address</label>
-                <input
-                  type="email"
-                  className={`form-control ${errors.email ? 'is-invalid' : ''}`}
-                  id="exampleInputEmail1"
-                  aria-describedby="emailHelp"
-                  value={formData.email}
-                  onChange={(e) =>
-                    setFormData({ ...formData, email: e.target.value })
-                  }
-                />{errors.email && <div className="invalid-feedback">{errors.email}</div>}
+                <div className='input-group'>
+                  <span className=' input-group-text'>
+                    <i className='bi bi-envelope-fill'></i>
+                  </span>
+                  <input
+                    type="email"
+                    className={`form-control ${errors.email ? 'is-invalid' : ''}`}
+                    id="exampleInputEmail1"
+                    aria-describedby="emailHelp"
+                    placeholder='eg. mark@mailservice.com'
+                    value={formData.email}
+                    onChange={(e) =>
+                      setFormData({ ...formData, email: e.target.value })
+                    }
+                  />
+                  <span className="input-group-text">
+                    <span className="tt" data-bs-placement="bottom" title="Enter an email address we can reply to">
+                      <i className="bi bi-question-circle text-muted"></i>
+                    </span>
+                  </span>
+                </div>
+                {errors.email && <div className="invalid-feedback">{errors.email}</div>}
                 <div id="emailHelp" className="form-text">Enter a valid email address.</div>
               </div>
               <div className="form-group mb-3">
@@ -102,15 +113,26 @@ const Login = () => {
                         }),
                       }}
                 >Password</label>
-                <input
-                  type="password"
-                  className={`form-control ${errors.password ? 'is-invalid' : ''}`}
-                  id="exampleInputPassword1"
-                  value={formData.password}
-                  onChange={(e) =>
-                    setFormData({ ...formData, password: e.target.value })
-                  }
-                />
+                <div className=' input-group '>
+                  <span className=' input-group-text '>
+                    <i className='bi bi-key-fill'></i>
+                  </span>
+                  <input
+                    type="password"
+                    className={`form-control ${errors.password ? 'is-invalid' : ''}`}
+                    id="exampleInputPassword1"
+                    placeholder='******'
+                    value={formData.password}
+                    onChange={(e) =>
+                      setFormData({ ...formData, password: e.target.value })
+                    }
+                  />
+                  <span className="input-group-text">
+                    <span className="tt" data-bs-placement="bottom" title={"Password should:\nbe at least 6 characters\ncontain a special character ./#$&?"}>
+                      <i className="bi bi-question-circle text-muted"></i>
+                    </span>
+                  </span>
+                </div>
                 {errors.password && <div className="invalid-feedback">{errors.password}</div>}
               </div>
               <div className="form-group mb-3 form-check form-switch">
