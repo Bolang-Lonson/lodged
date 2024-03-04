@@ -203,6 +203,18 @@ const Signup = () => {
                 </div>
               </div>
               <div className='form-floating my-2'>
+                <input type='password'
+                  className={`form-control ${
+                    errors.password ? 'is-invalid' : ''
+                  }`}
+                  id='password'
+                  name='password'
+                  placeholder='Enter your password'
+                  value={formData.password}
+                  onChange={(e) =>
+                    setFormData({ ...formData, password: e.target.value })
+                  }
+                />
                 <label htmlFor='password'
                     style={{
                         position: 'absolute',
@@ -217,23 +229,24 @@ const Signup = () => {
                         }),
                       }}
                 >Password</label>
-                <input type='password'
-                  className={`form-control ${
-                    errors.password ? 'is-invalid' : ''
-                  }`}
-                  id='password'
-                  name='password'
-                  placeholder='Enter your password'
-                  value={formData.password}
-                  onChange={(e) =>
-                    setFormData({ ...formData, password: e.target.value })
-                  }
-                />
                 {errors.password && (
                   <div className='invalid-feedback'>{errors.password}</div>
                 )}
               </div>
               <div className='form-floating my-2'>
+                <input
+                  type='password'
+                  className={`form-control ${
+                    errors.confirmPassword ? 'is-invalid' : ''
+                  }`}
+                  id='confirmPassword'
+                  name='confirmPassword'
+                  placeholder='Confirm your password'
+                  value={formData.confirmPassword}
+                  onChange={(e) =>
+                    setFormData({ ...formData, confirmPassword: e.target.value })
+                  }
+                />
                 <label htmlFor='confirmPassword'
                     style={{
                         position: 'absolute',
@@ -248,19 +261,6 @@ const Signup = () => {
                         }),
                       }}
                 >Confirm Password</label>
-                <input
-                  type='password'
-                  className={`form-control ${
-                    errors.confirmPassword ? 'is-invalid' : ''
-                  }`}
-                  id='confirmPassword'
-                  name='confirmPassword'
-                  placeholder='Confirm your password'
-                  value={formData.confirmPassword}
-                  onChange={(e) =>
-                    setFormData({ ...formData, confirmPassword: e.target.value })
-                  }
-                />
                 {errors.confirmPassword && (
                   <div className='invalid-feedback'>
                     {errors.confirmPassword}
