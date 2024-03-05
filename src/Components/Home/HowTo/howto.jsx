@@ -18,7 +18,7 @@ const HowTo = () => {
                             <div className='my-3'>
                                 <span className='display-1'><i className='bi bi-person-plus'></i></span>
                             </div>
-                            <p className="card-text mx-5 text-muted d-none d-lg-block">This requires a few basic details e.g. Name, email,etc.</p>
+                            <p className="card-text mx-5 text-muted d-none d-md-block">This requires a few basic details e.g. Name, email,etc.</p>
                             <a href="/signup" className="text-primary h1 mt-3"><i className='bi bi-box-arrow-in-right'></i></a>
                         </div>
                     </div>
@@ -32,7 +32,7 @@ const HowTo = () => {
                             <div className='my-3'>
                                 <span className='display-1'><i className='bi bi-journal-check'></i></span>
                             </div>
-                            <p className="card-text mx-5 text-muted d-none d-lg-block">You can pick from a variety of available hotels, resorts and guesthouses</p>
+                            <p className="card-text mx-5 text-muted d-none d-md-block">You can pick from a variety of available hotels, resorts and guesthouses</p>
                             <a href="/signup" className="text-primary h1 mt-3"><i className='bi bi-box-arrow-in-right'></i></a>
                         </div>
                     </div>
@@ -50,7 +50,7 @@ const HowTo = () => {
                                     <i className='bi bi-stripe mx-2'></i>
                                 </span>
                             </div>
-                            <p className="card-text mx-5 text-muted d-none d-lg-block">Make payments to the establishments through our secure payment system.</p>
+                            <p className="card-text mx-5 text-muted d-none d-md-block">Make payments to the establishments through our secure payment system.</p>
                             <a href="/signup" className="text-primary h1 mt-3"><i className='bi bi-box-arrow-in-right'></i></a>
                         </div>
                     </div>
@@ -64,7 +64,7 @@ const HowTo = () => {
                     <h2><i className='bi bi-globe me-2'></i>We Partnered With</h2>
                 </div>
                 <div className='row justify-content-center my-5'>
-                    <div className='col-md-8'>
+                    <div className='col-lg-8'>
                         <div className=' list-group'>
                             <div className='list-group-item py-3'>
                                 <div>
