@@ -17,7 +17,7 @@ const Home = () => {
                     </div>
                     <div className='col-12 col-md-5 text-center text-md-end'>
                         <h1>
-                            <div className='display-2'>let's find <br></br>your <br></br>dream hotel <br></br>room or <br></br>guest house</div>
+                            <div className='display-3'>let's find <br></br>your <br></br>dream hotel <br></br>resort or <br></br>guest house</div>
                         </h1>
                         <Link className='mt-5 btn btn-lg rounded-pill s-u' to='/signup'>get started <i className='bi bi-arrow-right-circle ms-2'></i></Link>
                         <p className='lead my-5 text-light'>Already have an account? <a href='/login'>Login</a></p>
