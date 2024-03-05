@@ -1,11 +1,11 @@
-#howto, #partners {
+/* #howto, #partners {
     padding: 80px 10%;
     display: flex;
     justify-content: space-around;
     flex-wrap: nowrap;
     position: relative;
-}
-
+} */
+/* 
 .steps {
     width: 200px; height: 200px;
     border: 2px solid #ccc;
@@ -13,7 +13,7 @@
     border-radius: 5%;
     padding: 5%;
     transition: all 0.1s ease 0s;
-}
+} */
 
 .steps:hover {
     box-shadow: -6px -6px 15px #ccc;
@@ -28,16 +28,9 @@ hr {
 }
 
 h2 {
-    position: absolute;
-    top: 10px;
-    float: center;
     text-transform: uppercase;
 }
 
-.partner-carousel {
-    min-width: 800px; height: auto;
-    padding: 20px;
-    margin-top: 10px;
-    align-content: center;
-    border: 1px dashed black;
+a.h1:hover {
+    opacity: 0.8;
 }
