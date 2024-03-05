@@ -38,7 +38,7 @@ const Navbar = ({transparent = true, signedIn}) => {
 					<span><i className="bi bi-list"></i></span>
 				</button>
 				{/* navbar links */}
-				<div className="collapse navbar-collapse justify-content-end align-center" id="main-nav">
+				<div className="collapse navbar-collapse justify-content-end align-items-center" id="main-nav">
 					<ul className="navbar-nav">
 						<li className="nav-item mx-3">
 							<NavLink exact='true' className={({ isActive }) => (isActive ? 'current nav-link ' : 'nav-link')} to='/'>HOME</NavLink>

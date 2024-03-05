@@ -58,7 +58,7 @@ const Login = () => {
             <div className='col-8 mx-auto'><h1 className="text-center mb-3">Login</h1></div>
           </div>
           <div className='row'>
-            <form onSubmit={handleSubmit} className='col-9 mx-auto mt-4'>
+            <form onSubmit={handleSubmit} className='col-md-9 col-10 mx-auto mt-4'>
               <div className="form-group mb-3">
                 <label htmlFor="exampleInputEmail1" className="form-label" 
                     style={{

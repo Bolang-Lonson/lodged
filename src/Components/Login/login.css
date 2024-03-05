@@ -3,6 +3,7 @@
     background-size: contain;
     background-repeat: repeat;
     background-position: center center;
+    backdrop-filter: blur(30px);
     height: 100dvh;
 }
 .form_box {
