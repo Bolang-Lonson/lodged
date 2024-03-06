@@ -14,6 +14,7 @@ const Signup = () => {
   });
 
   const [isChecked, setIsChecked] = useState(false);
+  // Setting state to false helps to imply that it is a boolean value which can only switch between true and false
   const [errors, setErrors] = useState({});
 
   const handleCheck = (event) => {
@@ -83,11 +84,11 @@ const Signup = () => {
       </div>
       <div className='row'>
         <div className='col-11 col-md-8 col-lg-5 mx-auto mt-0 form_box container'>
-          <div className='row'>
-            <div className='col-8 mx-auto'><h1 className="text-center mb-3">Signup</h1></div>
+          <div className='text-center justify-content-center align-items-center'>
+            <h1 className="">Signup</h1>
           </div>
           <div className='row'>
-            <form onSubmit={handleSubmit} className='col-9 mx-auto mt-1'>
+            <form onSubmit={handleSubmit} className='col-md-9 col-10 mx-auto mt-1'>
               <div className='form-floating my-2'> 
                 <input
                   type='text'
@@ -107,12 +108,13 @@ const Signup = () => {
                         top: '50%',
                         transform: 'translateY(-50%)',
                         transition: 'all 0.3s ease',
+                        /* Making form label move up as we begin input */
                         ...(formData.name && {
                           top: 0,
                           fontSize: '12px',
                           color: '#555',
                         }),
-                      }}
+                    }}
                 >
                     Name</label>
                 {errors.name && (
@@ -138,7 +140,8 @@ const Signup = () => {
                         top: '50%',
                         transform: 'translateY(-50%)',
                         transition: 'all 0.3s ease',
-                        ...(formData.name && {
+                        /* Making form label move up as we begin input */
+                        ...(formData.email && {
                           top: 0,
                           fontSize: '12px',
                           color: '#555',
@@ -190,7 +193,8 @@ const Signup = () => {
                         top: '50%',
                         transform: 'translateY(-50%)',
                         transition: 'all 0.3s ease',
-                        ...(formData.name && {
+                        /* Making form label move up as we begin input */
+                        ...(formData.phone && {
                           top: 0,
                           fontSize: '12px',
                           color: '#555',
@@ -222,7 +226,8 @@ const Signup = () => {
                         top: '50%',
                         transform: 'translateY(-50%)',
                         transition: 'all 0.3s ease',
-                        ...(formData.name && {
+                        /* Making form label move up as we begin input */
+                        ...(formData.password && {
                           top: 0,
                           fontSize: '12px',
                           color: '#555',
@@ -254,7 +259,8 @@ const Signup = () => {
                         top: '50%',
                         transform: 'translateY(-50%)',
                         transition: 'all 0.3s ease',
-                        ...(formData.name && {
+                        /* Making form label move up as we begin input */
+                        ...(formData.confirmPassword && {
                           top: 0,
                           fontSize: '12px',
                           color: '#555',
