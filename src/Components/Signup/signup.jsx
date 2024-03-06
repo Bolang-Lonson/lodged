@@ -75,11 +75,13 @@ const Signup = () => {
     <div className='container body'>
       <div className='row pt-4 text-center'>
         <div className='col'>
-          <img 
-            src={drklogo} 
-            alt='...' 
-            className='img-fluid'
-          />
+          <a href='/'>  
+            <img 
+              src={drklogo} 
+              alt='...' 
+              className='img-fluid'
+            />
+          </a>
         </div>
       </div>
       <div className='row'>
