@@ -29,7 +29,7 @@ const HowTo = () => {
         <>
         <div className='container mt-5' id='howto'>
             <div className='text-center'>
-                <h2>
+                <h2 className=' fw-bold'>
                     <span className='me-3'><i className='bi bi-info-square'></i></span>
                     how it works
                 </h2>
