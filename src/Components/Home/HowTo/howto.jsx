@@ -1,16 +1,40 @@
 import './howto.css';
+import React, {useState} from 'react';
 
 const HowTo = () => {
+    const [isHovered, setIsHovered] = useState({
+        icon1: false,
+        icon2: false,
+        icon3: false
+    });
+
+    const handleMouseEnter = (iconName) => {
+        setIsHovered(prevState =>({
+            ...prevState,
+            [iconName]: true
+        }));
+    };
+
+    const handleMouseLeave = (iconName) => {
+        setIsHovered(prevState =>({
+            ...prevState,
+            [iconName]: false
+        }));
+    };
+
     return(
         <>
         <div className='container mt-5' id='howto'>
             <div className='text-center'>
-                <h2>how it works</h2>
+                <h2>
+                    <span className='me-3'><i className='bi bi-info-square'></i></span>
+                    how it works
+                </h2>
                 <p className='lead text-muted '>As easy as foollowing these steps</p>
             </div>
             <div className='row my-5 justify-content-center align-items-center row-gap-3'>
                 <div className="col-9 col-lg-4">
-                    <div className="card border-primary border-2">
+                    <div className="card border-primary border-2 shadow rounded-4">
                         <div className="card-header text-center text-primary">Step 1</div>
                         <div className="card-body text-center py-5">
                             <h4 className="card-title">Sign up</h4>
@@ -19,12 +43,21 @@ const HowTo = () => {
                                 <span className='display-1'><i className='bi bi-person-plus'></i></span>
                             </div>
                             <p className="card-text mx-5 text-muted d-none d-md-block">This requires a few basic details e.g. Name, email,etc.</p>
-                            <a href="/signup" className="text-primary h1 mt-3"><i className='bi bi-box-arrow-in-right'></i></a>
+                            <div className='step-btn mt-4'>
+                                <a href="/signup" className="text-primary h1">
+                                    <i
+                                        onMouseEnter={() => handleMouseEnter('icon1')}
+                                        onMouseLeave={() => handleMouseLeave('icon1')} 
+                                        className= {isHovered.icon1? 'bi bi-arrow-right-circle-fill': 'bi bi-arrow-right-circle'}
+                                    >
+                                    </i>
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
                 <div className="col-9 col-lg-4">
-                    <div className="card border-primary border-2">
+                    <div className="card border-primary border-2 shadow rounded-4">
                         <div className="card-header text-center text-primary">Step 2</div>
                         <div className="card-body text-center py-5">
                             <h4 className="card-title">Book Lodging</h4>
@@ -33,12 +66,21 @@ const HowTo = () => {
                                 <span className='display-1'><i className='bi bi-journal-check'></i></span>
                             </div>
                             <p className="card-text mx-5 text-muted d-none d-md-block">You can pick from a variety of available hotels, resorts and guesthouses</p>
-                            <a href="/signup" className="text-primary h1 mt-3"><i className='bi bi-box-arrow-in-right'></i></a>
+                            <div className='step-btn mt-4'>
+                                <a href="/signup" className="text-primary h1">
+                                    <i
+                                        onMouseEnter={() => handleMouseEnter('icon2')}
+                                        onMouseLeave={() => handleMouseLeave('icon2')} 
+                                        className= {isHovered.icon2? 'bi bi-arrow-right-circle-fill': 'bi bi-arrow-right-circle'}
+                                    >
+                                    </i>
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>    
                 <div className="col-9 col-lg-4">
-                    <div className="card border-primary border-2">
+                    <div className="card border-primary border-2 shadow rounded-4">
                         <div className="card-header text-center text-primary">Step 3</div>
                         <div className="card-body text-center py-5">
                             <h4 className="card-title">Secure Payment</h4>
@@ -51,7 +93,16 @@ const HowTo = () => {
                                 </span>
                             </div>
                             <p className="card-text mx-5 text-muted d-none d-md-block">Make payments to the establishments through our secure payment system.</p>
-                            <a href="/signup" className="text-primary h1 mt-3"><i className='bi bi-box-arrow-in-right'></i></a>
+                            <div className='step-btn mt-4'>
+                                <a href="/signup" className="text-primary h1">
+                                    <i
+                                        onMouseEnter={() => handleMouseEnter('icon3')}
+                                        onMouseLeave={() => handleMouseLeave('icon3')} 
+                                        className= {isHovered.icon3? 'bi bi-arrow-right-circle-fill': 'bi bi-arrow-right-circle'}
+                                    >
+                                    </i>
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
