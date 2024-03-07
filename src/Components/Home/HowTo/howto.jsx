@@ -33,7 +33,7 @@ const HowTo = () => {
                 <p className='lead text-muted '>As easy as foollowing these steps</p>
             </div>
             <div className='row my-5 justify-content-center align-items-center row-gap-3'>
-                <div className="col-9 col-lg-4">
+                <div className="col-10 col-lg-4">
                     <div className="card border-primary border-2 shadow rounded-4">
                         <div className="card-header text-center text-primary">Step 1</div>
                         <div className="card-body text-center py-5">
@@ -56,7 +56,7 @@ const HowTo = () => {
                         </div>
                     </div>
                 </div>
-                <div className="col-9 col-lg-4">
+                <div className="col-10 col-lg-4">
                     <div className="card border-primary border-2 shadow rounded-4">
                         <div className="card-header text-center text-primary">Step 2</div>
                         <div className="card-body text-center py-5">
@@ -79,7 +79,7 @@ const HowTo = () => {
                         </div>
                     </div>
                 </div>    
-                <div className="col-9 col-lg-4">
+                <div className="col-10 col-lg-4">
                     <div className="card border-primary border-2 shadow rounded-4">
                         <div className="card-header text-center text-primary">Step 3</div>
                         <div className="card-body text-center py-5">
