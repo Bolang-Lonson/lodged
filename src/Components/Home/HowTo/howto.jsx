@@ -2,12 +2,14 @@ import './howto.css';
 import React, {useState} from 'react';
 
 const HowTo = () => {
+    // creating an object holding the mouse hover states of the 3 arrow-circle icons
     const [isHovered, setIsHovered] = useState({
         icon1: false,
         icon2: false,
         icon3: false
     });
 
+    // Handling mouse enter
     const handleMouseEnter = (iconName) => {
         setIsHovered(prevState =>({
             ...prevState,
@@ -15,6 +17,7 @@ const HowTo = () => {
         }));
     };
 
+    // Handling mouse leave
     const handleMouseLeave = (iconName) => {
         setIsHovered(prevState =>({
             ...prevState,
@@ -45,9 +48,9 @@ const HowTo = () => {
                             <p className="card-text mx-5 text-muted d-none d-md-block">This requires a few basic details e.g. Name, email,etc.</p>
                             <div className='step-btn mt-4'>
                                 <a href="/signup" className="text-primary h1">
-                                    <i
+                                    <i  //   switching icon to filled-up version on mousehover to provide feedback and seem clickable
                                         onMouseEnter={() => handleMouseEnter('icon1')}
-                                        onMouseLeave={() => handleMouseLeave('icon1')} 
+                                        onMouseLeave={() => handleMouseLeave('icon1')}
                                         className= {isHovered.icon1? 'bi bi-arrow-right-circle-fill': 'bi bi-arrow-right-circle'}
                                     >
                                     </i>
