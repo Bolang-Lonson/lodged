@@ -305,7 +305,7 @@ const Signup = () => {
         </div>
       </div>
       <div className='row text-center '>
-        <p className="form-group text-body-secondary">&copy; Lodged.com 2024</p>
+        <p className="form-group text-body-secondary lead"><i className='bi bi-c-circle'></i> Lodged.com 2024</p>
       </div>
     </div>
   );

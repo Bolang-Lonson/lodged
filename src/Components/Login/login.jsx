@@ -43,6 +43,7 @@ const Login = () => {
 
   return (
     <div className='container body'>
+      <div className='bg-blur'>
       <div className='row pt-4 text-center'>
         <div className='col'>
           <a href='/'>
@@ -152,7 +153,8 @@ const Login = () => {
         </div>
       </div>
       <div className='row text-center '>
-        <p className="form-group text-body-secondary">&copy; Lodged.com 2024</p>
+        <p className="form-group text-body-secondary lead"><i className='bi bi-c-circle'></i> Lodged.com 2024</p>
+      </div>
       </div>
     </div>
   );

@@ -1,11 +1,21 @@
 .body {
+    position: relative;
+    height: 100dvh;
+}
+
+.body::before {
+    content: '';
     background-image: url('../../Assets/Images/BG2.jpg');
     background-size: contain;
     background-repeat: repeat;
     background-position: center center;
-    backdrop-filter: blur(30px);
-    height: 100dvh;
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    filter: blur(2px);
+    z-index: -1;
 }
+
 .form_box {
     box-shadow: 0 0 5px #aaa;
     border-radius: 10px;
@@ -14,9 +24,6 @@
     background: #fff;
 }
 
-.img-fluid {
-    background-color: #fff;
-}
 .telly {
     display: flex;
     flex-wrap: wrap;
