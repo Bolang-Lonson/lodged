@@ -4,6 +4,10 @@ import './login.css';
 import drklogo from '../../Assets/Images/other/logo-char.png';
 
 const Login = () => {
+  const [passVisible, setPassVisible] = useState(false);
+  const toggleVisible = () => {
+    setPassVisible(!passVisible);
+  }
   const [formData, setFormData] = useState({
     email: '',
     password: '',
@@ -93,7 +97,7 @@ const Login = () => {
                     }
                   />
                   <span className="input-group-text">
-                    <span className="tt" data-bs-placement="bottom" title="Enter an email address we can reply to">
+                    <span className="tt" data-bs-placement="bottom" title="Enter a valid email address">
                       <i className="bi bi-question-circle text-muted"></i>
                     </span>
                   </span>
@@ -121,7 +125,7 @@ const Login = () => {
                     <i className='bi bi-key-fill'></i>
                   </span>
                   <input
-                    type="password"
+                    type={passVisible? 'text': "password"}
                     className={`form-control ${errors.password ? 'is-invalid' : ''}`}
                     id="exampleInputPassword1"
                     placeholder='******'
@@ -130,11 +134,10 @@ const Login = () => {
                       setFormData({ ...formData, password: e.target.value })
                     }
                   />
-                  <span className="input-group-text">
-                    <span className="tt" data-bs-placement="bottom" title={"Password should:\nbe at least 6 characters\ncontain a special character ./#$&?"}>
-                      <i className="bi bi-question-circle text-muted"></i>
-                    </span>
-                  </span>
+                  <button className="input-group-text" onClick={toggleVisible}>
+                    <i className={"bi text-muted" + (passVisible? ' bi-eye-fill':' bi-eye-slash-fill')}></i>
+                    {/* switching icon based on the password visibility */}
+                  </button>
                 </div>
                 {errors.password && <div className="invalid-feedback">{errors.password}</div>}
               </div>
