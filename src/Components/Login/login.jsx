@@ -48,117 +48,112 @@ const Login = () => {
   return (
     <div className='container body'>
       <div className='bg-blur'>
-      <div className='row pt-4 text-center'>
-        <div className='col'>
-          <a href='/'>
-            <img 
-              src={drklogo} 
-              alt='...' 
-              className='img-fluid'
-            />
-          </a>
-        </div>
-      </div>
-      <div className='row'>
-        <div className='col-11 col-md-8 col-lg-5 mx-auto mt-0 form_box container'>
-          <div className='row'>
-            <div className='col-8 mx-auto'><h1 className="text-center mb-3">Login</h1></div>
-          </div>
-          <div className='row'>
-            <form onSubmit={handleSubmit} className='col-md-9 col-10 mx-auto mt-4'>
-              <div className="form-group mb-3">
-                <label htmlFor="exampleInputEmail1" className="form-label" 
-                    style={{
-                        // position: 'absolute',
-                        pointerEvents: 'none',
-                        // top: '50%',
-                        // transform: 'translateY(-50%)',
-                        transition: 'all 0.3s ease',
-                        ...(formData.name && {
-                          top: 0,
-                          fontSize: '12px',
-                          color: '#555',
-                        }),
-                      }}
-                >Email address</label>
-                <div className='input-group'>
-                  <span className=' input-group-text'>
-                    <i className='bi bi-envelope-fill'></i>
-                  </span>
-                  <input
-                    type="email"
-                    className={`form-control ${errors.email ? 'is-invalid' : ''}`}
-                    id="exampleInputEmail1"
-                    aria-describedby="emailHelp"
-                    placeholder='eg. mark@mailservice.com'
-                    value={formData.email}
-                    onChange={(e) =>
-                      setFormData({ ...formData, email: e.target.value })
-                    }
-                  />
-                  <span className="input-group-text">
-                    <span className="tt" data-bs-placement="bottom" title="Enter a valid email address">
-                      <i className="bi bi-question-circle text-muted"></i>
-                    </span>
-                  </span>
-                </div>
-                {errors.email && <div className="invalid-feedback">{errors.email}</div>}
-                <div id="emailHelp" className="form-text">Enter a valid email address.</div>
-              </div>
-              <div className="form-group mb-3">
-                <label htmlFor="exampleInputPassword1" className="form-label" 
-                    style={{
-                        // position: 'absolute',
-                        pointerEvents: 'none',
-                        // top: '50%',
-                        // transform: 'translateY(-50%)',
-                        transition: 'all 0.3s ease',
-                        ...(formData.name && {
-                          top: 0,
-                          fontSize: '12px',
-                          color: '#555',
-                        }),
-                      }}
-                >Password</label>
-                <div className=' input-group '>
-                  <span className=' input-group-text '>
-                    <i className='bi bi-key-fill'></i>
-                  </span>
-                  <input
-                    type={passVisible? 'text': "password"}
-                    className={`form-control ${errors.password ? 'is-invalid' : ''}`}
-                    id="exampleInputPassword1"
-                    placeholder='******'
-                    value={formData.password}
-                    onChange={(e) =>
-                      setFormData({ ...formData, password: e.target.value })
-                    }
-                  />
-                  <button className="input-group-text" onClick={toggleVisible}>
-                    <i className={"bi text-muted" + (passVisible? ' bi-eye-fill':' bi-eye-slash-fill')}></i>
-                    {/* switching icon based on the password visibility */}
-                  </button>
-                </div>
-                {errors.password && <div className="invalid-feedback">{errors.password}</div>}
-              </div>
-              <div className="form-group mb-3 form-check form-switch">
-                <input
-                  type="checkbox"
-                  className="form-check-input"
-                  id="rem-check"
+        <div className='row align-items-center justify-content-center pt-5'>
+          <div className='col-11 col-md-8 col-lg-5 mx-auto mt-5 form_box container'>
+            <div className='row text-center'>
+              <a href='/'>
+                <img 
+                  src={drklogo} 
+                  alt='...' 
+                  className='img-fluid'
                 />
-                <label className="form-check-label" htmlFor="rem-check">Remember me</label>
-              </div>
-              <button type="submit" className="btn btn-outline-success px-5">Login</button>
-              <div className='form-text pt-1'>Don't have an account? <a href='/signup'>Signup</a></div>
-            </form>
+              </a>
+            </div>
+            <div className='row'>
+              <form onSubmit={handleSubmit} className='col-md-9 col-10 mx-auto mt-4'>
+                <div className="form-group mb-3">
+                  <label htmlFor="exampleInputEmail1" className="form-label" 
+                      style={{
+                          // position: 'absolute',
+                          pointerEvents: 'none',
+                          // top: '50%',
+                          // transform: 'translateY(-50%)',
+                          transition: 'all 0.3s ease',
+                          ...(formData.name && {
+                            top: 0,
+                            fontSize: '12px',
+                            color: '#555',
+                          }),
+                        }}
+                  >Email address</label>
+                  <div className='input-group'>
+                    <span className=' input-group-text'>
+                      <i className='bi bi-envelope-fill'></i>
+                    </span>
+                    <input
+                      type="email"
+                      className={`form-control ${errors.email ? 'is-invalid' : ''}`}
+                      id="exampleInputEmail1"
+                      aria-describedby="emailHelp"
+                      placeholder='eg. mark@mailservice.com'
+                      value={formData.email}
+                      onChange={(e) =>
+                        setFormData({ ...formData, email: e.target.value })
+                      }
+                    />
+                    <span className="input-group-text">
+                      <span className="tt" data-bs-placement="bottom" title="Enter a valid email address">
+                        <i className="bi bi-question-circle text-muted"></i>
+                      </span>
+                    </span>
+                  </div>
+                  {errors.email && <div className="invalid-feedback">{errors.email}</div>}
+                  <div id="emailHelp" className="form-text">Enter a valid email address.</div>
+                </div>
+                <div className="form-group mb-3">
+                  <label htmlFor="exampleInputPassword1" className="form-label" 
+                      style={{
+                          // position: 'absolute',
+                          pointerEvents: 'none',
+                          // top: '50%',
+                          // transform: 'translateY(-50%)',
+                          transition: 'all 0.3s ease',
+                          ...(formData.name && {
+                            top: 0,
+                            fontSize: '12px',
+                            color: '#555',
+                          }),
+                        }}
+                  >Password</label>
+                  <div className=' input-group '>
+                    <span className=' input-group-text '>
+                      <i className='bi bi-key-fill'></i>
+                    </span>
+                    <input
+                      type={passVisible? 'text': "password"}
+                      className={`form-control ${errors.password ? 'is-invalid' : ''}`}
+                      id="exampleInputPassword1"
+                      placeholder='******'
+                      value={formData.password}
+                      onChange={(e) =>
+                        setFormData({ ...formData, password: e.target.value })
+                      }
+                    />
+                    <button className="input-group-text" onClick={toggleVisible}>
+                      <i className={"bi text-muted" + (passVisible? ' bi-eye-fill':' bi-eye-slash-fill')}></i>
+                      {/* switching icon based on the password visibility */}
+                    </button>
+                  </div>
+                  {errors.password && <div className="invalid-feedback">{errors.password}</div>}
+                </div>
+                <div className="form-group mb-3 form-check form-switch">
+                  <input
+                    type="checkbox"
+                    className="form-check-input"
+                    id="rem-check"
+                  />
+                  <label className="form-check-label" htmlFor="rem-check">Remember me</label>
+                </div>
+                <button type="submit" className="btn btn-outline-success px-5">Login</button>
+                <div className='form-text mt-3'>Don't have an account? <a href='/signup'>Signup</a></div>
+              </form>
+            </div>
           </div>
         </div>
-      </div>
-      <div className='row text-center '>
-        <p className="form-group text-body-secondary lead"><i className='bi bi-c-circle'></i> Lodged.com 2024</p>
-      </div>
-      </div>
+        <div className='row text-center '>
+          <p className="form-group text-body-secondary lead"><i className='bi bi-c-circle'></i> Lodged.com 2024</p>
+        </div>
+        </div>
     </div>
   );
 };
