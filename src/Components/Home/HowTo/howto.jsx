@@ -35,9 +35,9 @@ const HowTo = () => {
                 </h2>
                 <p className='lead text-muted '>As easy as foollowing these steps</p>
             </div>
-            <div className='row my-5 justify-content-center align-items-center row-gap-3'>
+            <div className='row my-5 justify-content-center row-gap-3 d-flex flex-wrap align-items-stretch'>
                 <div className="col-10 col-lg-4">
-                    <div className="card border-primary border-2 shadow rounded-4">
+                    <div className="card h-100 border-primary border-2 shadow rounded-4">
                         <div className="card-header text-center text-primary">Step 1</div>
                         <div className="card-body text-center py-5">
                             <h4 className="card-title">Sign up</h4>
@@ -60,7 +60,7 @@ const HowTo = () => {
                     </div>
                 </div>
                 <div className="col-10 col-lg-4">
-                    <div className="card border-primary border-2 shadow rounded-4">
+                    <div className="card h-100 border-primary border-2 shadow rounded-4">
                         <div className="card-header text-center text-primary">Step 2</div>
                         <div className="card-body text-center py-5">
                             <h4 className="card-title">Book Lodging</h4>
@@ -83,7 +83,7 @@ const HowTo = () => {
                     </div>
                 </div>    
                 <div className="col-10 col-lg-4">
-                    <div className="card border-primary border-2 shadow rounded-4">
+                    <div className="card h-100 border-primary border-2 shadow rounded-4">
                         <div className="card-header text-center text-primary">Step 3</div>
                         <div className="card-body text-center py-5">
                             <h4 className="card-title">Secure Payment</h4>
@@ -91,8 +91,8 @@ const HowTo = () => {
                             <div className='my-3'>
                                 <span className='display-1'>
                                     <i className='bi bi-credit-card mx-2'></i>
-                                    <i className='bi bi-paypal mx-2'></i>
-                                    <i className='bi bi-stripe mx-2'></i>
+                                    <i className='bi bi-paypal mx-2 d-lg-none d-xl-inline'></i>
+                                    <i className='bi bi-stripe mx-2 d-lg-none d-xl-inline'></i>
                                 </span>
                             </div>
                             <p className="card-text mx-5 text-muted d-none d-md-block">Make payments to the establishments through our secure payment system.</p>
