@@ -64,7 +64,7 @@ const HowTo = () => {
                         <div className="card-header text-center text-primary">Step 2</div>
                         <div className="card-body text-center py-5">
                             <h4 className="card-title">Book Lodging</h4>
-                            <p className="lead card-subtitle">Find the place that matches your style</p>
+                            <p className="lead card-subtitle">Find what matches your style</p>
                             <div className='my-3'>
                                 <span className='display-1'><i className='bi bi-journal-check'></i></span>
                             </div>
