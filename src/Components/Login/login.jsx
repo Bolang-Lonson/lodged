@@ -34,6 +34,10 @@ const Login = () => {
 
     if (Object.keys(errors).length > 0) {
       setErrors({...errors});
+      Object.values(errors).forEach(e => {
+        console.error(e)
+        alert(e)
+      }); // for personal debugging and maybe for fun
       return;
     }
 
@@ -52,10 +56,10 @@ const Login = () => {
                 <div className="container pt-5">
                     <div className="text-center my-3">
                         <img src={drklogo} alt="logo" className="img-fluid"/>
-                        </div>
+                    </div>
                     <div className="row my-4 my-md-5 justify-content-center">
                         <div className="col-md-9 col-10">
-                            <form onSubmit={handleSubmit}>
+                  			<form onSubmit={handleSubmit}>
 								<div className='form-group mb-4'>
 									<label htmlFor="email" className="form-label border-start border-black border-3 ps-2 mb-3">Email Address</label>
 									<input 
@@ -79,10 +83,10 @@ const Login = () => {
 											(e) => setFormData({ ...formData, password: e.target.value })
 										}
 										/>
-										<button className="input-group-text rounded-end-pill" onClick={toggleVisible}>
+										<span className="input-group-text rounded-end-pill" onClick={toggleVisible}>
 											<i className={"bi text-muted" + (passVisible? ' bi-eye-fill':' bi-eye-slash-fill')}></i>
 											{	/* switching icon based on the password visibility */}
-										</button>
+										</span>
 									</div>
 									{errors.password && <div className='invalid-feedback'>{errors.password}</div>}
 								</div>	
