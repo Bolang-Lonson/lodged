@@ -53,6 +53,7 @@ const Login = () => {
 		<div className="p-0 m-0" id="login-background-art">
 			<div className="row justify-content-end align-items-center p-0 m-0" id="form-section">
 				<div className="col-md-6 col-lg-4 bg-light h-100 position-relative  shadow px-0 m-0" id="form-box">
+					<a href='/' className=' position-absolute top-0 start-0 m-4 text-black fw-semibold btn btn-light'><i className="bi bi-arrow-left-short pe-1 fs-4 pb-0"></i>Home</a>
 					<div className="container pt-5">
 						<div className="text-center my-3">
 							<img src={drklogo} alt="logo" className="img-fluid"/>
@@ -61,7 +62,10 @@ const Login = () => {
 							<div className="col-md-9 col-10">
 								<form onSubmit={handleSubmit}>
 									<div className='form-group mb-4'>
-										<label htmlFor="email" className="form-label border-start border-black border-3 ps-2 mb-3">Email Address</label>
+										<label 
+											htmlFor="email" 
+											className="form-label border-start border-black border-3 ps-2 mb-3"
+										>Email Address</label>
 										<input 
 											type="email" className={`form-control ${errors.email ? 'is-invalid' : ''} rounded-pill`}
 											aria-describedby='emailHelp' value={formData.email}
