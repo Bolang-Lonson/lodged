@@ -115,7 +115,7 @@ const Signup = () => {
 										<div className='invalid-feedback'>{errors.name}</div>
 									)}
 								</div>
-								<div className='form-floating my-2'>
+								<div className='form-floating my-2 border-start border-black border-3'>
 									<input
 										type='email'
 										className={`form-control rounded-0 ${errors.email ? 'is-invalid' : ''}`}
@@ -150,7 +150,7 @@ const Signup = () => {
 									<select
 										id='country-selector'
 										name='country'
-										className={`form-select rounded-0 ${
+										className={`form-select rounded-0 pt-2 ${
 										errors.country ? 'is-invalid' : ''
 										}`}
 										value={formData.country}
@@ -158,10 +158,10 @@ const Signup = () => {
 										setFormData({ ...formData, country: e.target.value })
 										}
 									>
-										<option value=''>+1</option>
+										<option value=''>{`${countries[0].emoji} ${countries[0].dial_code}`}</option>
 										{countries.map((country, index) => (
 										<option key={index} value={country.dial_code}>
-											{country.dial_code} - {country.name}({country.code})
+											{country.name}({country.code}) <span className="text-muted">{country.dial_code}</span>
 										</option>
 										))}
 									</select>
@@ -200,9 +200,9 @@ const Signup = () => {
 										)}
 									</div>
 								</div>
-								<div className='form-floating my-2'>
+								<div className='form-floating my-2 border-start border-black border-3'>
 									<input type='password'
-										className={`form-control ${
+										className={`form-control rounded-0 ${
 										errors.password ? 'is-invalid' : ''
 										}`}
 										id='password'
@@ -232,10 +232,10 @@ const Signup = () => {
 										<div className='invalid-feedback'>{errors.password}</div>
 									)}
 								</div>
-								<div className='form-floating my-2'>
+								<div className='form-floating my-2 border-start border-black border-3'>
 									<input
 										type='password'
-										className={`form-control ${
+										className={`form-control rounded-0 ${
 										errors.confirmPassword ? 'is-invalid' : ''
 										}`}
 										id='confirmPassword'
@@ -267,7 +267,7 @@ const Signup = () => {
 										</div>
 									)}
 								</div>
-								<div className='form-check my-3'>
+								<div className='form-check my-4'>
 									<input
 										type='checkbox'
 										className={`form-check-input ${
