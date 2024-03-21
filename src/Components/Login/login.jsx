@@ -50,10 +50,10 @@ const Login = () => {
 	}
 
 	return (
-		<div className="p-0 m-0" id="login-background-art">
+		<div className="p-0 m-0" id="background-art">
 			<div className="row justify-content-end align-items-center p-0 m-0" id="form-section">
 				<div className="col-md-6 col-lg-4 bg-light h-100 position-relative  shadow px-0 m-0" id="form-box">
-					<a href='/' className=' position-absolute top-0 start-0 m-4 text-black fw-semibold btn btn-light'><span className="bi bi-arrow-left-short lead mb-0"> Home</span></a>
+					<a href='/' className=' position-absolute top-0 start-0 m-2 text-black fw-semibold btn btn-light'><span className="bi bi-arrow-left-short lead mb-0"> Home</span></a>
 					<div className="container pt-5">
 						<div className="text-center my-3">
 							<img src={drklogo} alt="logo" className="img-fluid"/>
