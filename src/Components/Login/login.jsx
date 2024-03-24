@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
-// import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import './login.css';
 import drklogo from '../../Assets/Images/other/logo-char.png';
 
 const Login = () => {
+	const navigate = useNavigate();
 	const [passVisible, setPassVisible] = useState(false);
 	const toggleVisible = () => {
 		setPassVisible(!passVisible);
@@ -47,6 +48,7 @@ const Login = () => {
 
 	function signIn() {
 		// Add your sign-in code here
+		navigate('/dashboard');
 	}
 
 	return (
