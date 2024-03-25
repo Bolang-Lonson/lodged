@@ -19,13 +19,13 @@ const Navbar = ({transparent = true, signedIn}) => {
 				<div className="collapse navbar-collapse justify-content-end align-items-center" id="main-nav">
 					<ul className="navbar-nav">
 						<li className="nav-item mx-3">
-							<NavLink exact='true' className={({ isActive }) => (isActive ? 'current nav-link ' : 'nav-link')} to='/'>HOME</NavLink>
+							<NavLink exact='true' className={({ isActive }) => (isActive ? 'current nav-link hover-slide' : 'nav-link hover-slide')} to='/'>HOME</NavLink>
 						</li>
 						<li className="nav-item mx-3">
-							<NavLink exact='true' className={({ isActive }) => (isActive ? 'current nav-link ' : 'nav-link')} to='/about'>ABOUT</NavLink>
+							<NavLink exact='true' className={({ isActive }) => (isActive ? 'current nav-link hover-slide' : 'nav-link hover-slide')} to='/about'>ABOUT</NavLink>
 						</li>
 						<li className="nav-item mx-3">
-							<NavLink exact='true' className={({ isActive }) => (isActive ? 'current nav-link ' : 'nav-link')} to='/categories'>CATEGORIES</NavLink>
+							<NavLink exact='true' className={({ isActive }) => (isActive ? 'current nav-link hover-slide' : 'nav-link hover-slide')} to='/categories'>CATEGORIES</NavLink>
 						</li>
 						<li className="nav-item mx-3 d-md-none">
 							<a className="nav-link" href="/signup">SIGNUP</a>

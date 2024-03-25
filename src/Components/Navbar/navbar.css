@@ -21,13 +21,13 @@ a.custom-btn:hover {
     background-color: #b68d40;
 }
 
-li .nav-link {
+li .hover-slide {
     color: #d6ad60;
     position: relative;
     transition: all 0.3s ease 0s;
 }
 
-li .nav-link::after {
+li .hover-slide::after {
     content: '';
     height: 3px; width: 0;
     background: #b68d40;
@@ -36,11 +36,11 @@ li .nav-link::after {
     transition: 0.3s;
 }
 
-li .nav-link:hover {
+li .hover-slide:hover {
     color: #b68d40;
 }
 
-li .nav-link:hover::after {
+li .hover-slide:hover::after {
     width: 100%;
 }
 
