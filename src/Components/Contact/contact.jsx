@@ -1,3 +1,4 @@
+import Footer from "../Footer/footer";
 import Navbar from "../Navbar/navbar"
 
 const Contact = () => {
@@ -17,60 +18,63 @@ const Contact = () => {
                             <div className="card-body text-center p-5">
                                 <h2>Get in Touch</h2>
                                 <p className="lead">Share your feedback by sending a query</p>
-                                <form>
-                                    <label HtmlFor="email" className="form-label">Email address</label>
-                                    <div className="mb-4 input-group">
-                                        <span className="input-group-text">
-                                            <i className="bi bi-envelope-fill"></i>
-                                        </span>
-                                        <input type="email" className="form-control" id="email" placeholder="e.g. mario@example.com"/>
-                                        {/* tooltip */}
-                                        <span className="input-group-text">
-                                            <span className="tt" data-bs-placement="bottom" title="Enter an email address we can reply to">
-                                                <i className="bi bi-question-circle text-muted"></i>
+                                <div className="col-8 mx-auto">
+                                    <form>
+                                        <label HtmlFor="email" className="form-label float-start">Email address</label>
+                                        <div className="mb-4 input-group">
+                                            <span className="input-group-text">
+                                                <i className="bi bi-envelope-fill"></i>
                                             </span>
-                                        </span>
-                                    </div>
-
-                                    <label HtmlFor="name" className="form-label">Name</label>
-                                    <div className="input-group mb-4">
-                                        <span className="input-group-text">
-                                            <i className="bi bi-person-fill"></i>
-                                        </span>
-                                        <input type="text" className="form-control" id="name" placeholder="e.g. Mario"/>
-                                        {/* tooltip */}
-                                        <span className="input-group-text">
-                                            <span className="tt" data-bs-placement="bottom" title="Really nigga...?">
-                                                <i className="bi bi-question-circle text-muted"></i>
+                                            <input type="email" className="form-control" id="email" placeholder="e.g. mario@example.com"/>
+                                            {/* tooltip */}
+                                            <span className="input-group-text">
+                                                <span className="tt" data-bs-placement="bottom" title="Enter an email address we can reply to">
+                                                    <i className="bi bi-question-circle text-muted"></i>
+                                                </span>
                                             </span>
-                                        </span>
-                                    </div>
-                                    <label HtmlFor="subject" className="form-label">What is your question about?</label>
-                                    <div className="input-group mb-4">
-                                        <span className="input-group-text">
-                                            <i className="bi bi-chat-right-dots-fill"></i>
-                                        </span>
-                                        <select id="subject" className="form-select">
-                                            <option value="pricing" selected>Pricing query</option>
-                                            <option value="content">Content query</option>
-                                            <option value="other">Other query</option>
-                                        </select>
-                                    </div>
+                                        </div>
 
-                                    <div className="form-floating mb-4 mt-5">
-                                        <textarea id="query" className="form-control" style={{height: '140px'}}></textarea>
-                                        <label HtmlFor="query">Your query...</label>
-                                    </div>
+                                        <label HtmlFor="name" className="form-label float-start">Name</label>
+                                        <div className="input-group mb-4">
+                                            <span className="input-group-text">
+                                                <i className="bi bi-person-fill"></i>
+                                            </span>
+                                            <input type="text" className="form-control" id="name" placeholder="e.g. Mario"/>
+                                            {/* tooltip */}
+                                            <span className="input-group-text">
+                                                <span className="tt" data-bs-placement="bottom" title="Really nigga...?">
+                                                    <i className="bi bi-question-circle text-muted"></i>
+                                                </span>
+                                            </span>
+                                        </div>
+                                        <label HtmlFor="subject" className="form-label float-start">What is your question about?</label>
+                                        <div className="input-group mb-4">
+                                            <span className="input-group-text">
+                                                <i className="bi bi-chat-right-dots-fill"></i>
+                                            </span>
+                                            <select id="subject" className="form-select">
+                                                <option value="pricing" selected>Pricing query</option>
+                                                <option value="content">Content query</option>
+                                                <option value="other">Other query</option>
+                                            </select>
+                                        </div>
 
-                                    <div className="mb-4 text-center">
-                                        <button className="btn btn-secondary" type="submit">Submit</button>
-                                    </div>
-                                </form>
+                                        <div className="form-floating mb-4 mt-5">
+                                            <textarea id="query" className="form-control" style={{height: '140px'}}></textarea>
+                                            <label HtmlFor="query">Your query...</label>
+                                        </div>
+
+                                        <div className="mb-4 text-center">
+                                            <button className="btn btn-secondary" type="submit">Submit</button>
+                                        </div>
+                                    </form>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </section>
+            <Footer/>
         </div>
     );
 };

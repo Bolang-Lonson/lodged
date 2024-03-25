@@ -11,28 +11,8 @@ import React, {useState} from 'react';
 // }
 
 const Dashboard = () => {
-    // const [isHovered, setIsHovered] = useState({
-    //     depositIcon: false,
-    //     bookIcon: false,
-    // });
 
     const [searchValue, setSearchValue] = useState();
-
-    // handling mouse enter
-    // const handleMouseEnter = (iconName) => {
-    //     setIsHovered(prevState =>({
-    //         ...prevState,
-    //         [iconName]: true
-    //     }));
-    // };
-
-    // // Handling mouse leave
-    // const handleMouseLeave = (iconName) => {
-    //     setIsHovered(prevState =>({
-    //         ...prevState,
-    //         [iconName]: false
-    //     }));
-    // };
 
     return (
         <div className="ps-3 m-0">
@@ -127,14 +107,6 @@ const Dashboard = () => {
                                     <h5 className="card-title fs-4">Wallet <i className="ms-1 bi bi-wallet2"></i></h5>
                                     <div className="my-3"><span className="display-3 text-success fw-bold">$00.00</span></div>
                                     <a href="/deposit" className="mt-3 btn btn-primary rounded-3 align-items-center">Deposit <i className="bi bi-plus-circle"></i></a>
-                                    {/* <a href='/deposit'
-                                        className='text-primary display-5'
-                                    >
-                                        <i className={`bi ${isHovered.depositIcon? 'bi-plus-circle-fill': 'bi-plus-circle'}`}
-                                            onMouseEnter={() => handleMouseEnter('depositIcon')}
-                                            onMouseLeave={() => handleMouseLeave('depositIcon')}
-                                        ></i>
-                                    </a> */}
                                 </div>
                             </div>
                         </div>
@@ -277,6 +249,7 @@ const Dashboard = () => {
                                         </div>
                                     </div>
                                 </div>
+                                <div className="align-items-center p-3 pe-5"><a href="/lodgings" className="lead float-end">See more &gt;&gt;</a></div>
                             </div>
                         </div>
                     </div>
