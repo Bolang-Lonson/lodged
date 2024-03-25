@@ -4,35 +4,35 @@ import landpic from '../../Assets/Images/landpic-min.jpg';
 import userpic from '../../Assets/Images/BolangPic.jpg';
 import React, {useState} from 'react';
 
-const Modal = () => {
-    return (
-        <></>
-    )
-}
+// const Modal = () => {
+//     return (
+//         <></>
+//     )
+// }
 
 const Dashboard = () => {
-    const [isHovered, setIsHovered] = useState({
-        depositIcon: false,
-        bookIcon: false,
-    });
+    // const [isHovered, setIsHovered] = useState({
+    //     depositIcon: false,
+    //     bookIcon: false,
+    // });
 
     const [searchValue, setSearchValue] = useState();
 
     // handling mouse enter
-    const handleMouseEnter = (iconName) => {
-        setIsHovered(prevState =>({
-            ...prevState,
-            [iconName]: true
-        }));
-    };
+    // const handleMouseEnter = (iconName) => {
+    //     setIsHovered(prevState =>({
+    //         ...prevState,
+    //         [iconName]: true
+    //     }));
+    // };
 
-    // Handling mouse leave
-    const handleMouseLeave = (iconName) => {
-        setIsHovered(prevState =>({
-            ...prevState,
-            [iconName]: false
-        }));
-    };
+    // // Handling mouse leave
+    // const handleMouseLeave = (iconName) => {
+    //     setIsHovered(prevState =>({
+    //         ...prevState,
+    //         [iconName]: false
+    //     }));
+    // };
 
     return (
         <div className="ps-3 m-0">

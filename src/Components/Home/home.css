@@ -1,5 +1,5 @@
 .header {
-    background-image: linear-gradient(rgba(18, 38, 32, 0.5), rgba(18, 38, 32, 0.5)), url('../../Assets/Images/landpic-min.jpg');
+    background-image: linear-gradient(rgba(18, 38, 32, 0.65), rgba(18, 38, 32, 0.65)), url('../../Assets/Images/landpic-min.jpg');
     background-size: cover; /* Stretches the bg-image to fit exactly in the div*/
     border-bottom-left-radius: 70% 5%; /* giving the header an elliptical curve at the bottom border*/
     border-bottom-right-radius: 70% 5%;
