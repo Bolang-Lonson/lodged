@@ -37,7 +37,7 @@ const Login = () => {
 		setErrors({...errors});
 		Object.values(errors).forEach(e => {
 			console.error(e)
-			alert(e)
+			// alert(e)
 		}); // for personal debugging and maybe for fun
 		return;
 		}
