@@ -1,3 +1,4 @@
-#dash-content {
+#dash-page, #dash-sidebar, #dash-content {
     height: 100dvh;
+    overflow-y: scroll;
 }
