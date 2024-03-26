@@ -18,7 +18,7 @@ const Contact = () => {
                             <div className="card-body text-center p-5">
                                 <h2>Get in Touch</h2>
                                 <p className="lead">Share your feedback by sending a query</p>
-                                <div className="col-8 mx-auto">
+                                <div className="col-md-8 col-10 mx-auto">
                                     <form>
                                         <label HtmlFor="email" className="form-label float-start">Email address</label>
                                         <div className="mb-4 input-group">

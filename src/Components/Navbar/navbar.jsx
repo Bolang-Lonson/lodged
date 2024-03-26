@@ -28,7 +28,7 @@ const Navbar = ({transparent = true, signedIn}) => {
 							<NavLink exact='true' className={({ isActive }) => (isActive ? 'current nav-link hover-slide' : 'nav-link hover-slide')} to='/contact'>CONTACT</NavLink>
 						</li>
 						<li className="nav-item mx-3 d-md-none">
-							<a className="nav-link" href="/signup">SIGNUP</a>
+							<a className="nav-link hover-slide" href="/signup">SIGNUP</a>
 						</li>
 						{ !signedIn &&
 						<li className="nav-item ms-5 d-none d-md-inline">
