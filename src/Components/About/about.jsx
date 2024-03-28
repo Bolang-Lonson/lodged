@@ -11,7 +11,7 @@ const About = () => {
                     <h1 className='display-1'>About Us</h1>
                 </div>
             </div>
-            <div className='content py-5 container-sm'>
+            <div className='content py-5 container-sm px-5 px-sm-0'>
                 <p className="display-5 fw-bold text-muted d-block text-center">Who Are We?</p>
                 <div className='my-5 d-block '>
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente fugiat culpa iure numquam dolores dolorem pariatur eaque odit nostrum debitis aut, dolor placeat odio, eos accusamus est alias assumenda cupiditate?

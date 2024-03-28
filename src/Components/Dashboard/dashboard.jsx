@@ -75,17 +75,17 @@ const Dashboard = () => {
                     <div className="justify-content-between d-flex align-items-center mb-4">
                         <h2 className=' float-start text-muted'>Dashboard</h2>
                         <div className="btn-toolbar">
-                            <div className="navbar-search d-flex">
+                            <div className="navbar-search d-flex input-group">
                                 <input type="text" 
-                                        className="form-control"
+                                        className="form-control rounded-start-pill border-end-0"
                                         aria-describedby='search'
                                         placeholder='Type to search'
                                         value={searchValue}
                                         onChange={(e) => setSearchValue(e.target.value)}
                                 />
-                                <button type='submit' className='mx-2 btn btn-success'><i className="bi bi-search"></i></button>
+                                <button type='submit' className='input-group-text rounded-end-pill bg-white border-start-0'><i className="bi bi-search"></i></button>
                             </div>
-                            <div className="dropdown mx-3">
+                            <div className="dropdown mx-5">
                                 <a href="/profile" className="d-flex align-items-center link-body-emphasis text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
                                     <img src={userpic} alt="" width="32" height="32" className="rounded-circle me-2"/>
                                     <strong>User</strong>
