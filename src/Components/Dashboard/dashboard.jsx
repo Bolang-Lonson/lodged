@@ -83,7 +83,7 @@ const Dashboard = () => {
                                         value={searchValue}
                                         onChange={(e) => setSearchValue(e.target.value)}
                                 />
-                                <button type='submit' className='input-group-text rounded-end-pill bg-white border-start-0'><i className="bi bi-search"></i></button>
+                                <button type='button' className='input-group-text rounded-end-pill bg-white border-start-0'><i className="bi bi-search"></i></button>
                             </div>
                             <div className="dropdown mx-5">
                                 <a href="/profile" className="d-flex align-items-center link-body-emphasis text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
