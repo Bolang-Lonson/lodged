@@ -48,7 +48,7 @@ const Login = () => {
 
 	function signIn() {
 		// Add your sign-in code here
-		navigate('/dashboard');
+		navigate('/panel');
 	}
 
 	return (
