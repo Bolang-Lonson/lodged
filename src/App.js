@@ -5,7 +5,7 @@ import Home from './Components/Home/home';
 import About from './Components/About/about';
 import Login from './Components/Login/login';
 import Signup from './Components/Signup/signup';
-import Dashboard from './Components/Dashboard/dashboard';
+import Panel from './Components/Dashboard/panel';
 import Contact from './Components/Contact/contact';
 const App = () => {
   return (
@@ -15,7 +15,7 @@ const App = () => {
       <Route path='/about' element={<About/>}/>
       <Route path='/login' element={<Login/>}/>
       <Route path='/signup' element={<Signup/>}/>
-      <Route path='/dashboard' element={<Dashboard/>}/>
+      <Route path='/panel' element={<Panel/>}/>
       <Route path='/contact' element={<Contact/>}/>
     </Routes>
     </>
