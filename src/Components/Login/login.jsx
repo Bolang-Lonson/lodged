@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import './login.css';
 import drklogo from '../../Assets/Images/other/logo-char.png';
 
+
 const Login = () => {
 	const navigate = useNavigate();
 	const [passVisible, setPassVisible] = useState(false);
@@ -101,7 +102,12 @@ const Login = () => {
 										<input type="checkbox" className="form-check-input" id="rem-check"/>
 									</div>
 									<button className="btn btn-dark w-100 mb-4 rounded-pill" type="submit">Login</button>
-									<a href="/pass-recovery">Forgot your password?</a>
+									<a href="#pass-recovery" role='button' 
+										aria-controls='pass-recovery'
+										data-bs-toggle='modal'
+									>
+										Forgot your password?
+									</a>
 									<div className="mt-3">Don't have an account? <a href="/signup">Signup</a></div>
 								</form>
 							</div>
@@ -112,8 +118,34 @@ const Login = () => {
 					</div>
 				</div>
 			</div>
+			<Modal/>
 		</div>
 	);
 };
+
+
+const Modal = () => {
+    return (
+        <div className="modal fade align-items-center justify-content-center" id="pass-recovery" tabIndex={-1} aria-labelledby='modal-title' aria-hidden='true'>
+            <div className="modal-dialog">
+				<div className="modal-content">
+					<div className="modal-header border-bottom-0">
+						<h5 className="modal-title text-primary-emphasis" id='modal-title'>Password Recovery</h5>
+						<button className="btn-close text-primary" type="button" data-bs-dismiss="modal" aria-label="Close"/>
+					</div>
+					<div className="modal-body">
+						<p className='mx-2'>If you have an account and forgot your password enter your email address below and we'll send you a link to renew your password</p>
+						<form action="" className='col-9 justify-content-center align-items-center mx-auto'>
+							<label for="modal-email" className="form-label text-muted">Your email address:</label>
+							<input type="email" className="form-control mt-2 mb-4" id="modal-email" placeholder="e.g. mark@mail.com"/>
+							<button className="btn btn-dark my-3 d-block mx-auto">Recover Password</button>
+						</form>
+					</div>
+				</div>
+			</div>
+        </div>
+    );
+};
+
 
 export default Login;

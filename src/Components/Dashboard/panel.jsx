@@ -6,11 +6,6 @@ import History from './Panes/history';
 import Discover from './Panes/discover';
 import React, {useState} from 'react';
 
-// const Modal = () => {
-//     return (
-//         <></>
-//     )
-// }
 
 const Panel = () => {
 
@@ -116,7 +111,7 @@ const Panel = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="tab-content" id="t">
+                    <div className="tab-content container" id="t">
                         <Dashboard/>
                         <History/>
                         <Discover/>
