@@ -53,6 +53,10 @@ const Login = () => {
 		navigate('/panel');
 	}
 
+	const sendRecoveryEmail = () => {
+		// Send recovery email
+	}
+
 	return (
 		<div className="p-0 m-0" id="background-art">
 			<div className="row justify-content-end align-items-center p-0 m-0" id="form-section">
@@ -129,7 +133,13 @@ const Login = () => {
 					<form action="" className='col-9 justify-content-center align-items-center mx-auto'>
 						<label for="modal-email" className="form-label text-muted">Your email address:</label>
 						<input type="email" className="form-control mt-2 mb-4" id="modal-email" placeholder="e.g. mark@mail.com"/>
-						<button className="btn btn-dark my-3 d-block mx-auto">Recover Password</button>
+						<button 
+							className="btn btn-dark my-3 d-block mx-auto" 
+							type='submit' data-bs-dismiss='modal'
+							onClick={sendRecoveryEmail}
+						>
+							Recover Password
+						</button>
 					</form>
 					</>
 					)
