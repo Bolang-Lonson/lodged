@@ -14,6 +14,7 @@ const Login = () => {
 	const [formData, setFormData] = useState({
 		email: '',
 		password: '',
+		recoveryEmail: '',
 	});
 
 	const [errors, setErrors] = useState({});
@@ -24,24 +25,24 @@ const Login = () => {
 		const errors = {};
 
 		if (!formData.email) {
-		errors.email = 'Email address is required.';
+			errors.email = 'Email address is required.';
 		} else if (!/\S+@\S+\.\S+/.test(formData.email)) {
-		errors.email = 'Please enter a valid email address.';
+			errors.email = 'Please enter a valid email address.';
 		}
 
 		if (!formData.password) {
-		errors.password = 'Password is required.';
+			errors.password = 'Password is required.';
 		} else if (formData.password.length < 6) {
-		errors.password = 'Password must be at least 6 characters long.';
+			errors.password = 'Password must be at least 6 characters long.';
 		}
 
 		if (Object.keys(errors).length > 0) {
-		setErrors({...errors});
-		Object.values(errors).forEach(e => {
-			console.error(e)
-			// alert(e)
-		}); // for personal debugging and maybe for fun
-		return;
+			setErrors({...errors});
+			Object.values(errors).forEach(e => {
+				console.error(e)
+				// alert(e)
+			}); // for personal debugging and maybe for fun
+			return;
 		}
 
 		// Perform sign-in logic here
@@ -52,9 +53,22 @@ const Login = () => {
 		// Add your sign-in code here
 		navigate('/panel');
 	}
+	const errorCheck = () => {
+				
+		let error = ''; 
 
-	const sendRecoveryEmail = () => {
-		// Send recovery email
+		if (!formData.recoveryEmail){
+			error = 'Email address is required.';
+		} else if (!/\S+@\S+\.\S+/.test(formData.recoveryEmail)){
+			error = 'Please enter a valid email address.';
+		}
+
+		setErrors({...errors, recoveryEmail: error});
+	}
+
+	const sendRecovEmail = () => {
+		// send recovery email
+		setFormData({...formData, recoveryEmail: ''})
 	}
 
 	return (
@@ -77,9 +91,7 @@ const Login = () => {
 										<input 
 											type="email" className={`form-control ${errors.email ? 'is-invalid' : ''} rounded-pill`}
 											aria-describedby='emailHelp' value={formData.email}
-											onChange={
-												(e) => setFormData({...formData, email: e.target.value})
-											}
+											onChange={(e) => setFormData({...formData, email: e.target.value})}
 											id="email" placeholder="e.g john@example.com"
 
 										/>
@@ -132,11 +144,19 @@ const Login = () => {
 					<p className='mx-2'>If you have an account and forgot your password enter your email address below and we'll send you a link to renew your password</p>
 					<form action="" className='col-9 justify-content-center align-items-center mx-auto'>
 						<label for="modal-email" className="form-label text-muted">Your email address:</label>
-						<input type="email" className="form-control mt-2 mb-4" id="modal-email" placeholder="e.g. mark@mail.com"/>
-						<button 
-							className="btn btn-dark my-3 d-block mx-auto" 
+						<input
+							type="email" className={`form-control mt-2 mb-4 ${errors.recoveryEmail? 'is-invalid': ''}`}
+							aria-describedby='recovery email' value={formData.recoveryEmail}
+							id="recovery-email" placeholder="e.g. mark@mail.com"
+							onChange={(e) => setFormData({...formData, recoveryEmail: e.target.value})}
+							onBlur={errorCheck}
+						/>
+						{errors.recoveryEmail && <div className="invalid-feedback">{errors.recoveryEmail}</div>}
+						<button
+							className="btn btn-dark my-3 d-block mx-auto "
+							disabled={errors.recoveryEmail}
 							type='submit' data-bs-dismiss='modal'
-							onClick={sendRecoveryEmail}
+							onSubmit={sendRecovEmail}
 						>
 							Recover Password
 						</button>
