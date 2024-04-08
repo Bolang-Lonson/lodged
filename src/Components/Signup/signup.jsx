@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import countries from './countrycodes.json';
 import drklogo from '../../Assets/Images/other/logo-char.png';
 import '../Login/login.css';
+import Modal from './modal';
 
 const Signup = () => {
   const [formData, setFormData] = useState({
@@ -279,7 +280,12 @@ const Signup = () => {
 									/>
 									<label className='form-check-label' htmlFor='rem-check'>
 										I have read and agree to the{' '}
-										<a href='/termsandcoditions'>terms and conditions</a>
+										<a href='#terms-n-coditions'
+											role='button'
+											aria-controls='terms-n-conditions'
+											data-bs-target='#terms-n-conditions'
+											data-bs-toggle='modal'
+										>terms and conditions</a>
 									</label>
 									{errors.terms && (
 										<div className='invalid-feedback'>{errors.terms}</div>
@@ -302,6 +308,36 @@ const Signup = () => {
 				</div>
 			</div>
 		</div>
+		<Modal id='terms-n-conditions'
+			title = 'Terms and Conditions'
+			scrollable = {true}
+			body = {() => (
+				<>
+				<div className=" p-4 border border-black-subtle mx-4 bg-white border-1">
+					Lorem ipsum dolor, sit amet consectetur adipisicing elit. Necessitatibus nostrum illo eveniet sequi odio autem itaque tenetur tempore. Fuga nemo, aperiam minima numquam, error accusantium perspiciatis ut quasi quibusdam, alias vitae? Consequatur distinctio iure quo earum laboriosam quia in hic molestias? Voluptate, nulla culpa totam cum similique molestias quisquam error architecto tempore sunt nemo iusto ipsa quasi explicabo veniam et dolore! Doloribus voluptas ullam aliquid necessitatibus possimus odio enim, itaque hic? Quo similique provident iste voluptatibus aspernatur inventore excepturi necessitatibus non laudantium officiis fugit quidem corrupti, fuga dolorum quae animi nesciunt laboriosam fugiat? Incidunt deserunt, qui dignissimos sint dolor, temporibus, tenetur mollitia voluptates ducimus recusandae harum corrupti cumque hic atque aliquam facere laborum doloremque quibusdam. In sed unde veniam totam. Similique eum recusandae minima assumenda amet quisquam quae saepe reiciendis adipisci tempora, qui optio quam perspiciatis laboriosam ipsam totam accusamus, nobis doloribus tempore. Sequi, error aspernatur laudantium eius obcaecati ea eum et in veritatis fuga, tempore quam quisquam asperiores commodi aut. Nesciunt fugit veritatis deleniti. Incidunt amet quas soluta quos excepturi dolore omnis sed dolorum veritatis, perspiciatis unde quae ducimus voluptates velit sequi earum, vero ipsum recusandae ad deserunt quibusdam? Quos neque vero, perferendis voluptate deserunt consequatur? Porro blanditiis deleniti nihil suscipit veniam voluptates, nostrum quasi quod quaerat sapiente unde nisi accusamus cupiditate architecto, culpa, quis impedit. Beatae culpa id iure iusto quo odio recusandae modi nostrum fuga aperiam quod sunt fugiat ipsam consectetur officia numquam necessitatibus quibusdam repellendus consequatur quidem harum aspernatur, ad facere similique! Excepturi, quidem! Quae facere labore nostrum quaerat natus alias, quam, dolorem, provident officia explicabo error aut numquam cumque cum sequi asperiores ad rerum. Totam ullam dicta eaque nobis illo reiciendis a amet assumenda quis corporis ex quidem cum similique dolorem, quos repellat eos quae nulla porro? Quos natus totam placeat commodi mollitia, quidem debitis voluptatum beatae eum, cumque voluptatibus. Quos voluptatibus, aspernatur labore odit repellendus incidunt, corporis dolore iusto mollitia quasi nesciunt dolores iure aut quae officia aliquid fugiat tempore rerum deleniti quisquam voluptatum voluptate quam voluptatem aliquam! Distinctio repellat suscipit assumenda inventore ea architecto neque non ipsa sapiente odit, nemo error, quaerat temporibus debitis aliquid consequatur aut repudiandae incidunt harum quas? Reiciendis vel illum harum sint eaque doloribus veritatis repudiandae facere officiis recusandae. Quae, repudiandae ducimus! At, sapiente dolorem eos dicta hic dignissimos quo libero maxime? Dolorem impedit cupiditate hic assumenda voluptatibus exercitationem fugit? Iure doloribus facere repudiandae officiis libero eveniet nesciunt sunt!
+				</div>
+				</>
+  			)}
+			footer = {() => (
+				<>
+				<button 
+					className="btn btn-outline-dark" 
+					onClick={() => setIsChecked(false)}
+					data-bs-dismiss='modal' aria-label='decline'
+				>
+					Decline
+				</button>
+				{/* Both decline and accept buttons will change the state of the checkbox accordingly and close the modal */}
+				<button 
+					className="btn btn-dark me-4 px-5"
+					onClick={() => setIsChecked(true)}
+					data-bs-dismiss='modal' aria-label='accept'
+				>
+					Accept
+				</button>
+				</>
+			)}
+		/>
     </div>
   );
 };
