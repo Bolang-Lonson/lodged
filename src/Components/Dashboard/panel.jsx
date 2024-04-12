@@ -65,7 +65,7 @@ const Panel = () => {
                 id='dash-page' style={{height : '100dvh'}}
                 >
                 <Col sm={2} className="px-4 d-none d-sm-flex flex-column flex-shrink-0 py-3 bg-charcoal" id='dash-sidebar'>
-                    <div className="justify-content-center align-items-center text-center border-bottom border-glitter mb-1">
+                    <div className="justify-content-center align-items-center text-center border-bottom border-glitter mb-5">
                         <a href="/" className="d-flex justify-content-center align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
                             <img src={logo} alt="logo" className='ms-2 img-fluid'/>
                         </a>
