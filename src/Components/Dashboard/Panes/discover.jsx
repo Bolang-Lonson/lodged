@@ -1,9 +1,10 @@
 import landpic from '../../../Assets/Images/landpic-min.jpg';
+import {Tab, Row} from 'react-bootstrap';
 
 const Discover = () => {
     return (
-        <div className="tab-pane fade" id="nav-discover" role="tabpanel" aria-labelledby="nav-disc-tab">
-            <div className="row mb-4">
+        <>
+            <Row className="mb-4">
                 <div className="col-12">
                     <div className="card border-0 rounded-4 shadow-sm">
                         <div className="card-header text-capitalize bg-white rounded-4 rounded-bottom-0 p-3">
@@ -94,8 +95,8 @@ const Discover = () => {
                         <div className="align-items-center p-3 pe-5"><a href="/lodgings" className="lead float-end">See more &gt;&gt;</a></div>
                     </div>
                 </div>
-            </div>
-        </div>
+            </Row>
+        </>
     );
 };
 

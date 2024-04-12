@@ -1,6 +1,8 @@
+import {Tab} from 'react-bootstrap';
+
 const History = () => {
     return (
-        <div id="nav-hist" className="tab-pane fade" role="tabpanel" aria-labelledby='nav-hist-tab'>
+        <>
             <div className="row">
             <div className="col-12">
                     <div className="card rounded-4 bg-white border-0 shadow-sm">
@@ -53,7 +55,7 @@ const History = () => {
                     </div>
                 </div>
             </div>
-        </div>
+        </>
     );
 };
 

@@ -1,8 +1,10 @@
 import landpic from '../../../Assets/Images/landpic-min.jpg';
+import {Tab, Container, Row, Col, Dropdown, ButtonGroup, Button, Nav} from 'react-bootstrap';
+
 
 const Dashboard = () => {
     return (
-        <div id="nav-dash" className='tab-pane fade show active' role="tabpanel" aria-labelledby='nav-dash-tab'>
+        <>
             <div className="row mb-4 row-gap-4">
                 <div className="col-lg-4 col-md-5 col-12">
                     <div className="card rounded-4 bg-body border-0 shadow-sm">
@@ -156,7 +158,7 @@ const Dashboard = () => {
                     </div>
                 </div>
             </div>
-        </div>
+        </>
     );
 };
 
