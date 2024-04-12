@@ -115,7 +115,7 @@ const Panel = () => {
                         </Collapse>
                     </Nav>
                     <hr></hr>
-                    <Dropdown as={ButtonGroup} drop='up-centered'>
+                    <Dropdown as={ButtonGroup} drop='end'>
                         <Button className="align-items-center ps-0 text-glitter" variant='none'>
                             <img src={userpic} alt="" width="32" height="32" className="rounded-circle me-4"/>
                             <strong>User</strong>
