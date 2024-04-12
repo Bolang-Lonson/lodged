@@ -1,22 +1,22 @@
 import landpic from '../../../Assets/Images/landpic-min.jpg';
-import {Tab, Container, Row, Col, Dropdown, ButtonGroup, Button, Nav} from 'react-bootstrap';
+import { Row, Col } from 'react-bootstrap';
 
 
 const Dashboard = () => {
     return (
         <>
-            <div className="row mb-4 row-gap-4">
-                <div className="col-lg-4 col-md-5 col-12">
+            <Row className="mb-4 row-gap-4">
+                <Col xs={12} md={5} lg={4}>
                     <div className="card rounded-4 bg-body border-0 shadow-sm">
                         <div className="card-body text-center p-5">
                             <h5 className="card-title fs-4">Wallet <i className="ms-1 bi bi-wallet2"></i></h5>
                             <div className="my-3"><span className="display-3 text-success fw-bold">$00.00</span></div>
-                            <a href="/deposit" className="mt-3 btn btn-primary rounded-3 align-items-center">Deposit <i className="bi bi-plus-circle"></i></a>
+                            <a href="/deposit" className="mt-3 btn btn-outline-success rounded-3 align-items-center">Deposit <i className="bi bi-plus-circle"></i></a>
                         </div>
                     </div>
-                </div>
-                <div className="col-lg-8 col-md-7 col-12">
-                    <div className="card rounded-4 bg-primary-subtle border-0 shadow-sm">
+                </Col>
+                <Col xs={12} md={7} lg={8}>
+                    <div className="card rounded-4 bg-success-subtle border-0 shadow-sm">
                         <div className="card-body text-center p-5">
                             <h5 className="card-title fs-4">Upcoming Bookings <i className="ms-1 bi bi-journals"></i></h5>
                             <hr/>
@@ -64,13 +64,13 @@ const Dashboard = () => {
                             <a href="/bookingSearch" className="btn btn-light w-100 text-center lead">Create New Booking</a>
                         </div>
                     </div>
-                </div>
-            </div>
-            <div className="row mb-4">
-                <div className="col-12">
+                </Col>
+            </Row>
+            <Row className="mb-4">
+                <Col xs={12}>
                     <div className="card border-0 rounded-4 shadow-sm">
                         <div className="card-header text-capitalize bg-white rounded-4 rounded-bottom-0 p-3">
-                            <h4 className='mb-0'>Nearby Lodging <i className="ms-2 bi bi-geo"></i></h4>
+                            <h4 className='mb-0 text-charcoal'>Nearby Lodging <i className="ms-2 bi bi-geo"></i></h4>
                         </div>
                         <div className="card-body">
                             <div className="list-group">
@@ -156,8 +156,8 @@ const Dashboard = () => {
                         </div>
                         <div className="align-items-center pb-3 pe-5 text-end"><a href="/lodgings">See more &gt;&gt;</a></div>
                     </div>
-                </div>
-            </div>
+                </Col>
+            </Row>
         </>
     );
 };

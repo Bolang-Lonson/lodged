@@ -86,7 +86,7 @@ const Login = () => {
 									<div className='form-group mb-4'>
 										<label 
 											htmlFor="email" 
-											className="form-label border-start border-black border-3 ps-2 mb-3"
+											className="form-label border-start border-charcoal border-3 ps-2 mb-3"
 										>Email Address</label>
 										<input 
 											type="email" className={`form-control ${errors.email ? 'is-invalid' : ''} rounded-pill`}
@@ -98,7 +98,7 @@ const Login = () => {
 										{errors.email && <div className="invalid-feedback">{errors.email}</div>}
 									</div>
 									<div className='form-group mb-4'>
-										<label htmlFor="pass" className="form-label border-start border-black border-3 ps-2 mb-3">Password</label>
+										<label htmlFor="pass" className="form-label border-start border-charcoal border-3 ps-2 mb-3">Password</label>
 										<div className={`input-group ${errors.password? 'is-invalid': ''}`}>
 											<input type={passVisible? 'text': "password"} className={`form-control rounded-start-pill`} 
 											id="pass" placeholder='********'
@@ -118,7 +118,7 @@ const Login = () => {
 										<label htmlFor="rem-check" className="form-check-label">Remember me</label>
 										<input type="checkbox" className="form-check-input" id="rem-check"/>
 									</div>
-									<button className="btn btn-dark w-100 mb-4 rounded-pill" type="submit">Login</button>
+									<button className="btn btn-charcoal w-100 mb-4 rounded-pill" type="submit">Login</button>
 									<a href="#pass-recovery" role='button' 
 										aria-controls='pass-recovery'
 										data-bs-toggle='modal'

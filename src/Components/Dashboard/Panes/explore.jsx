@@ -1,11 +1,11 @@
 import landpic from '../../../Assets/Images/landpic-min.jpg';
-import {Tab, Row} from 'react-bootstrap';
+import { Row, Col } from 'react-bootstrap';
 
-const Discover = () => {
+const Explore = () => {
     return (
         <>
             <Row className="mb-4">
-                <div className="col-12">
+                <Col xs={12}>
                     <div className="card border-0 rounded-4 shadow-sm">
                         <div className="card-header text-capitalize bg-white rounded-4 rounded-bottom-0 p-3">
                             <h4>Nearby Lodging <i className="ms-2 bi bi-geo"></i></h4>
@@ -94,10 +94,10 @@ const Discover = () => {
                         </div>
                         <div className="align-items-center p-3 pe-5"><a href="/lodgings" className="lead float-end">See more &gt;&gt;</a></div>
                     </div>
-                </div>
+                </Col>
             </Row>
         </>
     );
 };
 
-export default Discover;
+export default Explore;
