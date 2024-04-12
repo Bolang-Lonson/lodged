@@ -67,7 +67,7 @@ const Login = () => {
 	}
 
 	const sendRecovEmail = () => {
-		// send recovery email
+		// resetting the form data to empty string
 		setFormData({...formData, recoveryEmail: ''})
 	}
 

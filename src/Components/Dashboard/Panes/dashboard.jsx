@@ -3,9 +3,9 @@ import landpic from '../../../Assets/Images/landpic-min.jpg';
 const Dashboard = () => {
     return (
         <div id="nav-dash" className='tab-pane fade show active' role="tabpanel" aria-labelledby='nav-dash-tab'>
-            <div className="row mb-4">
-                <div className="col-md-4 col-12">
-                    <div className="card rounded-4 bg-white border-0 shadow-sm">
+            <div className="row mb-4 row-gap-4">
+                <div className="col-lg-4 col-md-5 col-12">
+                    <div className="card rounded-4 bg-body border-0 shadow-sm">
                         <div className="card-body text-center p-5">
                             <h5 className="card-title fs-4">Wallet <i className="ms-1 bi bi-wallet2"></i></h5>
                             <div className="my-3"><span className="display-3 text-success fw-bold">$00.00</span></div>
@@ -13,8 +13,8 @@ const Dashboard = () => {
                         </div>
                     </div>
                 </div>
-                <div className="col-md-8 col-12">
-                    <div className="card rounded-4 bg-white border-0 shadow-sm">
+                <div className="col-lg-8 col-md-7 col-12">
+                    <div className="card rounded-4 bg-primary-subtle border-0 shadow-sm">
                         <div className="card-body text-center p-5">
                             <h5 className="card-title fs-4">Upcoming Bookings <i className="ms-1 bi bi-journals"></i></h5>
                             <hr/>
@@ -68,12 +68,12 @@ const Dashboard = () => {
                 <div className="col-12">
                     <div className="card border-0 rounded-4 shadow-sm">
                         <div className="card-header text-capitalize bg-white rounded-4 rounded-bottom-0 p-3">
-                            <h4>Nearby Lodging <i className="ms-2 bi bi-geo"></i></h4>
+                            <h4 className='mb-0'>Nearby Lodging <i className="ms-2 bi bi-geo"></i></h4>
                         </div>
                         <div className="card-body">
                             <div className="list-group">
                                 <div className="list-group-item border-0 border-bottom">
-                                    <h5 className="mb-1"><i className="bi bi-buildings-fill me-3"></i>
+                                    <h5 className="mb-0"><i className="bi bi-buildings-fill me-3"></i>
                                         Hilton Hotel
                                         <span className='float-end text-warning pe-4'>
                                             <i className="bi bi-star-fill"></i>
@@ -99,7 +99,7 @@ const Dashboard = () => {
                                     </div>
                                 </div>
                                 <div className="list-group-item border-0 border-bottom">
-                                    <h5 className="mb-1"><i className="bi bi-buildings-fill me-3"></i>
+                                    <h5 className="mb-0"><i className="bi bi-buildings-fill me-3"></i>
                                         La Falaise Hotel
                                         <span className='float-end text-warning pe-4'>
                                             <i className="bi bi-star-fill"></i>
@@ -125,7 +125,7 @@ const Dashboard = () => {
                                     </div>
                                 </div>
                                 <div className="list-group-item border-0 border-bottom">
-                                    <h5 className="mb-1"><i className="bi bi-buildings-fill me-3"></i>
+                                    <h5 className="mb-0"><i className="bi bi-buildings-fill me-3"></i>
                                         Heaven Hotel
                                         <span className='float-end text-warning pe-4'>
                                             <i className="bi bi-star-fill"></i>
@@ -152,7 +152,7 @@ const Dashboard = () => {
                                 </div>
                             </div>
                         </div>
-                        <div className="align-items-center p-3 pe-5"><a href="/lodgings" className="lead float-end">See more &gt;&gt;</a></div>
+                        <div className="align-items-center pb-3 pe-5 text-end"><a href="/lodgings">See more &gt;&gt;</a></div>
                     </div>
                 </div>
             </div>
