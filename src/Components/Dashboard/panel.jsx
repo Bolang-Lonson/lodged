@@ -37,12 +37,8 @@ const Panel = () => {
                             <i className='bi bi-bell fs-6'></i>
                             {notifications > 0 && <Badge pill bg='success'>{notifications}</Badge>  /* only shows if there's a notification*/}
                         </Dropdown.Toggle>
-                        <Dropdown.Menu className="text-small">
-                            <Dropdown.Item href="/booking"><i className="bi bi-plus-circle me-3"></i>New lodging</Dropdown.Item>
-                            <Dropdown.Item href="/settings"><i className="bi bi-gear me-3"></i>Settings</Dropdown.Item>
-                            <Dropdown.Item href="/profile"><i className="bi bi-person me-3"></i>Profile</Dropdown.Item>
-                            <Dropdown.Divider/>
-                            <Dropdown.Item href="/signout"><i className="bi bi-box-arrow-left me-3"></i>Sign out</Dropdown.Item>
+                        <Dropdown.Menu className="text-small p-2" style={{width: '20rem'}}>
+                            <p>No notifications</p>
                         </Dropdown.Menu>
                     </Dropdown>
                     <Dropdown drop='down-centered' className="ms-2 ms-lg-5">
@@ -65,7 +61,10 @@ const Panel = () => {
     
     return (
         <Tab.Container defaultActiveKey="explore" className='m-0'>
-            <Row className="bg-light m-0 pe-0" id='dash-page'>
+            <Row 
+                className="bg-light m-0 pe-0" 
+                id='dash-page' style={{height : '100dvh'}}
+                >
                 <Col sm={2} className="px-4 d-none d-sm-flex flex-column flex-shrink-0 py-3 bg-charcoal" id='dash-sidebar'>
                     <div className="justify-content-center align-items-center text-center border-bottom border-glitter mb-1">
                         <a href="/" className="d-flex justify-content-center align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
@@ -132,7 +131,10 @@ const Panel = () => {
                         </Dropdown.Menu>
                     </Dropdown>
                 </Col>
-                <Col sm={10}  className="bg-light px-0 overflow-y-scroll" id='dash-content'>
+                <Col sm={10}  
+                    className="bg-light px-0 overflow-y-scroll" 
+                    id='dash-content' style={{height : '100dvh'}}
+                >
                     <Tab.Content className='m-0'>
                         <Tab.Pane eventKey='dashboard' className='m-0 p-0'>
                             <InfoBar title='dashboard'/>
