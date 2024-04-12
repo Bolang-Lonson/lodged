@@ -1,4 +1,3 @@
-import './panel.css';
 import logo from '../../Assets/Images/biglogo-png.png';
 import userpic from '../../Assets/Images/BolangPic.jpg';
 import Dashboard from './Panes/dashboard';
