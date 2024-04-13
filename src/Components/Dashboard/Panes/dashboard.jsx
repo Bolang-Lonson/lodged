@@ -7,24 +7,23 @@ const Dashboard = () => {
         <>
             <Row className="mb-4 row-gap-4">
                 <Col xs={12} md={5} lg={4}>
-                    <div className="card rounded-4 bg-body border-0 shadow-sm">
+                    <div className="card rounded-4 bg-light border-0 shadow-sm">
                         <div className="card-body text-center p-5">
-                            <h5 className="card-title fs-4">Wallet <i className="ms-1 bi bi-wallet2"></i></h5>
+                            <h5 className="card-title text-charcoal fs-4">Wallet <i className="ms-1 bi bi-wallet2"></i></h5>
                             <div className="my-3"><span className="display-3 text-success fw-bold">$00.00</span></div>
                             <a href="/deposit" className="mt-3 btn btn-outline-success rounded-3 align-items-center">Deposit <i className="bi bi-plus-circle"></i></a>
                         </div>
                     </div>
                 </Col>
                 <Col xs={12} md={7} lg={8}>
-                    <div className="card rounded-4 bg-success-subtle border-0 shadow-sm">
+                    <div className="card rounded-4 bg-light border-0 shadow-sm">
                         <div className="card-body text-center p-5">
-                            <h5 className="card-title fs-4">Upcoming Bookings <i className="ms-1 bi bi-journals"></i></h5>
-                            <hr/>
-                            <div className="my-3">
+                            <h5 className="card-title text-charcoal fs-4">Upcoming Bookings <i className="ms-1 bi bi-journals"></i></h5>
+                            <div className="my-3 rounded-3">
                                 <div className="table-responsive small">
-                                    <table className="table table-striped table-sm">
+                                    <table className="table table-striped table-success text-gold table-sm">
                                         <thead>
-                                            <tr>
+                                            <tr className='text-glitter'>
                                                 <th>#</th>
                                                 <th>Establishment</th>
                                                 <th>from</th>
@@ -61,7 +60,7 @@ const Dashboard = () => {
                                 </div>
                             </div>
                             <hr />
-                            <a href="/bookingSearch" className="btn btn-light w-100 text-center lead">Create New Booking</a>
+                            <a href="/bookingSearch" className="btn btn-dominant w-100 text-center text-white">Create New Booking</a>
                         </div>
                     </div>
                 </Col>

@@ -84,7 +84,7 @@ const Signup = () => {
 					<div className="row my-4 my-md-5 justify-content-center">
 						<div className="col-md-9 col-10">
 							<form onSubmit={handleSubmit}>
-								<div className='form-floating my-2 border-start border-black border-3'> 
+								<div className='form-floating my-2 border-start border-charcoal border-3'> 
 									<input
 										type='text'
 										className={`form-control rounded-0 ${errors.name ? 'is-invalid' : ''}`}
@@ -116,7 +116,7 @@ const Signup = () => {
 										<div className='invalid-feedback'>{errors.name}</div>
 									)}
 								</div>
-								<div className='form-floating my-2 border-start border-black border-3'>
+								<div className='form-floating my-2 border-start border-charcoal border-3'>
 									<input
 										type='email'
 										className={`form-control rounded-0 ${errors.email ? 'is-invalid' : ''}`}
@@ -201,7 +201,7 @@ const Signup = () => {
 										)}
 									</div>
 								</div>
-								<div className='form-floating my-2 border-start border-black border-3'>
+								<div className='form-floating my-2 border-start border-charcoal border-3'>
 									<input type='password'
 										className={`form-control rounded-0 ${
 										errors.password ? 'is-invalid' : ''
@@ -233,7 +233,7 @@ const Signup = () => {
 										<div className='invalid-feedback'>{errors.password}</div>
 									)}
 								</div>
-								<div className='form-floating my-2 border-start border-black border-3'>
+								<div className='form-floating my-2 border-start border-charcoal border-3'>
 									<input
 										type='password'
 										className={`form-control rounded-0 ${
@@ -293,7 +293,7 @@ const Signup = () => {
 								</div>
 								<button
 								type='submit'
-								className='btn btn-dark mt-2 w-100'
+								className='btn btn-charcoal mt-2 w-100'
 								disabled={!isChecked}
 								>
 								Create Account

@@ -9,7 +9,9 @@
 $custom-theme-colors: (
     "glitter": #f4ebd0,
     "charcoal": #122620,
-    "primary": $transparent
+    "accent": $green-100,
+    "dominant": $green-300,
+    "gold": #b68d40,
 );
 
 $theme-colors: map-merge($custom-theme-colors, $theme-colors);
