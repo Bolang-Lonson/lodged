@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './login.css';
 import drklogo from '../../Assets/Images/other/logo-char.png';
@@ -46,13 +46,28 @@ const Login = () => {
 		}
 
 		// Perform sign-in logic here
-		signIn();
+		setIsLogging(true);
 	};
 
-	function signIn() {
-		// Add your sign-in code here
-		navigate('/panel');
-	}
+	const [isLogging, setIsLogging] = useState(false);
+
+
+	useEffect(() => {
+		function simulateLogin() {
+			return new Promise((resolve) => setTimeout(resolve, 2000));
+		}
+		async function signIn() {
+			// Add your sign-in code here
+			// practicing promises and asynchronous programming
+			if (isLogging) {
+				await simulateLogin().then(() => setIsLogging(false));
+				navigate('/panel');
+			}
+		}
+
+		signIn();
+	},[isLogging, navigate]);
+
 	const errorCheck = () => {
 				
 		let error = ''; 
@@ -118,7 +133,7 @@ const Login = () => {
 										<label htmlFor="rem-check" className="form-check-label">Remember me</label>
 										<input type="checkbox" className="form-check-input" id="rem-check"/>
 									</div>
-									<button className="btn btn-charcoal w-100 mb-4 rounded-pill" type="submit">Login</button>
+									<button className="btn btn-charcoal w-100 mb-4 rounded-pill" type="submit">{isLogging? 'Signing in...':'Login'}</button>
 									<a href="#pass-recovery" role='button' 
 										aria-controls='pass-recovery'
 										data-bs-toggle='modal'
