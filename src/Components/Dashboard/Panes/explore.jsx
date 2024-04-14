@@ -1,11 +1,23 @@
 import landpic from '../../../Assets/Images/landpic-min.jpg';
-import { Row, Col } from 'react-bootstrap';
+import { Row, Col, Button, Form } from 'react-bootstrap';
+import React, {useState} from 'react';
 
 const Explore = () => {
+
+    const [inFocus, setInFocus] = useState(false);
     return (
         <>
             <Row className="mb-4">
                 <Col xs={12}>
+                    <p className="display-6 fw-bold">Find your stay</p>
+                    <Col xs={12} md={9} className='d-flex flex-row gap-3 mb-5 mx-auto'>
+                        <Form.Control
+                            type='search'
+                            size='lg' className={`rounded-4 fs-6 focus-ring focus-ring-success ${inFocus? 'border-0':''}`}
+                            placeholder='Search' onFocus={() => setInFocus(true)} onBlur={() => setInFocus(false)}
+                        />
+                        <Button variant='success' className='px-3 rounded-4 focus-ring focus-ring-success'><i className="bi bi-sliders lead"></i></Button>
+                    </Col>
                     <div className="card border-0 rounded-4 shadow-sm">
                         <div className="card-header text-capitalize bg-white rounded-4 rounded-bottom-0 p-3">
                             <h4>Nearby Lodging <i className="ms-2 bi bi-geo"></i></h4>
