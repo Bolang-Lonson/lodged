@@ -1,16 +1,17 @@
 import landpic from '../../../Assets/Images/landpic-min.jpg';
-import { Row, Col, Button, Form } from 'react-bootstrap';
+import { Row, Col, Button, Form, Card } from 'react-bootstrap';
 import React, {useState} from 'react';
+import pic from '../../../Assets/Images/landpic-min.jpg'
 
 const Explore = () => {
 
     const [inFocus, setInFocus] = useState(false);
     return (
         <>
-            <Row className="mb-4">
-                <Col xs={12}>
+            <Row className="mb-5">
+                <Col xs={12} md={10} lg={7} className='mx-auto'>
                     <p className="display-6 fw-bold">Find your stay</p>
-                    <Col xs={12} md={9} className='d-flex flex-row gap-3 mb-5 mx-auto'>
+                    <Col xs={12} md={9} lg={12} className='d-flex flex-row gap-3 mb-5 mx-auto'>
                         <Form.Control
                             type='search'
                             size='lg' className={`rounded-4 fs-6 focus-ring focus-ring-success ${inFocus? 'border-0':''}`}
@@ -18,9 +19,26 @@ const Explore = () => {
                         />
                         <Button variant='success' className='px-3 rounded-4 focus-ring focus-ring-success'><i className="bi bi-sliders lead"></i></Button>
                     </Col>
+                    <h5 className='mb-3'>Nearby Lodging <i className="ms-2 bi bi-geo"></i></h5>
+                    <Card bg='charcoal' className='rounded-4 border-0 my-4'>
+                        <Card.Img fluid src={pic} alt='Hotel image' className='rounded-4 opacity-75' style={{ 'max-height': '35rem'}}/>
+                        <Card.ImgOverlay className=' align-content-end text-glitter'>
+                            <Card.Title>
+                                <i className="bi bi-buildings-fill me-3"></i>
+                                Hilton Hotel
+                                <span className='float-end text-gold fs-6'>
+                                    <small className="bi bi-star-fill"></small>
+                                    <small className="bi bi-star-fill"></small>
+                                    <small className="bi bi-star-fill"></small>
+                                    <small className="bi bi-star-fill"></small>
+                                    <small className="bi bi-star-fill"></small>
+                                </span>
+                            </Card.Title>
+                            <Card.Text><small>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus porro, voluptatibus repellat tempore libero quae illum</small></Card.Text>
+                        </Card.ImgOverlay>
+                    </Card>
                     <div className="card border-0 rounded-4 shadow-sm">
                         <div className="card-header text-capitalize bg-white rounded-4 rounded-bottom-0 p-3">
-                            <h4>Nearby Lodging <i className="ms-2 bi bi-geo"></i></h4>
                         </div>
                         <div className="card-body">
                             <div className="list-group">

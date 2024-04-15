@@ -1,11 +1,12 @@
 import logo from '../../Assets/Images/biglogo-png.png';
+import darkLogo from '../../Assets/Images/other/logoCapped.png';
 import './panel.css';
 import userpic from '../../Assets/Images/BolangPic.jpg';
 import Dashboard from './Panes/dashboard';
 import History from './Panes/history';
 import Explore from './Panes/explore';
 import React, {useState} from 'react';
-import {Tab, Container, Row, Col, Dropdown, ButtonGroup, Button, Nav, Collapse, Badge} from 'react-bootstrap';
+import {Tabs, Tab, Container, Row, Col, Dropdown, ButtonGroup, Button, Image,  Nav, Collapse, Badge} from 'react-bootstrap';
 import {useMediaQuery} from 'react-responsive';
 
 const Panel = () => {
@@ -13,6 +14,7 @@ const Panel = () => {
     const mobileDisplay = useMediaQuery({ query : '(max-width: 767.99px)'});
     const [open, setOpen] = useState(false);
     const [tabActive, setTabActive] = useState('explore');
+    const [sideBar, toggleSideBar] = useState(true);
 
     function handleSelect(eventKey) {
         setTabActive(eventKey);
@@ -23,7 +25,7 @@ const Panel = () => {
     let notifications = 1;
     // Number of notifications to display as badge
     
-    const InfoBar = ({title, shadow=true}) => {
+    const InfoBar = ({shadow=true}) => {
 
         const [searchValue, setSearchValue] = useState('');
         const [inFocus, setInFocus] = useState(false);
@@ -32,8 +34,15 @@ const Panel = () => {
         }
 
         return (
-            <Container fluid className={`justify-content-between d-flex align-items-center ${shadow? 'shadow-sm':''} mx-0 mb-4 p-3 px-lg-5`}>
-                <h2 className='text-charcoal mb-0 ms-lg-2 text-capitalize'>{title}</h2>
+            <Container fluid className={`justify-content-between d-flex align-items-center ${shadow? 'shadow-sm':''} mx-0 mb-4 px-3 px-lg-5`}>
+                <Image 
+                    src={darkLogo} className='mt-2' 
+                    style={{height: '65px'}}
+                    onClick={() => toggleSideBar(!sideBar)}
+                    aria-controls='dash-sidebar'
+                    aria-expanded={sideBar}
+                    // data-bs-toggle='collapse'
+                />
                 <div className="btn-toolbar justify-content-between align-items-center">
                     <div className="d-flex input-group">
                         <input 
@@ -49,8 +58,27 @@ const Panel = () => {
                             <i className='bi bi-bell fs-6'></i>
                             {notifications > 0 && <Badge pill bg='success'>{notifications}</Badge>  /* only shows if there's a notification*/}
                         </Dropdown.Toggle>
-                        <Dropdown.Menu className="text-small p-2" style={{width: '20rem'}}>
-                            <p>No notifications</p>
+                        <Dropdown.Menu className="text-small py-0" style={{width: '20rem'}}>
+                            <Tabs
+                                defaultActiveKey='notifications'
+                                variant='underline' justify
+                                className='mx-3'
+                            >
+                                <Tab 
+                                    eventKey='notifications' title='Notifications'
+                                    className='p-3'
+                                >
+                                    <small>No new notifications</small>
+                                    {/* notifications as a listgroup */}
+                                </Tab>
+                                <Tab 
+                                    eventKey='reminders' title='Reminders'
+                                    className='p-3'
+                                >
+                                    <small>No new reminders</small>
+                                    {/* reminders as a list group */}
+                                </Tab>
+                            </Tabs>
                         </Dropdown.Menu>
                     </Dropdown>
                     <Dropdown drop='down-centered' className="ms-2 ms-lg-5">
@@ -72,19 +100,23 @@ const Panel = () => {
     }
     
     return (
-        <Tab.Container defaultActiveKey="explore" className='m-0'>
+        <Tab.Container activeKey={tabActive} className='m-0'>
             <Row 
                 className="bg-light m-0 pe-0" 
                 id='dash-page' style={{height : '100dvh'}}
                 >
-                <Col sm={2} className="px-0 d-none d-sm-flex flex-column flex-shrink-0 py-3 bg-charcoal" id='dash-sidebar'>
-                    <div className="justify-content-center align-items-center text-center border-bottom border-gold mb-5">
-                        <a href="/" className="d-flex justify-content-center align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
-                            <img src={logo} alt="logo" className='ms-2 img-fluid'/>
+                <Collapse in={sideBar} dimension='width'>
+                <Col sm={2} className={`px-0 d-none ${sideBar? 'd-sm-flex':''} flex-column flex-shrink-0 pb-3 bg-charcoal`} id='dash-sidebar'>
+                    <div className="d-flex flex-row justify-content-evenly align-items-center text-center border-bottom border-gold mb-5">
+                        <Button variant='outline-glitter' className="toggle-btn">
+                            <i className="bi bi-grid-fill"></i>
+                        </Button>
+                        <a href="/" className="align-items-center mb-3 mb-md-0">
+                            <img src={logo} alt="logo" className='ms-2 img-fluid pt-2'/>
                         </a>
                     </div>
                     <Nav 
-                        defaultActiveKey="explore" 
+                        // defaultActiveKey="explore"
                         className="flex-column mb-auto gap-2"
                         onSelect={handleSelect}
                     >
@@ -116,14 +148,14 @@ const Panel = () => {
                             </Nav.Link>
                         </Nav.Item>
                         <Button onClick={() => setOpen(!open)} as={Nav.Item}
-                                className='align-items-center ps-4 bg-transparent text-start pb-0 border-0 text-glitter'
+                                className='collapsed align-items-center ps-4 bg-transparent text-start pb-0 border-0 text-glitter'
                                 aria-controls='collapse-body'
                                 aria-expanded={open}
                                 data-bs-toggle='collapse'
                             >
                                 <i className="bi pe-none me-3 bi-bookmark-heart" width="16" height="16"></i>
                                 Favourites
-                                <i className={`bi pe-none ms-2 pt-2 ${open? 'bi-caret-down-fill':'bi-caret-right-fill'}`} width="16" height="16"></i>
+                                <i className={`float-end bi mt-0 pe-none ms-2 pb-2 ${open? 'bi-caret-down-fill':'bi-caret-right-fill'}`} width="16" height="16"></i>
                         </Button>
                         {/* I'm only doing this to test the collapsible sidebar item. will eventually change and have all favourite categories on the single favs pages */}
                         <Collapse in={open}>
@@ -171,31 +203,32 @@ const Panel = () => {
                         </Dropdown.Menu>
                     </Dropdown>
                 </Col>
-                <Col sm={10}  
+                </Collapse>
+                <Col  
                     className="bg-accent bg-opacity-25 px-0 overflow-y-scroll" 
                     id='dash-content' style={{height : '100dvh'}}
                 >
                     <Tab.Content className='m-0'>
                         <Tab.Pane eventKey='dashboard' className='m-0 p-0'>
-                            <InfoBar title='dashboard'/>
+                            <InfoBar/>
                             <Col xs={11} className='mx-auto'>
-                                <Dashboard/>
+                                <Dashboard switchPane={setTabActive}/>
                             </Col>
                         </Tab.Pane>
                         <Tab.Pane eventKey='history'>
-                            <InfoBar title='history'/>
+                            <InfoBar/>
                             <Col xs={11} className='mx-auto'>
                                 <History/>
                             </Col>
                         </Tab.Pane>
                         <Tab.Pane eventKey='explore'>
-                            <InfoBar title='explore' shadow={false}/>
+                            <InfoBar shadow={!mobileDisplay}/>
                             <Col xs={11} className='mx-auto'>
                                 <Explore/>
                             </Col>
                         </Tab.Pane>
                         <Tab.Pane eventKey='hotels'>
-                            <InfoBar title='hotels'/>
+                            <InfoBar/>
                         </Tab.Pane>
                     </Tab.Content>
                 </Col>
