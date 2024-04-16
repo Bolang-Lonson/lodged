@@ -2,31 +2,25 @@ import logo from '../../Assets/Images/biglogo-png.png';
 import darkLogo from '../../Assets/Images/other/logoCapped.png';
 import './panel.css';
 import userpic from '../../Assets/Images/BolangPic.jpg';
-import Dashboard from './Panes/dashboard';
-import History from './Panes/history';
-import Explore from './Panes/explore';
 import React, {useState} from 'react';
-import {Outlet} from 'react-router-dom';
+import {NavLink, Outlet} from 'react-router-dom';
 import {Tabs, Tab, Container, Row, Col, Dropdown, ButtonGroup, Button, Image,  Nav, Collapse, Badge} from 'react-bootstrap';
 import {useMediaQuery} from 'react-responsive';
 
-const Panel = () => {
+const Panel = ({shadow}) => {
 
     const mobileDisplay = useMediaQuery({ query : '(max-width: 767.99px)'});
     const [open, setOpen] = useState(false);
-    const [tabActive, setTabActive] = useState('explore');
     const [sideBar, toggleSideBar] = useState(true);
 
-    function handleSelect(eventKey) {
-        setTabActive(eventKey);
-        // debugging using console.log
-        console.log('Active tab', eventKey);
-    }
+    // classes for the navlinks both in base state and active state
+    const baseClass = 'text-glitter ps-4 nav-link';
+    const activeClass = ' bg-dark bg-opacity-75 border-end border-5 border-glitter';
 
     let notifications = 1;
     // Number of notifications to display as badge
     
-    const InfoBar = ({shadow=true}) => {
+    const InfoBar = ({shadow}) => {
 
         const [searchValue, setSearchValue] = useState('');
         const [inFocus, setInFocus] = useState(false);
@@ -101,144 +95,117 @@ const Panel = () => {
     }
     
     return (
-        <Tab.Container activeKey={tabActive} className='m-0'>
-            <Row 
-                className="bg-light m-0 pe-0" 
-                id='dash-page' style={{height : '100dvh'}}
+        <Row 
+            className="bg-light m-0 pe-0" 
+            id='dash-page' style={{height : '100dvh'}}
+            >
+                {/* SideBar */}
+            <Col id='dash-sidebar'
+                sm={2} className={`px-0 d-none ${sideBar? 'd-sm-flex':''} h-100 flex-column flex-shrink-0 pb-3 bg-charcoal overflow-y-auto`} 
+            >
+                <div className="d-flex flex-row justify-content-evenly align-items-center text-center border-bottom border-gold mb-5">
+                    <Button variant='outline-glitter' className="toggle-btn">
+                        <i className="bi bi-grid-fill"></i>
+                    </Button>
+                    <a href="/" className="align-items-center mb-3 mb-md-0">
+                        <img src={logo} alt="logo" className='ms-2 img-fluid pt-2'/>
+                    </a>
+                </div>
+                <Nav 
+                    className="flex-column mb-auto gap-2"
                 >
-                <Collapse in={sideBar} dimension='width'>
-                <Col 
-                    sm={2} className={`px-0 d-none ${sideBar? 'd-sm-flex':''} h-100 flex-column flex-shrink-0 pb-3 bg-charcoal overflow-y-auto`} 
-                    id='dash-sidebar'
-                >
-                    <div className="d-flex flex-row justify-content-evenly align-items-center text-center border-bottom border-gold mb-5">
-                        <Button variant='outline-glitter' className="toggle-btn">
-                            <i className="bi bi-grid-fill"></i>
-                        </Button>
-                        <a href="/" className="align-items-center mb-3 mb-md-0">
-                            <img src={logo} alt="logo" className='ms-2 img-fluid pt-2'/>
-                        </a>
-                    </div>
-                    <Nav 
-                        // defaultActiveKey="explore"
-                        className="flex-column mb-auto gap-2"
-                        onSelect={handleSelect}
-                    >
-                        <Nav.Item>
-                            <Nav.Link 
-                                eventKey="explore"
-                                className={`text-glitter ps-4 ${tabActive === 'explore' ? 'bg-dark bg-opacity-75 border-end border-5 border-glitter':''}`}
-                            >
-                                <i className="bi pe-none me-3 bi-search" width="16" height="16"></i>
-                                Explore
-                            </Nav.Link>
-                        </Nav.Item>
-                        <Nav.Item>
-                            <Nav.Link 
-                                eventKey="dashboard"
-                                className={`text-glitter ps-4 ${tabActive === 'dashboard' ? 'bg-dark bg-opacity-75 border-end border-5 border-glitter':''}`}
-                            >
-                                <i className="bi pe-none me-3 bi-speedometer" width="16" height="16"></i>
-                                Dashboard
-                            </Nav.Link>
-                        </Nav.Item>
-                        <Nav.Item>
-                            <Nav.Link 
-                                eventKey="history"
-                                className={`text-glitter ps-4 ${tabActive === 'history' ? 'bg-dark bg-opacity-75 border-end border-5 border-glitter':''}`}
-                            >
-                                <i className="bi pe-none me-3 bi-clock-history" width="16" height="16"></i>
-                                History
-                            </Nav.Link>
-                        </Nav.Item>
-                        <Button onClick={() => setOpen(!open)} as={Nav.Item}
-                                className='collapsed align-items-center ps-4 bg-transparent text-start pb-0 border-0 text-glitter'
-                                aria-controls='collapse-body'
-                                aria-expanded={open}
-                                data-bs-toggle='collapse'
-                            >
-                                <i className="bi pe-none me-3 bi-bookmark-heart" width="16" height="16"></i>
-                                Favourites
-                                <i className={`float-end bi mt-0 pe-none ms-2 pb-2 ${open? 'bi-caret-down-fill':'bi-caret-right-fill'}`} width="16" height="16"></i>
-                        </Button>
-                        {/* I'm only doing this to test the collapsible sidebar item. will eventually change and have all favourite categories on the single favs pages */}
-                        <Collapse in={open}>
-                            <div id="collapse-body" className='bg-dark bg-opacity-75 w-75 ps-3 w-100 rounded mt-0'>
-                                <Nav.Item>
-                                    <Nav.Link 
-                                        eventKey='hotels' 
-                                        className={`ps-3 text-glitter ${tabActive === 'hotels' ? 'bg-dark bg-opacity-75 border-end border-5 border-glitter':''}`}
-                                    >
-                                        Hotel
-                                    </Nav.Link>
-                                </Nav.Item>
-                                <Nav.Item>
-                                    <Nav.Link 
-                                        eventKey='resorts' 
-                                        className={`ps-3 text-glitter ${tabActive === 'resorts' ? 'bg-dark bg-opacity-75 border-end border-5 border-glitter':''}`}
-                                    >
-                                        Resort
-                                    </Nav.Link>
-                                </Nav.Item>
-                                <Nav.Item>
-                                    <Nav.Link 
-                                        eventKey='guest-houses' 
-                                        className={`ps-3 text-glitter ${tabActive === 'guest-houses' ? 'bg-dark bg-opacity-75 border-end border-5 border-glitter':''}`}
-                                    >
-                                        Guest House
-                                    </Nav.Link>
-                                </Nav.Item>
-                            </div>
-                        </Collapse>
-                    </Nav>
-                    <hr></hr>
-                    <Dropdown as={ButtonGroup} drop='end'>
-                        <Button className="align-items-center ps-0 text-glitter" variant='none'>
-                            <img src={userpic} alt="" width="32" height="32" className="rounded-circle me-4"/>
-                            <strong>User</strong>
-                        </Button>
-                        <Dropdown.Toggle split variant='none' className='text-glitter'/>
-                        <Dropdown.Menu className="text-small shadow">
-                            <Dropdown.Item href="/booking"><i className="bi bi-plus-circle me-3"></i>New lodging</Dropdown.Item>
-                            <Dropdown.Item href="/"><i className="bi bi-gear me-3"></i>Settings</Dropdown.Item>
-                            <Dropdown.Item href="/profile"><i className="bi bi-person me-3"></i>Profile</Dropdown.Item>
-                            <Dropdown.Divider/>
-                            <Dropdown.Item href="/login"><i className="bi bi-box-arrow-left me-3"></i>Sign out</Dropdown.Item>
-                        </Dropdown.Menu>
-                    </Dropdown>
-                </Col>
-                </Collapse>
-                <Col  
-                    className="bg-accent bg-opacity-25 px-0 overflow-y-scroll" 
-                    id='dash-content' style={{height : '100dvh'}}
-                >
-                    <InfoBar/>
-                    <Tab.Content className='m-0'>
-                        <Outlet />
-                        <Tab.Pane eventKey='dashboard' className='m-0 p-0'>
-                            <Col xs={11} className='mx-auto'>
-                                <Dashboard switchPane={setTabActive}/>
-                            </Col>
-                        </Tab.Pane>
-                        <Tab.Pane eventKey='history'>
-                            <InfoBar/>
-                            <Col xs={11} className='mx-auto'>
-                                <History/>
-                            </Col>
-                        </Tab.Pane>
-                        <Tab.Pane eventKey='explore'>
-                            <InfoBar shadow={!mobileDisplay}/>
-                            <Col xs={11} className='mx-auto'>
-                                <Explore/>
-                            </Col>
-                        </Tab.Pane>
-                        <Tab.Pane eventKey='hotels'>
-                            <InfoBar/>
-                        </Tab.Pane>
-                    </Tab.Content>
-                </Col>
-            </Row>
-        </Tab.Container>
+                    <Nav.Item>
+                        <NavLink 
+                            exact='true' to='./'
+                            className={({isActive}) => (isActive? baseClass+activeClass: baseClass)}
+                        >
+                            <i className="bi pe-none me-3 bi-search" width="16" height="16"></i>
+                            Explore
+                        </NavLink>
+                    </Nav.Item>
+                    <Nav.Item>
+                        <NavLink
+                            exact='true' to="/panel/dashboard"
+                            className={({isActive}) => (isActive? baseClass+activeClass: baseClass)}
+                        >
+                            <i className="bi pe-none me-3 bi-speedometer" width="16" height="16"></i>
+                            Dashboard
+                        </NavLink>
+                    </Nav.Item>
+                    <Nav.Item>
+                        <NavLink 
+                            exact='true' to='/panel/history'
+                            className={({isActive}) => (isActive? baseClass+activeClass: baseClass)}
+                        >
+                            <i className="bi pe-none me-3 bi-clock-history" width="16" height="16"></i>
+                            History
+                        </NavLink>
+                    </Nav.Item>
+                    <Button onClick={() => setOpen(!open)} as={Nav.Item}
+                            className='collapsed align-items-center ps-4 bg-transparent text-start pb-0 border-0 text-glitter'
+                            aria-controls='collapse-body'
+                            aria-expanded={open}
+                            data-bs-toggle='collapse'
+                        >
+                            <i className="bi pe-none me-3 bi-bookmark-heart" width="16" height="16"></i>
+                            Favourites
+                            <i className={`float-end bi mt-0 pe-none ms-2 pb-2 ${open? 'bi-caret-down-fill':'bi-caret-right-fill'}`} width="16" height="16"></i>
+                    </Button>
+                    {/* I'm only doing this to test the collapsible sidebar item. will eventually change and have all favourite categories on the single favs pages */}
+                    <Collapse in={open}>
+                        <div id="collapse-body" className='bg-dark bg-opacity-75 w-75 ps-3 w-100 rounded mt-0'>
+                            <Nav.Item>
+                                <Nav.Link 
+                                    eventKey='hotels' 
+                                    className={`ps-3 text-glitter ${false ? 'bg-dark bg-opacity-75 border-end border-5 border-glitter':''}`}
+                                >
+                                    Hotel
+                                </Nav.Link>
+                            </Nav.Item>
+                            <Nav.Item>
+                                <Nav.Link 
+                                    eventKey='resorts' 
+                                    className={`ps-3 text-glitter ${false ? 'bg-dark bg-opacity-75 border-end border-5 border-glitter':''}`}
+                                >
+                                    Resort
+                                </Nav.Link>
+                            </Nav.Item>
+                            <Nav.Item>
+                                <Nav.Link 
+                                    eventKey='guest-houses' 
+                                    className={`ps-3 text-glitter ${false ? 'bg-dark bg-opacity-75 border-end border-5 border-glitter':''}`}
+                                >
+                                    Guest House
+                                </Nav.Link>
+                            </Nav.Item>
+                        </div>
+                    </Collapse>
+                </Nav>
+                <hr></hr>
+                <Dropdown as={ButtonGroup} drop='end'>
+                    <Button className="align-items-center ps-0 text-glitter" variant='none'>
+                        <img src={userpic} alt="" width="32" height="32" className="rounded-circle me-4"/>
+                        <strong>User</strong>
+                    </Button>
+                    <Dropdown.Toggle split variant='none' className='text-glitter'/>
+                    <Dropdown.Menu className="text-small shadow">
+                        <Dropdown.Item href="/booking"><i className="bi bi-plus-circle me-3"></i>New lodging</Dropdown.Item>
+                        <Dropdown.Item href="/"><i className="bi bi-gear me-3"></i>Settings</Dropdown.Item>
+                        <Dropdown.Item href="/profile"><i className="bi bi-person me-3"></i>Profile</Dropdown.Item>
+                        <Dropdown.Divider/>
+                        <Dropdown.Item href="/login"><i className="bi bi-box-arrow-left me-3"></i>Sign out</Dropdown.Item>
+                    </Dropdown.Menu>
+                </Dropdown>
+            </Col>
+            {/* Content */}
+            <Col  
+                className="bg-accent bg-opacity-25 px-0 overflow-y-scroll" 
+                id='dash-content' style={{height : '100dvh'}}
+            >
+                <InfoBar shadow={shadow}/>
+                <Outlet />
+            </Col>
+        </Row>
     );
 };
 

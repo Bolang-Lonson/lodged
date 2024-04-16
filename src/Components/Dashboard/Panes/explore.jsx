@@ -3,8 +3,8 @@ import { Row, Col, Button, Form, Card } from 'react-bootstrap';
 import React, {useState} from 'react';
 import pic from '../../../Assets/Images/landpic-min.jpg';
 
-const Explore = () => {
-
+const Explore = ({setShadow}) => {
+    setShadow(false);
     const [lookup, setLookup] = useState('');
     const [inFocus, setInFocus] = useState(false);
 
@@ -41,7 +41,7 @@ const Explore = () => {
         console.log(data);
     }
     return (
-        <>
+        <Col xs={11} className='mx-auto'>
             <Row className="mb-5">
                 <Col xs={12} md={10} lg={7} className='mx-auto'>
                     <p className="display-6 fw-bold">Find your stay</p>
@@ -160,7 +160,7 @@ const Explore = () => {
                     </div>
                 </Col>
             </Row>
-        </>
+        </Col>
     );
 };
 

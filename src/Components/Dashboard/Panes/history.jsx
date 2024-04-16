@@ -1,10 +1,12 @@
-// import {Tab} from 'react-bootstrap';
+import {Col} from 'react-bootstrap';
 
-const History = () => {
+const History = ({setShadow}) => {
+    setShadow(true);
+
     return (
-        <>
+        <Col xs={11} className='mx-auto'>
             <div className="row">
-            <div className="col-12">
+                <div className="col-12">
                     <div className="card rounded-4 bg-white border-0 shadow-sm">
                         <div className="card-body text-center p-5">
                             <h5 className="card-title fs-4">Upcoming Bookings <i className="ms-1 bi bi-journals"></i></h5>
@@ -55,7 +57,7 @@ const History = () => {
                     </div>
                 </div>
             </div>
-        </>
+        </Col>
     );
 };
 

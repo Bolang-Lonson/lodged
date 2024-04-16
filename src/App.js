@@ -1,4 +1,5 @@
 import './App.css';
+import { useState } from 'react';
 import 'bootstrap-icons/font/bootstrap-icons.css'
 import { Routes, Route } from 'react-router-dom';
 import Home from './Components/Home/home';
@@ -12,6 +13,9 @@ import History from './Components/Dashboard/Panes/history';
 import Explore from './Components/Dashboard/Panes/explore';
 
 const App = () => {
+  const [shadow, setShadow] = useState(true);
+  // boolean for whether the navbar in the panel has a shadow
+  // I depends on the particular pane in view
   return (
     <>
     <Routes>
@@ -20,10 +24,10 @@ const App = () => {
       <Route path='/contact' element={<Contact/>}/>
       <Route path='/login' element={<Login/>}/>
       <Route path='/signup' element={<Signup/>}/>
-      <Route path='/panel/' element={<Panel/>}>
-        <Route index element={Explore}/>
-        <Route path='./dashboard' element={Dashboard}/>
-        <Route path='./history' element={History}/>
+      <Route path='/panel/' element={<Panel shadow={shadow}/>}>
+        <Route index element={<Explore setShadow={setShadow}/>}/>
+        <Route path='/panel/dashboard' element={<Dashboard setShadow={setShadow}/>}/>
+        <Route path='/panel/history' element={<History setShadow={setShadow}/>}/>
       </Route>
     </Routes>
     </>
