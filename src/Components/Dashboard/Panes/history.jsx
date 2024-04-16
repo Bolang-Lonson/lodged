@@ -1,4 +1,4 @@
-import {Tab} from 'react-bootstrap';
+// import {Tab} from 'react-bootstrap';
 
 const History = () => {
     return (

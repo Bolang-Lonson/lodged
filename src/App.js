@@ -7,16 +7,24 @@ import Login from './Components/Login/login';
 import Signup from './Components/Signup/signup';
 import Panel from './Components/Dashboard/panel';
 import Contact from './Components/Contact/contact';
+import Dashboard from './Components/Dashboard/Panes/dashboard';
+import History from './Components/Dashboard/Panes/history';
+import Explore from './Components/Dashboard/Panes/explore';
+
 const App = () => {
   return (
     <>
     <Routes>
       <Route path='/' element={<Home/>}/>
       <Route path='/about' element={<About/>}/>
+      <Route path='/contact' element={<Contact/>}/>
       <Route path='/login' element={<Login/>}/>
       <Route path='/signup' element={<Signup/>}/>
-      <Route path='/panel' element={<Panel/>}/>
-      <Route path='/contact' element={<Contact/>}/>
+      <Route path='/panel/' element={<Panel/>}>
+        <Route index element={Explore}/>
+        <Route path='./dashboard' element={Dashboard}/>
+        <Route path='./history' element={History}/>
+      </Route>
     </Routes>
     </>
   );

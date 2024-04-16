@@ -6,6 +6,7 @@ import Dashboard from './Panes/dashboard';
 import History from './Panes/history';
 import Explore from './Panes/explore';
 import React, {useState} from 'react';
+import {Outlet} from 'react-router-dom';
 import {Tabs, Tab, Container, Row, Col, Dropdown, ButtonGroup, Button, Image,  Nav, Collapse, Badge} from 'react-bootstrap';
 import {useMediaQuery} from 'react-responsive';
 
@@ -91,7 +92,7 @@ const Panel = () => {
                             <Dropdown.Item href="/settings"><i className="bi bi-gear me-3"></i>Settings</Dropdown.Item>
                             <Dropdown.Item href="/profile"><i className="bi bi-person me-3"></i>Profile</Dropdown.Item>
                             <Dropdown.Divider/>
-                            <Dropdown.Item href="/signout"><i className="bi bi-box-arrow-left me-3"></i>Sign out</Dropdown.Item>
+                            <Dropdown.Item href="/login"><i className="bi bi-box-arrow-left me-3"></i>Sign out</Dropdown.Item>
                         </Dropdown.Menu>
                     </Dropdown>
                 </div>
@@ -106,7 +107,10 @@ const Panel = () => {
                 id='dash-page' style={{height : '100dvh'}}
                 >
                 <Collapse in={sideBar} dimension='width'>
-                <Col sm={2} className={`px-0 d-none ${sideBar? 'd-sm-flex':''} flex-column flex-shrink-0 pb-3 bg-charcoal`} id='dash-sidebar'>
+                <Col 
+                    sm={2} className={`px-0 d-none ${sideBar? 'd-sm-flex':''} h-100 flex-column flex-shrink-0 pb-3 bg-charcoal overflow-y-auto`} 
+                    id='dash-sidebar'
+                >
                     <div className="d-flex flex-row justify-content-evenly align-items-center text-center border-bottom border-gold mb-5">
                         <Button variant='outline-glitter' className="toggle-btn">
                             <i className="bi bi-grid-fill"></i>
@@ -199,7 +203,7 @@ const Panel = () => {
                             <Dropdown.Item href="/"><i className="bi bi-gear me-3"></i>Settings</Dropdown.Item>
                             <Dropdown.Item href="/profile"><i className="bi bi-person me-3"></i>Profile</Dropdown.Item>
                             <Dropdown.Divider/>
-                            <Dropdown.Item href="/signout"><i className="bi bi-box-arrow-left me-3"></i>Sign out</Dropdown.Item>
+                            <Dropdown.Item href="/login"><i className="bi bi-box-arrow-left me-3"></i>Sign out</Dropdown.Item>
                         </Dropdown.Menu>
                     </Dropdown>
                 </Col>
@@ -208,9 +212,10 @@ const Panel = () => {
                     className="bg-accent bg-opacity-25 px-0 overflow-y-scroll" 
                     id='dash-content' style={{height : '100dvh'}}
                 >
+                    <InfoBar/>
                     <Tab.Content className='m-0'>
+                        <Outlet />
                         <Tab.Pane eventKey='dashboard' className='m-0 p-0'>
-                            <InfoBar/>
                             <Col xs={11} className='mx-auto'>
                                 <Dashboard switchPane={setTabActive}/>
                             </Col>

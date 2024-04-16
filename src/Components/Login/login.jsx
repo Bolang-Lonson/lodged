@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import './login.css';
 import drklogo from '../../Assets/Images/other/logo-char.png';
 import Modal from '../Signup/modal';
+import { Alert } from 'react-bootstrap';
 
 
 const Login = () => {
@@ -97,6 +98,8 @@ const Login = () => {
 						</div>
 						<div className="row my-4 my-md-5 justify-content-center">
 							<div className="col-md-9 col-10">
+								{errors.email && <Alert variant='danger' onClose={() => setErrors({...errors, email: ''})} dismissible>{errors.email}</Alert>}
+								{errors.password && <Alert variant='danger' onClose={() => setErrors({...errors, password: ''})} dismissible>{errors.password}</Alert>}
 								<form onSubmit={handleSubmit}>
 									<div className='form-group mb-4'>
 										<label 
@@ -110,7 +113,6 @@ const Login = () => {
 											id="email" placeholder="e.g john@example.com"
 
 										/>
-										{errors.email && <div className="invalid-feedback">{errors.email}</div>}
 									</div>
 									<div className='form-group mb-4'>
 										<label htmlFor="pass" className="form-label border-start border-charcoal border-3 ps-2 mb-3">Password</label>
@@ -127,7 +129,6 @@ const Login = () => {
 												{	/* switching icon based on the password visibility */}
 											</span>
 										</div>
-										{errors.password && <div className='invalid-feedback'>{errors.password}</div>}
 									</div>	
 									<div className="form-check mb-3">
 										<label htmlFor="rem-check" className="form-check-label">Remember me</label>
