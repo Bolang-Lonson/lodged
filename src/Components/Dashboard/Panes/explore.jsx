@@ -1,6 +1,6 @@
 import landpic from '../../../Assets/Images/landpic-min.jpg';
 import { Row, Col, Button, Form, Card } from 'react-bootstrap';
-import React, {useLayoutEffect, useState} from 'react';
+import React, { useState} from 'react';
 import pic from '../../../Assets/Images/landpic-min.jpg';
 
 const HotelCard = ({image}) => {
@@ -25,20 +25,82 @@ const HotelCard = ({image}) => {
     )
 }
 
-const Explore = ({setShadow, images, loadCards}) => {
+const Explore = ({setShadow}) => {
     setShadow(false);
     const [lookup, setLookup] = useState('');
     const [inFocus, setInFocus] = useState(false);
-    const [hotelCards, setHotelCard] = useState();
+    const [images, setImages] = useState([]);
 
-    useLayoutEffect(() => {
-        let hotelCard = images.map((image, index) => {
-            return (
-                <HotelCard image={image} key={index}/>
-            )
-        })
-        setHotelCard(hotelCard);
-    },[images]);
+    const apiToken = 'T1RLAQJKaJzgXYcnTcrc09TS1Ech94x/lqdPDXSEcy/OezER6RB1jwrYpQOpAEtP2FEl2CRNAADggIUY87PkIpv4ZDhaTCjEz3LfVTaIJKfNIBQpZh4+Z16zF0HyhiNA/uAvKW4UE/xrvaPGahAvS0l8UZdg8GrHhYJti9FK2iYdJdNgPS5R6ru8ch8sQd6iQIC+SR0H3i191z0nql7oSeilodj4qwZUdWy7insgMgd5XKjvgXOt/uxkiuQAyxdwrbJs69xYXo3fGpXWL3oXEANeYiBI14xdm5W570ErFIQtv+cOGVtqT7wXVpvmlvb4o8eMqq6Pzsoc7VdJtU5ttCnXJg1F0DBpvLOoThV8mE/r9F3LM1MVAGA*';
+
+    async function fetchImage(category) {
+        return await fetch('https://api.cert.platform.sabre.com/v1.0.0/shop/hotels/media', {
+            method: "post",
+            headers: {
+                "accept": "application/json",
+                "Content-Type": "application/json",
+                "authorization": `Bearer ${apiToken}`
+            },
+            body: JSON.stringify({
+                "GetHotelMediaRQ": {
+                    "HotelRefs": {
+                        "HotelRef": [
+                        {
+                            "HotelCode": "426",
+                            "CodeContext": "Sabre",
+                            "ImageRef": {
+                                "MaxImages": "6",
+                                "Images": {
+                                    "Image": [
+                                    {
+                                        "Type": "ORIGINAL"
+                                    }
+                                    ]
+                                },
+                                "Categories": {
+                                    "Category": [
+                                    {
+                                        "Code": category
+                                    }
+                                    ]
+                                },
+                                "AdditionalInfo": {
+                                    "Info": [
+                                    {
+                                        "Type": "CAPTION",
+                                        "content": true
+                                    }
+                                    ]
+                                },
+                                "Languages": {
+                                    "Language": [
+                                    {
+                                        "Code": "EN"
+                                    }
+                                    ]
+                                }
+                            }
+                        }
+                        ]
+                    }
+                }
+            })
+        }).then(resp => resp.json())
+        .then(data => {return {
+            title: data.GetHotelMediaRS.HotelMediaInfos.HotelMediaInfo[0].HotelInfo.Marketer,
+            url: data.GetHotelMediaRS.HotelMediaInfos.HotelMediaInfo[0].ImageItems.ImageItem[0].Images.Image[0].Url,
+            caption: data.GetHotelMediaRS.HotelMediaInfos.HotelMediaInfo[0].ImageItems.ImageItem[0].AdditionalInfo.Info[0].Description.Text[0].content
+        }})
+        // debugging and testing response content
+    };
+
+    const loadCards = () => {
+        let imgs = [];
+        [2, 3, 4, 5].forEach(categ => fetchImage(categ).then(data => imgs.push(data)));
+        setImages(imgs);
+        console.log(imgs, images);
+    }
+
     return (
         <Col xs={11} className='mx-auto'>
             <Row className="mb-5">
@@ -75,7 +137,11 @@ const Explore = ({setShadow, images, loadCards}) => {
                             <Card.Text><small>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus porro, voluptatibus repellat tempore libero quae illum</small></Card.Text>
                         </Card.ImgOverlay>
                     </Card>
-                    {hotelCards && hotelCards}
+                    {images && images.map((image, index) => {
+                        return (
+                            <HotelCard image={image} key={index}/>
+                        )
+                    })}
                     <div className="card border-0 rounded-4 shadow-sm">
                         <div className="card-header text-capitalize bg-white rounded-4 rounded-bottom-0 p-3">
                         </div>

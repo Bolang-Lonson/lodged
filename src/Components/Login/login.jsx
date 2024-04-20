@@ -62,7 +62,7 @@ const Login = () => {
 			// practicing promises and asynchronous programming
 			if (isLogging) {
 				await simulateLogin().then(() => setIsLogging(false));
-				navigate('/panel');
+				navigate('/panel/');
 			}
 		}
 
