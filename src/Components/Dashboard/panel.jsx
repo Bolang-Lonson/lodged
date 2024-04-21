@@ -29,7 +29,14 @@ const Panel = ({shadow}) => {
         }
 
         return (
-            <Container fluid className={`justify-content-between d-flex align-items-center ${shadow? 'shadow-sm':''} mx-0 mb-4 px-3 px-lg-5`}>
+            <Container fluid className={`justify-content-between d-flex align-items-center ${shadow? 'shadow-sm':''} mx-0 mb-4 px-3 px-lg-5 bg-accent-light`}
+                style={{
+                    position: "sticky",
+                    top: '0',
+                    left: '0',
+                    zIndex: "1"
+                }}
+            >
                 <Image 
                     src={darkLogo} className='mt-2' 
                     style={{height: '65px'}}
@@ -101,7 +108,7 @@ const Panel = ({shadow}) => {
             >
                 {/* SideBar */}
             <Col id='dash-sidebar'
-                sm={2} className={`px-0 d-none ${sideBar? 'd-sm-flex':''} h-100 flex-column flex-shrink-0 pb-3 bg-charcoal overflow-y-auto`} 
+                sm={2} className={`px-0 d-none ${sideBar? 'd-sm-flex':''} h-100 flex-column flex-shrink-0 pb-3 bg-charcoal overflow-y-auto`}
             >
                 <div className="d-flex flex-row justify-content-evenly align-items-center text-center border-bottom border-gold mb-5">
                     <Button variant='outline-glitter' className="toggle-btn">
@@ -181,8 +188,7 @@ const Panel = ({shadow}) => {
                         </div>
                     </Collapse>
                 </Nav>
-                <hr></hr>
-                <Dropdown as={ButtonGroup} drop='end'>
+                <Dropdown as={ButtonGroup} drop='up'>
                     <Button className="align-items-center ps-0 text-glitter" variant='none'>
                         <img src={userpic} alt="" width="32" height="32" className="rounded-circle me-4"/>
                         <strong>User</strong>
@@ -199,7 +205,7 @@ const Panel = ({shadow}) => {
             </Col>
             {/* Content */}
             <Col  
-                className="bg-accent bg-opacity-25 px-0 overflow-y-scroll" 
+                className="px-0 overflow-y-scroll bg-accent bg-opacity-25" 
                 id='dash-content' style={{height : '100dvh'}}
             >
                 <InfoBar shadow={shadow}/>

@@ -41,12 +41,12 @@ li .hover-slide:hover {
 }
 
 li .hover-slide:hover::after {
-    width: 100%;
+    width: 75%;
 }
 
 .navbar-nav li .current::after {
     content: '';
-    height: 3px; width: 100%;
+    height: 3px; width: 75%;
     background: #b68d40;
     position: absolute;
     left: 0; bottom: -1px;
