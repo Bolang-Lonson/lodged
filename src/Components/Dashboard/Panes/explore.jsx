@@ -1,5 +1,5 @@
 import landpic from '../../../Assets/Images/landpic-min.jpg';
-import {Collapse, Row, Col, Button, Form, Card } from 'react-bootstrap';
+import {Collapse, Row, Col, Button, Form, Card, OverlayTrigger, Tooltip } from 'react-bootstrap';
 import React, { useEffect, useState} from 'react';
 import pic from '../../../Assets/Images/landpic-min.jpg';
 
@@ -31,6 +31,7 @@ const Explore = ({setShadow}) => {
     const [inFocus, setInFocus] = useState(false);
     const [images, setImages] = useState([]);
     const [filter, openFilter] = useState(false);
+    const [range, setRange] = useState(20);     // Value from 0 to 100 representing the percentage
 
     const apiToken = 'T1RLAQJKaJzgXYcnTcrc09TS1Ech94x/lqdPDXSEcy/OezER6RB1jwrYpQOpAEtP2FEl2CRNAADggIUY87PkIpv4ZDhaTCjEz3LfVTaIJKfNIBQpZh4+Z16zF0HyhiNA/uAvKW4UE/xrvaPGahAvS0l8UZdg8GrHhYJti9FK2iYdJdNgPS5R6ru8ch8sQd6iQIC+SR0H3i191z0nql7oSeilodj4qwZUdWy7insgMgd5XKjvgXOt/uxkiuQAyxdwrbJs69xYXo3fGpXWL3oXEANeYiBI14xdm5W570ErFIQtv+cOGVtqT7wXVpvmlvb4o8eMqq6Pzsoc7VdJtU5ttCnXJg1F0DBpvLOoThV8mE/r9F3LM1MVAGA*';
 
@@ -110,41 +111,53 @@ const Explore = ({setShadow}) => {
         if(lookup){loadCards()};
     }, [lookup]);
 
+
     return (
         <Col xs={11} className='mx-auto'>
             <Row className="mb-5">
                 <Col xs={12} md={10} lg={7} className='mx-auto'>
                     <p className="display-6 fw-bold">Find your stay</p>
-                    <Col xs={12} md={9} lg={12} className='d-flex flex-row gap-3 mb-2 mx-auto'>
+                    <Col xs={12} md={9} lg={12} className='d-flex flex-row gap-3 mb-3 mx-auto'>
                         <Form.Control
                             type='search' value={lookup} onChange={(e) => setLookup(e.target.value)}
                             size='lg' className={`rounded-4 fs-6 focus-ring focus-ring-success ${inFocus? 'border-0':''}`}
                             placeholder='Search' onFocus={() => setInFocus(true)} onBlur={() => setInFocus(false)}
                         />
+                        <OverlayTrigger overlay={<Tooltip>Filter Search</Tooltip>} placement='right'>
                         <Button 
-                            onClick={() => openFilter(!filter)} title='Filter'
-                            variant='success' className='tt px-3 rounded-4 focus-ring focus-ring-success'
+                            onClick={() => openFilter(!filter)}
+                            variant='success' className='px-3 rounded-4'
                         >
                             <i className="bi bi-sliders lead"></i>
                         </Button>
                         {/* Filter for search */}
-                        
+                        </OverlayTrigger>
                     </Col>
                     <Collapse in={filter}>
                         <div id="filter-body">
-                            <Card body className='border-1 border-success-subtle p-1 d-flex flex-row flex-wrap align-items-center justify-content-around'>
-                                <Form.Check className=' d-inline-block'>
-                                    <Form.Check.Input isValid/>
-                                    <Form.Check.Label>Hotels</Form.Check.Label>
-                                </Form.Check>
-                                <Form.Check className=' d-inline-block'>
-                                    <Form.Check.Input isValid/>
-                                    <Form.Check.Label>Resorts</Form.Check.Label>
-                                </Form.Check>
+                            <Card className='border-1 border-success-subtle p-0'>
+                                <Card.Body className=' p-0 d-flex flex-row flex-wrap align-items-center justify-content-evenly'>
+                                    <Form.Check className=' d-inline-block'>
+                                        <Form.Check.Input isValid/>
+                                        <Form.Check.Label className='text-black'>Hotels</Form.Check.Label>
+                                    </Form.Check>
+                                    <Form.Check className=' d-inline-block'>
+                                        <Form.Check.Input isValid/>
+                                        <Form.Check.Label className='text-black'>Resorts</Form.Check.Label>
+                                    </Form.Check>
+                                    <Form.Check className=' d-inline-block'>
+                                        <Form.Check.Input isValid/>
+                                        <Form.Check.Label className='text-black'>Guest-House</Form.Check.Label>
+                                    </Form.Check>
+                                    <Form.Group className='text-center'>
+                                        <Form.Label className='m-0'>Range {Math.round((range/100) * 50)}km</Form.Label>
+                                        <Form.Range value={range} onChange={(e) => setRange(e.target.value)} className='w-75'/>
+                                    </Form.Group>
+                                </Card.Body>
                             </Card>
                         </div>
                     </Collapse>
-                    <h5 className='my-3'>Nearby Lodging <i className="ms-2 bi bi-geo"></i></h5>
+                    <h5 className='my-5'>Nearby Lodging <i className="ms-2 bi bi-geo"></i></h5>
                     <Card bg='charcoal' className='rounded-4 border-0 my-4'>
                         <Card.Img src={pic} alt='Hotel image' className='rounded-4 opacity-75' style={{ maxHeight: '35rem'}}/>
                         <Card.ImgOverlay className='align-content-end text-glitter'>
