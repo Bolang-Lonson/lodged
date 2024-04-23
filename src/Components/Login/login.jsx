@@ -140,7 +140,7 @@ const Login = () => {
 									</div>	
 									<div className="form-check mb-3">
 										<label htmlFor="rem-check" className="form-check-label">Remember me</label>
-										<input type="checkbox" className="form-check-input" id="rem-check"/>
+										<input type="checkbox" className="form-check-input focus-ring focus-ring-light" id="rem-check"/>
 									</div>
 									<button className="btn btn-charcoal w-100 mb-4 rounded-pill" type="submit">{isLogging? 'Signing in...':'Login'}</button>
 									<a href="#pass-recovery" role='button' 

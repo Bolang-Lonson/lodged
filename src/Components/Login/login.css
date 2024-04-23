@@ -65,5 +65,9 @@ color: #555;
     overflow: auto;
 }
 #rem-check:checked {
-    background-color: black;
+    background-color: var(--bs-success);
+    border: 0;
+}
+#rem-check:focus {
+    border-color: var(--bs-border-color);
 }
