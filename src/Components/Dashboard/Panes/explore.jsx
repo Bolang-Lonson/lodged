@@ -5,7 +5,7 @@ import pic from '../../../Assets/Images/landpic-min.jpg';
 
 const HotelCard = ({image}) => {
     return (
-        <Card bg='charcoal' className='rounded-4 border-0 my-4'>
+        <Card bg='charcoal' className='rounded-4 border-0 my-5'>
             <Card.Img src={image.url} alt='Hotel image' className='rounded-4 opacity-75' style={{ maxHeight: '35rem'}}/>
             <Card.ImgOverlay className='align-content-end text-glitter'>
                 <Card.Title>
@@ -151,14 +151,17 @@ const Explore = ({setShadow}) => {
                                     </Form.Check>
                                     <Form.Group className='text-center'>
                                         <Form.Label className='m-0'>Range {Math.round((range/100) * 50)}km</Form.Label>
-                                        <Form.Range value={range} onChange={(e) => setRange(e.target.value)} className='w-75'/>
+                                        <Form.Range 
+                                            value={range} onChange={(e) => setRange(e.target.value)} 
+                                            className='w-75' style={{"$form-range-track-height": "0.2rem"}}
+                                        />
                                     </Form.Group>
                                 </Card.Body>
                             </Card>
                         </div>
                     </Collapse>
                     <h5 className='my-5'>Nearby Lodging <i className="ms-2 bi bi-geo"></i></h5>
-                    <Card bg='charcoal' className='rounded-4 border-0 my-4'>
+                    <Card bg='charcoal' className='rounded-4 border-0 my-5'>
                         <Card.Img src={pic} alt='Hotel image' className='rounded-4 opacity-75' style={{ maxHeight: '35rem'}}/>
                         <Card.ImgOverlay className='align-content-end text-glitter'>
                             <Card.Title>

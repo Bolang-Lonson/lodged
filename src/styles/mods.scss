@@ -1,5 +1,7 @@
 // custom variables
-
+$form-range-track-height:         .2rem;
+$form-range-thumb-width:                   .7rem;
+$form-range-thumb-height:                  $form-range-thumb-width;
 // import the functions & variables
 @import "../../node_modules/bootstrap/scss/functions";
 @import "../../node_modules/bootstrap/scss/variables";

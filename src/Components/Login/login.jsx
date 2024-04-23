@@ -87,17 +87,24 @@ const Login = () => {
 		setFormData({...formData, recoveryEmail: ''})
 	}
 
+	const [inFocus, setInFocus] = useState({
+		email: false,
+		password: false
+	});
+
 	return (
 		<div className="p-0 m-0" id="background-art">
 			<div className="row justify-content-end align-items-center p-0 m-0" id="form-section">
-				<div className="col-md-6 col-lg-4 bg-light h-100 position-relative  shadow px-0 m-0" id="form-box">
+				{/* Form box placed on one side of the page */}
+				<div className="col-md-6 col-lg-6 bg-light h-100 position-relative shadow px-0 m-0" id="form-box">
 					<a href='/' className=' position-absolute top-0 start-0 m-2 text-black fw-semibold btn btn-light'><span className="bi bi-arrow-left-short lead mb-0"> Home</span></a>
 					<div className="container pt-5">
 						<div className="text-center my-3">
 							<img src={drklogo} alt="logo" className="img-fluid"/>
 						</div>
+						{/* Form itself */}
 						<div className="row my-4 my-md-5 justify-content-center">
-							<div className="col-md-9 col-10">
+							<div className="col-md-6 col-10">
 								{errors.email && <Alert variant='danger' onClose={() => setErrors({...errors, email: ''})} dismissible>{errors.email}</Alert>}
 								{errors.password && <Alert variant='danger' onClose={() => setErrors({...errors, password: ''})} dismissible>{errors.password}</Alert>}
 								<form onSubmit={handleSubmit}>
@@ -107,24 +114,25 @@ const Login = () => {
 											className="form-label border-start border-charcoal border-3 ps-2 mb-3"
 										>Email Address</label>
 										<input 
-											type="email" className={`form-control ${errors.email ? 'is-invalid' : ''} rounded-pill`}
+											type="email" 
+											className={`form-control ${errors.email ? 'is-invalid' : ''} rounded-pill border-2 focus-ring ${inFocus.email? 'focus-ring-light border-success':''}`}
 											aria-describedby='emailHelp' value={formData.email}
 											onChange={(e) => setFormData({...formData, email: e.target.value})}
 											id="email" placeholder="e.g john@example.com"
-
+											onFocus={() => setInFocus({...inFocus, email: true})} onBlur={() => setInFocus({...inFocus, email: false})}
 										/>
 									</div>
 									<div className='form-group mb-4'>
 										<label htmlFor="pass" className="form-label border-start border-charcoal border-3 ps-2 mb-3">Password</label>
-										<div className={`input-group ${errors.password? 'is-invalid': ''}`}>
-											<input type={passVisible? 'text': "password"} className={`form-control rounded-start-pill`} 
-											id="pass" placeholder='********'
-											value={formData.password}
-											onChange={
-												(e) => setFormData({ ...formData, password: e.target.value })
-											}
+										<div className={`input-group ${errors.password? 'is-invalid': ''} border border-2 rounded-pill ${inFocus.password? 'border-success': ''}`}>
+											<input 
+												type={passVisible? 'text': "password"} value={formData.password}
+												className={`form-control rounded-start-pill border-0 focus-ring focus-ring-light`} 
+												id="pass" placeholder='********'
+												onChange={(e) => setFormData({ ...formData, password: e.target.value })}
+												onFocus={() => setInFocus({...inFocus, password: true})} onBlur={() => setInFocus({...inFocus, password: false})}
 											/>
-											<span className="input-group-text rounded-end-pill" onClick={toggleVisible}>
+											<span className="input-group-text rounded-end-pill bg-white border-0" onClick={toggleVisible}>
 												<i className={"bi text-muted" + (passVisible? ' bi-eye-fill':' bi-eye-slash-fill')}></i>
 												{	/* switching icon based on the password visibility */}
 											</span>
