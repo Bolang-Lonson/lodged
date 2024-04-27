@@ -97,7 +97,7 @@ const Login = () => {
 			<div className="row justify-content-end align-items-center p-0 m-0" id="form-section">
 				{/* Form box placed on one side of the page */}
 				<div className="col-md-6 col-lg-6 bg-light h-100 position-relative shadow px-0 m-0" id="form-box">
-					<a href='/' className=' position-absolute top-0 start-0 m-2 text-black fw-semibold btn btn-light'><span className="bi bi-arrow-left-short lead mb-0"> Home</span></a>
+					<a href='/' className=' position-absolute top-0 start-0 m-2 text-primary btn btn-light'><span className="bi bi-chevron-left mb-0"></span> Home</a>
 					<div className="container pt-5">
 						<div className="text-center my-3">
 							<img src={drklogo} alt="logo" className="img-fluid"/>
@@ -105,8 +105,8 @@ const Login = () => {
 						{/* Form itself */}
 						<div className="row my-4 my-md-5 justify-content-center">
 							<div className="col-md-6 col-10">
-								{errors.email && <Alert variant='danger' onClose={() => setErrors({...errors, email: ''})} dismissible>{errors.email}</Alert>}
-								{errors.password && <Alert variant='danger' onClose={() => setErrors({...errors, password: ''})} dismissible>{errors.password}</Alert>}
+								{errors.email && <Alert variant='danger' className='py-1' onClose={() => setErrors({...errors, email: ''})}>{errors.email}</Alert>}
+								{errors.password && <Alert variant='danger' className='py-1' onClose={() => setErrors({...errors, password: ''})}>{errors.password}</Alert>}
 								<form onSubmit={handleSubmit}>
 									<div className='form-group mb-4'>
 										<label 

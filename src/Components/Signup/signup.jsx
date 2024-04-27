@@ -75,14 +75,14 @@ const Signup = () => {
   return (
     <div className='p-0 m-0' id="background-art">
 		<div className="row justify-content-end align-items-center p-0 m-0" id="form-section">
-			<div className="col-md-6 col-lg-4 bg-light h-100 position-relative  shadow px-0 m-0" id="form-box">
-				<a href='/' className=' position-absolute top-0 start-0 m-2 text-black fw-semibold btn btn-light'><span className="bi bi-arrow-left-short lead mb-0"> Home</span></a>
+			<div className="col-md-6 col-lg-6 bg-light h-100 position-relative  shadow px-0 m-0" id="form-box">
+				<a href='/' className=' position-absolute top-0 start-0 m-2 text-primary btn btn-light'><span className="bi bi-chevron-left mb-0"> Home</span></a>
 				<div className="container pt-5">
 					<div className="text-center my-3">
 						<img src={drklogo} alt="logo" className="img-fluid" />
 					</div>
 					<div className="row my-4 my-md-5 justify-content-center">
-						<div className="col-md-9 col-10">
+						<div className="col-md-6 col-10">
 							<form onSubmit={handleSubmit}>
 								<div className='form-floating my-2 border-start border-charcoal border-3'> 
 									<input
