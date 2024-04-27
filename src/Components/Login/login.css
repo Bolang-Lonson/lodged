@@ -24,6 +24,10 @@
 .number {
     width: 75%;
 }
+
+.form-control:focus {
+    --bs-focus-ring-color: rgba(0,0,0, .0);
+}
   
 .form-select {
     border: 1px solid #ccc;

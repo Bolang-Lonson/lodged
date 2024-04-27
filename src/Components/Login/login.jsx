@@ -127,7 +127,7 @@ const Login = () => {
 										<div className={`input-group ${errors.password? 'is-invalid': ''} border border-2 rounded-pill ${inFocus.password? 'border-success': ''}`}>
 											<input 
 												type={passVisible? 'text': "password"} value={formData.password}
-												className={`form-control rounded-start-pill border-0 focus-ring focus-ring-light`} 
+												className={`form-control rounded-start-pill border-0 focus-ring`} 
 												id="pass" placeholder='********'
 												onChange={(e) => setFormData({ ...formData, password: e.target.value })}
 												onFocus={() => setInFocus({...inFocus, password: true})} onBlur={() => setInFocus({...inFocus, password: false})}
