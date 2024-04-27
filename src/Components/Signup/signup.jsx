@@ -76,18 +76,18 @@ const Signup = () => {
     <div className='p-0 m-0' id="background-art">
 		<div className="row justify-content-end align-items-center p-0 m-0" id="form-section">
 			<div className="col-md-6 col-lg-6 bg-light h-100 position-relative  shadow px-0 m-0" id="form-box">
-				<a href='/' className=' position-absolute top-0 start-0 m-2 text-primary btn btn-light'><span className="bi bi-chevron-left mb-0"> Home</span></a>
+				<a href='/' className=' position-absolute top-0 start-0 m-3 text-primary text-decoration-none'><span className="bi bi-chevron-left mb-0"> Home</span></a>
 				<div className="container pt-5">
 					<div className="text-center my-3">
 						<img src={drklogo} alt="logo" className="img-fluid" />
 					</div>
 					<div className="row my-4 my-md-5 justify-content-center">
 						<div className="col-md-6 col-10">
-							<form onSubmit={handleSubmit}>
+							<form onSubmit={handleSubmit} id='signup-form'>
 								<div className='form-floating my-2 border-start border-charcoal border-3'> 
 									<input
 										type='text'
-										className={`form-control rounded-0 ${errors.name ? 'is-invalid' : ''}`}
+										className={`form-control border-2 border-start-0 rounded-0 focus-ring ${errors.name ? 'is-invalid' : ''}`}
 										id='name'
 										name='name'
 										placeholder='Enter your name'
@@ -119,9 +119,8 @@ const Signup = () => {
 								<div className='form-floating my-2 border-start border-charcoal border-3'>
 									<input
 										type='email'
-										className={`form-control rounded-0 ${errors.email ? 'is-invalid' : ''}`}
-										id='email'
-										name='email'
+										className={`form-control border-2 border-start-0 rounded-0 focus-ring ${errors.email ? 'is-invalid' : ''}`}
+										id='signup-email' name='email'
 										placeholder='Enter your email'
 										value={formData.email}
 										onChange={(e) =>
@@ -151,7 +150,7 @@ const Signup = () => {
 									<select
 										id='country-selector'
 										name='country'
-										className={`form-select rounded-0 pt-2 ${
+										className={`form-select rounded-0 pt-2 border-2 focus-ring ${
 										errors.country ? 'is-invalid' : ''
 										}`}
 										value={formData.country}
@@ -172,7 +171,7 @@ const Signup = () => {
 									<div className='form-floating number'>
 										<input
 										type='tel'
-										className={`form-control rounded-0 ${errors.phone ? 'is-invalid' : ''}`}
+										className={`form-control border-2 rounded-0 focus-ring ${errors.phone ? 'is-invalid' : ''}`}
 										id='phone'
 										name='phone'
 										placeholder='Enter your telephone number'
@@ -203,7 +202,7 @@ const Signup = () => {
 								</div>
 								<div className='form-floating my-2 border-start border-charcoal border-3'>
 									<input type='password'
-										className={`form-control rounded-0 ${
+										className={`form-control border-2 border-start-0 rounded-0 focus-ring ${
 										errors.password ? 'is-invalid' : ''
 										}`}
 										id='password'
@@ -236,7 +235,7 @@ const Signup = () => {
 								<div className='form-floating my-2 border-start border-charcoal border-3'>
 									<input
 										type='password'
-										className={`form-control rounded-0 ${
+										className={`form-control border-2 border-start-0 rounded-0 focus-ring ${
 										errors.confirmPassword ? 'is-invalid' : ''
 										}`}
 										id='confirmPassword'
@@ -271,7 +270,7 @@ const Signup = () => {
 								<div className='form-check my-4'>
 									<input
 										type='checkbox'
-										className={`form-check-input ${
+										className={`form-check-input focus-ring ${
 										errors.terms ? 'is-invalid' : ''
 										}`}
 										id='rem-check'
@@ -281,6 +280,7 @@ const Signup = () => {
 									<label className='form-check-label' htmlFor='rem-check'>
 										I have read and agree to the{' '}
 										<a href='#terms-n-coditions'
+											className=' text-decoration-none'
 											role='button'
 											aria-controls='terms-n-conditions'
 											data-bs-target='#terms-n-conditions'
@@ -298,7 +298,12 @@ const Signup = () => {
 								>
 								Create Account
 								</button>
-								<div className="mt-3">Already have an account? <a href="/login">Login</a></div>
+								<div className="mt-3">
+									Already have an account? 
+									<a href="/login" 
+										className=' text-decoration-none'
+									> Login</a>
+								</div>
 							</form>
 						</div>
 					</div>

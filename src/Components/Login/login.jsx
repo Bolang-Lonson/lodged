@@ -97,7 +97,7 @@ const Login = () => {
 			<div className="row justify-content-end align-items-center p-0 m-0" id="form-section">
 				{/* Form box placed on one side of the page */}
 				<div className="col-md-6 col-lg-6 bg-light h-100 position-relative shadow px-0 m-0" id="form-box">
-					<a href='/' className=' position-absolute top-0 start-0 m-2 text-primary btn btn-light'><span className="bi bi-chevron-left mb-0"></span> Home</a>
+					<a href='/' className=' position-absolute top-0 start-0 m-3 text-primary text-decoration-none'><span className="bi bi-chevron-left mb-0"></span> Home</a>
 					<div className="container pt-5">
 						<div className="text-center my-3">
 							<img src={drklogo} alt="logo" className="img-fluid"/>
@@ -115,7 +115,7 @@ const Login = () => {
 										>Email Address</label>
 										<input 
 											type="email" 
-											className={`form-control ${errors.email ? 'is-invalid' : ''} rounded-pill border-2 focus-ring ${inFocus.email? 'focus-ring-light border-success':''}`}
+											className={`form-control ${errors.email ? 'is-invalid' : ''} rounded-pill border-2 focus-ring`}
 											aria-describedby='emailHelp' value={formData.email}
 											onChange={(e) => setFormData({...formData, email: e.target.value})}
 											id="email" placeholder="e.g john@example.com"
@@ -143,13 +143,14 @@ const Login = () => {
 										<input type="checkbox" className="form-check-input focus-ring focus-ring-light" id="rem-check"/>
 									</div>
 									<button className="btn btn-charcoal w-100 mb-4 rounded-pill" type="submit">{isLogging? 'Signing in...':'Login'}</button>
-									<a href="#pass-recovery" role='button' 
+									<a href="#pass-recovery" role='button'
+										className=' text-decoration-none'
 										aria-controls='pass-recovery'
 										data-bs-toggle='modal'
 									>
 										Forgot your password?
 									</a>
-									<div className="mt-3">Don't have an account? <a href="/signup">Signup</a></div>
+									<div className="mt-3">Don't have an account? <a href="/signup" className=' text-decoration-none'>Signup</a></div>
 								</form>
 							</div>
 						</div>

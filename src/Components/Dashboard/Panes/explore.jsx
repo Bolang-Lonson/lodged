@@ -186,7 +186,7 @@ const Explore = ({setShadow}) => {
                     <div className="card border-0 rounded-4 shadow-sm">
                         <div className="card-header text-capitalize bg-white rounded-4 rounded-bottom-0 p-3">
                         </div>
-                        <div className="card-body">
+                        <div className="card-body pb-0">
                             <div className="list-group">
                                 <div className="list-group-item border-0 border-bottom">
                                     <h5 className="mb-1"><i className="bi bi-buildings-fill me-3"></i>
@@ -268,7 +268,7 @@ const Explore = ({setShadow}) => {
                                 </div>
                             </div>
                         </div>
-                        <div className="align-items-center p-3 pe-5"><a href="/lodgings" className="lead float-end">See more &gt;&gt;</a></div>
+                        <div className="align-items-center py-2 pe-5 text-end"><a href="/lodgings" className="lead float-end text-decoration-none">See more...</a></div>
                     </div>
                 </Col>
             </Row>

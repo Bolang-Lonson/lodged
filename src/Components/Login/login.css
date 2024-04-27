@@ -25,8 +25,22 @@
     width: 75%;
 }
 
-.form-control:focus {
-    --bs-focus-ring-color: rgba(0,0,0, .0);
+#email:focus {
+    /* since bootstrap forces a focus ring i had to take it off manually */
+    --bs-focus-ring-color: rgba(0,0,0, .0) !important;
+    border-color: var(--bs-success) !important;
+}
+
+#signup-form input:focus {
+    --bs-focus-ring-color: rgba(0,0,0, .0) !important;
+    border-color: var(--bs-success) !important;
+}
+#signup-form select:focus {
+    --bs-focus-ring-color: rgba(0,0,0, .0) !important;
+    border-color: var(--bs-success) !important;
+}
+#pass:focus {
+    --bs-focus-ring-color: rgba(0,0,0, .0) !important;
 }
   
 .form-select {
