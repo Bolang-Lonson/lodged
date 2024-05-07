@@ -142,7 +142,12 @@ const Login = () => {
 										<label htmlFor="rem-check" className="form-check-label">Remember me</label>
 										<input type="checkbox" className="form-check-input focus-ring focus-ring-light" id="rem-check"/>
 									</div>
-									<button className="btn btn-charcoal w-100 mb-4 rounded-pill" type="submit">{isLogging? 'Signing in...':'Login'}</button>
+									<button 
+										className="btn btn-charcoal w-100 mb-4 rounded-pill" type="submit"
+										disabled={isLogging}
+									>
+										{isLogging? 'Signing in...':'Login'}
+									</button>
 									<a href="#pass-recovery" role='button'
 										className=' text-decoration-none'
 										aria-controls='pass-recovery'
