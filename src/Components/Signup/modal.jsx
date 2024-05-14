@@ -14,7 +14,7 @@ const Modal = (props) => {
 				<div className="modal-content bg-light rounded-4">
 					<div className="modal-header border-bottom-0">
 						<h4 className="modal-title w-100 d-block text-center" id='modalLabel'>{props.title}</h4>
-						<button className="btn-close bg-body-secondary rounded-pill" type='button' data-bs-dismiss='modal' aria-label='close'></button>
+						<button className="btn-close bg-body-secondary rounded-pill me-0" type='button' data-bs-dismiss='modal' aria-label='close'></button>
 					</div>
 					<div className="modal-body">
 						{props.body()}
