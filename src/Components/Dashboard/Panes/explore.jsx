@@ -1,5 +1,5 @@
 import landpic from '../../../Assets/Images/landpic-min.jpg';
-import {Collapse, Row, Col, Button, Form, Card, OverlayTrigger, Tooltip } from 'react-bootstrap';
+import {Collapse, Row, Col, Button, Form, Card, OverlayTrigger, Tooltip, Offcanvas } from 'react-bootstrap';
 import React, { useEffect, useState} from 'react';
 import pic from '../../../Assets/Images/landpic-min.jpg';
 
@@ -133,7 +133,33 @@ const Explore = ({setShadow}) => {
                         {/* Filter for search */}
                         </OverlayTrigger>
                     </Col>
-                    <Collapse in={filter}>
+                    <Offcanvas show={filter} onHide={() => openFilter(false)} scroll='true' placement='bottom' className='w-50 d-block mx-auto rounded-top-4 ps-4'>
+                        <Offcanvas.Header closeButton className='pe-3'>
+                            <Offcanvas.Title>Search Filter</Offcanvas.Title>
+                        </Offcanvas.Header>
+                        <Offcanvas.Body>
+                            <Form.Check>
+                                <Form.Check.Input isValid/>
+                                <Form.Check.Label className='text-black'>Hotels</Form.Check.Label>
+                            </Form.Check>
+                            <Form.Check>
+                                <Form.Check.Input isValid/>
+                                <Form.Check.Label className='text-black'>Resorts</Form.Check.Label>
+                            </Form.Check>
+                            <Form.Check>
+                                <Form.Check.Input isValid/>
+                                <Form.Check.Label className='text-black'>Guest-House</Form.Check.Label>
+                            </Form.Check>
+                            <Form.Group className='text-center'>
+                                <Form.Label className='m-0'>Range {Math.round((range/100) * 50)}km</Form.Label>
+                                <Form.Range 
+                                    value={range} onChange={(e) => setRange(e.target.value)} 
+                                    className='w-75 d-block mx-auto' style={{"$form-range-track-height": "0.2rem"}}
+                                />
+                            </Form.Group>
+                        </Offcanvas.Body>
+                    </Offcanvas>
+                    {/* <Collapse in={filter}>
                         <div id="filter-body">
                             <Card className='border-1 border-success-subtle p-0'>
                                 <Card.Body className=' p-0 d-flex flex-row flex-wrap align-items-center justify-content-evenly'>
@@ -159,7 +185,7 @@ const Explore = ({setShadow}) => {
                                 </Card.Body>
                             </Card>
                         </div>
-                    </Collapse>
+                    </Collapse> */}
                     <h5 className='my-5'>Nearby Lodging <i className="ms-2 bi bi-geo"></i></h5>
                     <Card bg='charcoal' className='rounded-4 border-0 my-5'>
                         <Card.Img src={pic} alt='Hotel image' className='rounded-4 opacity-75' style={{ maxHeight: '35rem'}}/>
