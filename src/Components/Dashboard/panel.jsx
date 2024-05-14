@@ -31,7 +31,7 @@ const Panel = ({shadow}) => {
         return (
             <Container fluid className={`justify-content-between d-flex align-items-center ${shadow? 'shadow-sm':''} mx-0 mb-4 px-3 px-lg-5 bg-accent-light`}
                 style={{
-                    position: "sticky",
+                    position: "sticky", //Making the navbar stick to the top of viewport during scrolling
                     top: '0',
                     left: '0',
                     zIndex: "1"
@@ -60,7 +60,7 @@ const Panel = ({shadow}) => {
                             <i className='bi bi-bell fs-6'></i>
                             {notifications > 0 && <Badge pill bg='success'>{notifications}</Badge>  /* only shows if there's a notification*/}
                         </Dropdown.Toggle>
-                        <Dropdown.Menu className="text-small py-0" style={{width: '20rem'}}>
+                        <Dropdown.Menu className="text-small py-0 border-0 mt-2" style={{width: '20rem'}}>
                             <Tabs
                                 defaultActiveKey='notifications'
                                 variant='underline' justify
@@ -88,12 +88,12 @@ const Panel = ({shadow}) => {
                             <img src={userpic} alt="" width="32" height="32" className="rounded-circle me-2"/>
                             <strong className=' d-none d-md-inline'>User</strong>
                         </Dropdown.Toggle>
-                        <Dropdown.Menu className="text-small">
-                            <Dropdown.Item href="/booking"><i className="bi bi-plus-circle me-3"></i>New lodging</Dropdown.Item>
-                            <Dropdown.Item href="/settings"><i className="bi bi-gear me-3"></i>Settings</Dropdown.Item>
-                            <Dropdown.Item href="/profile"><i className="bi bi-person me-3"></i>Profile</Dropdown.Item>
+                        <Dropdown.Menu className="text-small border-0 px-2">
+                            <Dropdown.Item href="/booking" className='rounded'><i className="bi bi-plus-circle me-3"></i>New lodging</Dropdown.Item>
+                            <Dropdown.Item href="/settings" className='rounded'><i className="bi bi-gear me-3"></i>Settings</Dropdown.Item>
+                            <Dropdown.Item href="/profile" className='rounded'><i className="bi bi-person me-3"></i>Profile</Dropdown.Item>
                             <Dropdown.Divider/>
-                            <Dropdown.Item href="/login"><i className="bi bi-box-arrow-left me-3"></i>Sign out</Dropdown.Item>
+                            <Dropdown.Item href="/login" className='rounded'><i className="bi bi-box-arrow-left me-3"></i>Sign out</Dropdown.Item>
                         </Dropdown.Menu>
                     </Dropdown>
                 </div>
@@ -194,12 +194,12 @@ const Panel = ({shadow}) => {
                         <strong>User</strong>
                     </Button>
                     <Dropdown.Toggle split variant='none' className='text-glitter'/>
-                    <Dropdown.Menu className="text-small shadow">
-                        <Dropdown.Item href="/booking"><i className="bi bi-plus-circle me-3"></i>New lodging</Dropdown.Item>
-                        <Dropdown.Item href="/"><i className="bi bi-gear me-3"></i>Settings</Dropdown.Item>
-                        <Dropdown.Item href="/profile"><i className="bi bi-person me-3"></i>Profile</Dropdown.Item>
+                    <Dropdown.Menu className="text-small shadow px-2">
+                        <Dropdown.Item href="/booking" className='rounded'><i className="bi bi-plus-circle me-3"></i>New lodging</Dropdown.Item>
+                        <Dropdown.Item href="/" className='rounded'><i className="bi bi-gear me-3"></i>Settings</Dropdown.Item>
+                        <Dropdown.Item href="/profile" className='rounded'><i className="bi bi-person me-3"></i>Profile</Dropdown.Item>
                         <Dropdown.Divider/>
-                        <Dropdown.Item href="/login"><i className="bi bi-box-arrow-left me-3"></i>Sign out</Dropdown.Item>
+                        <Dropdown.Item href="/login" className='rounded'><i className="bi bi-box-arrow-left me-3"></i>Sign out</Dropdown.Item>
                     </Dropdown.Menu>
                 </Dropdown>
             </Col>
