@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import './login.css';
 import drklogo from '../../Assets/Images/other/logo-char.png';
 import Modal from '../Signup/modal';
-import { Alert } from 'react-bootstrap';
+import { Alert, Spinner } from 'react-bootstrap';
 
 
 const Login = () => {
@@ -146,7 +146,9 @@ const Login = () => {
 										className="btn btn-charcoal w-100 mb-4 rounded-pill" type="submit"
 										disabled={isLogging}
 									>
-										{isLogging? 'Signing in...':'Login'}
+										{isLogging? `Signing in...`:'Login'}
+										{isLogging && <Spinner animation='border' size='sm'/>}
+										{/* Bootstrap spinner for spinner animation for login */}
 									</button>
 									<a href="#pass-recovery" role='button'
 										className=' text-decoration-none'
