@@ -133,7 +133,7 @@ const Explore = ({setShadow}) => {
                         {/* Filter for search */}
                         </OverlayTrigger>
                     </Col>
-                    <Offcanvas show={filter} onHide={() => openFilter(false)} scroll='true' placement='bottom' className='w-50 d-block mx-auto rounded-top-4 ps-4'>
+                    <Offcanvas show={filter} onHide={() => openFilter(false)} scroll='true' placement='bottom' className='w-lg-50 d-block mx-lg-auto mx-2 rounded-top-4 ps-4'>
                         <Offcanvas.Header closeButton className='pe-3'>
                             <Offcanvas.Title>Search Filter</Offcanvas.Title>
                         </Offcanvas.Header>
