@@ -29,7 +29,7 @@ const Panel = ({shadow}) => {
         }
 
         return (
-            <Container fluid className={`justify-content-between d-flex align-items-center ${shadow? 'shadow-sm':''} mx-0 mb-4 px-3 px-lg-5 bg-accent-light`}
+            <Container fluid className={`justify-content-between d-flex align-items-center ${shadow? 'shadow-sm':''} mx-0 px-3 px-lg-5 bg-accent-light`}
                 style={{
                     position: "sticky", //Making the navbar stick to the top of viewport during scrolling
                     top: '0',
@@ -39,11 +39,10 @@ const Panel = ({shadow}) => {
             >
                 <Image 
                     src={darkLogo} className='mt-2' 
-                    style={{height: '65px'}}
+                    style={{height: '65px', cursor: 'pointer'}}
                     onClick={() => toggleSideBar(!sideBar)}
                     aria-controls='dash-sidebar'
-                    aria-expanded={sideBar}
-                    // data-bs-toggle='collapse'
+                    // aria-expanded={sideBar}
                 />
                 <div className="btn-toolbar justify-content-between align-items-center">
                     <div className="d-flex input-group">
@@ -102,24 +101,28 @@ const Panel = ({shadow}) => {
     }
     
     return (
+        <>
         <Row 
-            className="bg-light m-0 pe-0" 
+            className="bg-light m-0 pe-0"
             id='dash-page' style={{height : '100dvh'}}
-            >
+        >
                 {/* SideBar */}
-            <Col id='dash-sidebar'
-                sm={2} className={`px-0 d-none ${sideBar? 'd-sm-flex':''} h-100 flex-column flex-shrink-0 pb-3 bg-charcoal overflow-y-auto`}
+            <div id='dash-sidebar'
+                className={`px-0 ${sideBar? 'col-3': 'w-80'} d-sm-flex h-100 flex-column pb-3 bg-charcoal overflow-y-auto`}
+                style={{
+                    transition: 'all 0.4s ease',
+                }}
             >
                 <div className="d-flex flex-row justify-content-evenly align-items-center text-center border-bottom border-gold mb-5">
                     <Button variant='outline-glitter' className="toggle-btn">
                         <i className="bi bi-grid-fill"></i>
                     </Button>
                     <a href="/" className="align-items-center mb-3 mb-md-0">
-                        <img src={logo} alt="logo" className='ms-2 img-fluid pt-2'/>
+                        <img src={logo} alt="logo" className='ms-2 pt-2'/>
                     </a>
                 </div>
                 <Nav 
-                    className="flex-column mb-auto gap-2"
+                    className="flex-column mb-auto gap-2 overflow-y-auto h-75"
                 >
                     <Nav.Item>
                         <NavLink 
@@ -160,7 +163,7 @@ const Panel = ({shadow}) => {
                     </Button>
                     {/* I'm only doing this to test the collapsible sidebar item. will eventually change and have all favourite categories on the single favs pages */}
                     <Collapse in={open}>
-                        <div id="collapse-body" className='bg-dark bg-opacity-75 w-75 ps-3 w-100 rounded mt-0'>
+                        <div id="collapse-body" className='bg-dark bg-opacity-75 ps-3 w-100 rounded mt-0'>
                             <Nav.Item>
                                 <Nav.Link 
                                     eventKey='hotels' 
@@ -202,7 +205,7 @@ const Panel = ({shadow}) => {
                         <Dropdown.Item href="/login" className='rounded'><i className="bi bi-box-arrow-left me-3"></i>Sign out</Dropdown.Item>
                     </Dropdown.Menu>
                 </Dropdown>
-            </Col>
+            </div>
             {/* Content */}
             <Col  
                 className="px-0 overflow-y-scroll bg-accent bg-opacity-25" 
@@ -212,6 +215,7 @@ const Panel = ({shadow}) => {
                 <Outlet />
             </Col>
         </Row>
+        </>
     );
 };
 

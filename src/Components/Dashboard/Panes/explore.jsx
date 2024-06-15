@@ -113,7 +113,7 @@ const Explore = ({setShadow}) => {
 
 
     return (
-        <Col xs={11} className='mx-auto'>
+        <Col xs={11} className='mx-auto pt-4'>
             <Row className="mb-5">
                 <Col xs={12} md={10} lg={7} className='mx-auto'>
                     <p className="display-6 fw-bold">Find your stay</p>

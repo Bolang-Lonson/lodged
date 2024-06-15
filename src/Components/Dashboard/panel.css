@@ -1,4 +1,8 @@
 .form-control:focus {
     outline: none; /* Remove default outline */
     border-color: #ba7fecd7; /* Set your desired border color */
-  }
+}
+
+.row .w-80 {	width: 80px }
+
+.nav-link:hover { background: #ffffff2d }
