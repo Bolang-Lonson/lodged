@@ -2,16 +2,18 @@ import logo from '../../Assets/Images/biglogo-png.png';
 import darkLogo from '../../Assets/Images/other/logoCapped.png';
 import './panel.css';
 import userpic from '../../Assets/Images/BolangPic.jpg';
-import React, {useState} from 'react';
+import React, {useState, useRef} from 'react';
 import {NavLink, Outlet} from 'react-router-dom';
 import {Tabs, Tab, Container, Row, Col, Dropdown, ButtonGroup, Button, Image,  Nav, Collapse, Badge} from 'react-bootstrap';
 import {useMediaQuery} from 'react-responsive';
 
 const Panel = ({shadow}) => {
 
-    const mobileDisplay = useMediaQuery({ query : '(max-width: 767.99px)'});
+    const mobileDisplay = useMediaQuery({ query : '(max-width: 575.99px)'});
     const [open, setOpen] = useState(false);
     const [sideBar, toggleSideBar] = useState(true);
+    const [searching, toggleSearching] = useState(false);
+    const srchbar = useRef(null);
 
     // classes for the navlinks both in base state and active state
     const baseClass = 'text-glitter ps-4 nav-link';
@@ -29,30 +31,41 @@ const Panel = ({shadow}) => {
         }
 
         return (
-            <Container fluid className={`justify-content-between d-flex align-items-center ${shadow? 'shadow-sm':''} mx-0 px-3 px-lg-5 bg-accent-light`}
+            <Container fluid className={`justify-content-between d-flex flex-wrap align-items-center ${shadow? 'shadow-sm':''} mx-0 px-3 px-lg-5 bg-accent-light`}
                 style={{
                     position: "sticky", //Making the navbar stick to the top of viewport during scrolling
                     top: '0',
                     left: '0',
-                    zIndex: "1"
+                    zIndex: "1",
                 }}
             >
                 <Image 
-                    src={darkLogo} className='mt-2' 
+                    src={darkLogo} className={`mt-2 ${searching && 'd-none'}`}
                     style={{height: '65px', cursor: 'pointer'}}
                     onClick={() => toggleSideBar(!sideBar)}
                     aria-controls='dash-sidebar'
                     // aria-expanded={sideBar}
                 />
-                <div className="btn-toolbar justify-content-between align-items-center">
-                    <div className="d-flex input-group">
+                <div className={`btn-toolbar d-flex align-items-center ${searching? 'mt-3 mb-3 flex-grow-1': 'justify-content-between'} flex-nowrap`}>
+                    <div className={`${searching && 'me-auto'} input-group`}>
                         <input 
-                            type="search" onFocus={() => setInFocus(true)} onBlur={() => setInFocus(false)}
-                            className={`form-control focus-ring focus-ring-light d-none d-md-inline-block bg-white ${inFocus? 'border-success-subtle':'bg-opacity-25'} rounded-start-pill border-end-0 ps-4 pe-0`}
+                            type="search" onFocus={() => setInFocus(true)} onBlur={() => {setInFocus(false);toggleSearching(false)}}
+                            className={`form-control focus-ring focus-ring-light ${mobileDisplay && searching? 'd-inline-block':'d-none'} d-md-inline-block bg-white ${inFocus? 'border-success-subtle':'bg-opacity-25'} rounded-start-pill border-end-0 ps-4 pe-0`}
                             aria-describedby='search' placeholder='Type to search'
-                            value={searchValue} onChange={updateSearchVal}
+                            value={searchValue} onChange={updateSearchVal} ref={srchbar}
                         />
-                        <button type='button' className={`input-group-text text-charcoal bg-white ${inFocus? 'border-success-subtle':'bg-opacity-25'} ${mobileDisplay? 'rounded-pill':'rounded-end-pill border-start-0'}`}><i className="bi bi-search"></i></button>
+                        <button 
+                            type='button'
+                            onClick={() => {
+                                if (mobileDisplay && !searching){
+                                    toggleSearching(true);
+                                    setTimeout(() => {
+                                        srchbar.current.focus();
+                                    }, 100);
+                                }
+                                
+                            }}
+                            className={`input-group-text text-charcoal bg-white ${inFocus? 'border-success-subtle':'bg-opacity-25'} ${mobileDisplay? (searching? 'rounded-end-pill border-start-0':'rounded-pill'):'rounded-end-pill border-start-0'}`}><i className="bi bi-search"></i></button>
                     </div>
                     <Dropdown drop='down-centered' data-bs-theme='light' className="ms-2 ms-lg-5">
                         <Dropdown.Toggle className="bg-transparent border-0 text-black d-flex h-100 align-items-center p-0 dropdown-toggle">
@@ -108,7 +121,7 @@ const Panel = ({shadow}) => {
         >
                 {/* SideBar */}
             <div id='dash-sidebar'
-                className={`px-0 ${sideBar? 'col-3': 'w-80'} d-sm-flex h-100 flex-column pb-3 bg-charcoal overflow-y-auto`}
+                className={`px-0 ${sideBar? 'col-3': 'w-80'} d-none d-lg-flex h-100 flex-column pb-3 bg-charcoal overflow-y-auto`}
                 style={{
                     transition: 'all 0.4s ease',
                 }}
